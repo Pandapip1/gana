@@ -1,0 +1,29 @@
+# -*- mode: rec -*-
+#
+# Registry for payment target types
+#
+# TODO: reference payto:// RFC for 'void' once the RFC has been published
+#
+
+%rec: PaymentTargetType
+%typedef: Name_t regexp /^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-]*$/
+%type: Name Name_t
+%key: Name
+%allowed: Contact
+%allowed: Reference
+%sort: Name Contact Reference
+
+Name: ach
+
+Name: bic
+
+Name: iban
+
+Name: upi
+
+Name: bitcoin
+
+Name: ilp
+
+Name: void
+Reference: N/A
