@@ -4,10 +4,10 @@
 #
 %rec: HttpStatusCode
 %key: Value
-%typedef: ValueRange_t range 100 599
+%typedef: ValueRange_t range 0 599
 %type: Value ValueRange_t
 %mandatory: Value
-%typedef: Description_t regexp /^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\) -]*$/
+%typedef: Description_t regexp /^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\), -]*$/
 %type: Description Description_t
 %unique: Description
 %mandatory: Description

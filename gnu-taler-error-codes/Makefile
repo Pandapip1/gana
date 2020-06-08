@@ -15,8 +15,11 @@ prep:
 combined.tmp: registry.rec prep
 	recsel -t TalerErrorCode -j HttpStatus -p Description,Name,Value,HttpStatus,HttpStatus.Value,HttpStatus.Identifier ../http-status-codes/registry.rec registry.rec > $@
 
-taler-error-codes.h.tmp: combined.tmp h.template
-	../format.sh h.template < combined.tmp > $@
+combined-indents.tmp: combined.tmp
+	sed 's/\+ /\+    * /g' combined.tmp > combined-indents.tmp
+
+taler-error-codes.h.tmp: combined-indents.tmp h.template
+	../format.sh h.template < combined-indents.tmp > $@
 
 taler-error-codes.h: h.header taler-error-codes.h.tmp h.footer
 	cat $^ > $@
