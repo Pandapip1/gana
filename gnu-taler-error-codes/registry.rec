@@ -8,7 +8,7 @@
 %constraint: ( Value < 100 ) || ( Value > 999 )
 %type: Value ValueRange_t
 %mandatory: Value
-%typedef: Description_t regexp /^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-].*$/
+%typedef: Description_t regexp |^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\)\.,;!"':#\/ -]*$|
 %type: Description Description_t
 %mandatory: Description
 %typedef: Name_t regexp /^[ABCDEFGHIJKLMNOPQRSTUVWXYZ_][ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789]*$/
@@ -21,6 +21,7 @@
 %mandatory: HttpStatus
 %sort: Value
 
+
 Value: 0
 Name: NONE
 Description: Special code to indicate no error (or no "code" present).
@@ -28,8 +29,7 @@ HttpStatus: 0
 
 Value: 1
 Name: INVALID
-Description: Special code to indicate that a non-integer error code was returned in
-+ the JSON response.
+Description: Special code to indicate that a non-integer error code was returned in the JSON response.
 HttpStatus: 0
 
 Value: 2
@@ -69,126 +69,92 @@ HttpStatus: 0
 
 Value: 9
 Name: OPERATION_INVALID
-Description: Operation specified invalid for this URL (resulting in a "NOT FOUND"
-+ for the overall response).
+Description: Operation specified invalid for this URL (resulting in a "NOT FOUND" for the overall response).
 HttpStatus: 0
 
 Value: 10
 Name: ENDPOINT_UNKNOWN
-Description: There is no endpoint defined for the URL provided by the client
-+ (returned together with a #MHD_HTTP_NOT_FOUND status code).
+Description: There is no endpoint defined for the URL provided by the client (
 HttpStatus: 404
 
 Value: 11
 Name: URI_TOO_LONG
-Description: The URI is longer than the longest URI the HTTP server is willing to
-+ parse. Returned together with an HTTP status code of
-+ #MHD_HTTP_URI_TOO_LONG.
+Description: The URI is longer than the longest URI the HTTP server is willing to parse.
 HttpStatus: 414
 
 Value: 12
 Name: WRONG_NUMBER_OF_SEGMENTS
-Description: The number of segments included in the URI does not match the number
-+ of segments expected by the endpoint. (returned together with a
-+ #MHD_HTTP_NOT_FOUND status code).
+Description: The number of segments included in the URI does not match the number of segments expected by the endpoint. (
 HttpStatus: 404
 
 Value: 13
 Name: HOLE_IN_WIRE_FEE_STRUCTURE
-Description: The start and end-times in the wire fee structure leave a hole. This
-+ is not allowed. Generated as an error on the client-side.
+Description: The start and end-times in the wire fee structure leave a hole. This is not allowed. Generated as an error on the client-side.
 HttpStatus: 0
 
 Value: 14
 Name: VERSION_MALFORMED
-Description: The version string given does not follow the expected
-+ CURRENT:REVISION:AGE Format.  Generated as an error on the client
-+ side.
+Description: The version string given does not follow the expected CURRENT:REVISION:AGE Format.  Generated as an error on the client side.
 HttpStatus: 0
 
 Value: 15
 Name: CLIENT_INTERNAL_FAILURE
-Description: The client-side experienced an internal failure. Generated as an error
-+ on the client side.
+Description: The client-side experienced an internal failure. Generated as an error on the client side.
 HttpStatus: 0
 
 Value: 1001
 Name: DB_SETUP_FAILED
-Description: The exchange failed to even just initialize its connection to the
-+ database.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to even just initialize its connection to the database.
 HttpStatus: 500
 
 Value: 1002
 Name: DB_START_FAILED
-Description: The exchange encountered an error event to just start the database
-+ transaction.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange encountered an error event to just start the database transaction.
 HttpStatus: 500
 
 Value: 1003
 Name: DB_COMMIT_FAILED_HARD
-Description: The exchange encountered an error event to commit the database
-+ transaction (hard, unrecoverable error). This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange encountered an error event to commit the database transaction (hard, unrecoverable error).
 HttpStatus: 500
 
 Value: 1004
 Name: DB_COMMIT_FAILED_ON_RETRY
-Description: The exchange encountered an error event to commit the database
-+ transaction, even after repeatedly retrying it there was always a
-+ conflicting transaction. (This indicates a repeated serialization
-+ error; should only happen if some client maliciously tries to create
-+ conflicting concurrent transactions.) This response is provided with
-+ HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange encountered an error event to commit the database transaction, even after repeatedly retrying it there was always a conflicting transaction. (This indicates a repeated serialization error; should only happen if some client maliciously tries to create conflicting concurrent transactions.)
 HttpStatus: 500
 
 Value: 1005
 Name: PARSER_OUT_OF_MEMORY
-Description: The exchange had insufficient memory to parse the request. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange had insufficient memory to parse the request.
 HttpStatus: 500
 
 Value: 1006
 Name: JSON_INVALID
-Description: The JSON in the client's request to the exchange was malformed.
-+ (Generic parse error). This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The JSON in the client's request to the exchange was malformed. (Generic parse error).
 HttpStatus: 400
 
 Value: 1007
 Name: JSON_INVALID_WITH_DETAILS
-Description: The JSON in the client's request to the exchange was malformed.
-+ Details about the location of the parse error are provided. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The JSON in the client's request to the exchange was malformed. Details about the location of the parse error are provided.
 HttpStatus: 400
 
 Value: 1008
 Name: PARAMETER_MISSING
-Description: A required parameter in the request to the exchange was missing. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: A required parameter in the request to the exchange was missing.
 HttpStatus: 400
 
 Value: 1009
 Name: PARAMETER_MALFORMED
-Description: A parameter in the request to the exchange was malformed. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: A parameter in the request to the exchange was malformed.
 HttpStatus: 400
 
 Value: 1010
 Name: COIN_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
-Description: The exchange failed to obtain the transaction history of the given
-+ coin from the database while generating an insufficient funds errors.
-+ This can happen during /deposit or /recoup requests. This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to obtain the transaction history of the given coin from the database while generating an insufficient funds errors. This can happen during /deposit or /recoup requests.
 HttpStatus: 500
 
 Value: 1011
 Name: INTERNAL_LOGIC_ERROR
-Description: Internal logic error.  Some server-side function failed that really
-+ should not. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Internal logic error.  Some server-side function failed that really should not.
 HttpStatus: 500
 
 Value: 1012
@@ -233,8 +199,7 @@ HttpStatus: 0
 
 Value: 1055
 Name: DEPOSITS_INVALID_H_CONTRACT_TERMS
-Description: The hash of the contract terms given to a /deposits/ handler was
-+ malformed.
+Description: The hash of the contract terms given to a /deposits/ handler was malformed.
 HttpStatus: 0
 
 Value: 1056
@@ -244,521 +209,367 @@ HttpStatus: 0
 
 Value: 1057
 Name: DEPOSITS_INVALID_BODY_BY_EXCHANGE
-Description: The body returned by the exchange for a /deposits/ request was
-+ malformed. Error created client-side.
+Description: The body returned by the exchange for a /deposits/ request was malformed. Error created client-side.
 HttpStatus: 0
 
 Value: 1058
 Name: DEPOSITS_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature returned by the exchange in a /deposits/ request was
-+ malformed. Error created client-side.
+Description: The signature returned by the exchange in a /deposits/ request was malformed. Error created client-side.
 HttpStatus: 0
 
 Value: 1100
 Name: WITHDRAW_INSUFFICIENT_FUNDS
-Description: The given reserve does not have sufficient funds to admit the
-+ requested withdraw operation at this time.  The response includes the
-+ current "balance" of the reserve as well as the transaction "history"
-+ that lead to this balance.  This response is provided with HTTP status
-+ code #MHD_HTTP_CONFLICT.
+Description: The given reserve does not have sufficient funds to admit the requested withdraw operation at this time.  The response includes the current "balance" of the reserve as well as the transaction "history" that lead to this balance.
 HttpStatus: 409
 
 Value: 1101
 Name: WITHDRAW_RESERVE_UNKNOWN
-Description: The exchange has no information about the "reserve_pub" that was
-+ given. This response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The exchange has no information about the "reserve_pub" that was given.
 HttpStatus: 404
 
 Value: 1102
 Name: WITHDRAW_AMOUNT_FEE_OVERFLOW
-Description: The amount to withdraw together with the fee exceeds the numeric range
-+ for Taler amounts.  This is not a client failure, as the coin value
-+ and fees come from the exchange's configuration. This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The amount to withdraw together with the fee exceeds the numeric range for Taler amounts.  This is not a client failure, as the coin value and fees come from the exchange's configuration.
 HttpStatus: 500
 
 Value: 1103
 Name: AMOUNT_DEPOSITS_OVERFLOW
-Description: All of the deposited amounts into this reserve total up to a value
-+ that is too big for the numeric range for Taler amounts. This is not a
-+ client failure, as the transaction history comes from the exchange's
-+ configuration.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: All of the deposited amounts into this reserve total up to a value that is too big for the numeric range for Taler amounts. This is not a client failure, as the transaction history comes from the exchange's configuration.
 HttpStatus: 500
 
 Value: 1104
 Name: WITHDRAW_HISTORIC_DENOMINATION_KEY_NOT_FOUND
-Description: For one of the historic withdrawals from this reserve, the exchange
-+ could not find the denomination key. This is not a client failure, as
-+ the transaction history comes from the exchange's configuration.  This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: For one of the historic withdrawals from this reserve, the exchange could not find the denomination key. This is not a client failure, as the transaction history comes from the exchange's configuration.
 HttpStatus: 500
 
 Value: 1105
 Name: WITHDRAW_AMOUNT_WITHDRAWALS_OVERFLOW
-Description: All of the withdrawals from reserve total up to a value that is too
-+ big for the numeric range for Taler amounts. This is not a client
-+ failure, as the transaction history comes from the exchange's
-+ configuration.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: All of the withdrawals from reserve total up to a value that is too big for the numeric range for Taler amounts. This is not a client failure, as the transaction history comes from the exchange's configuration.
 HttpStatus: 500
 
 Value: 1106
 Name: WITHDRAW_RESERVE_WITHOUT_WIRE_TRANSFER
-Description: The exchange somehow knows about this reserve, but there seem to have
-+ been no wire transfers made.  This is not a client failure, as this is
-+ a database consistency issue of the exchange.  This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange somehow knows about this reserve, but there seem to have been no wire transfers made.  This is not a client failure, as this is a database consistency issue of the exchange.
 HttpStatus: 500
 
 Value: 1107
 Name: WITHDRAW_SIGNATURE_FAILED
-Description: The exchange failed to create the signature using the denomination
-+ key.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to create the signature using the denomination key.
 HttpStatus: 500
 
 Value: 1108
 Name: WITHDRAW_DB_STORE_ERROR
 Description: The exchange failed to store the withdraw operation in its database.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 1109
 Name: WITHDRAW_DB_FETCH_ERROR
-Description: The exchange failed to check against historic withdraw data from
-+ database (as part of ensuring the idempotency of the operation). This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to check against historic withdraw data from database (as part of ensuring the idempotency of the operation).
 HttpStatus: 500
 
 Value: 1110
 Name: WITHDRAW_DENOMINATION_KEY_NOT_FOUND
-Description: The exchange is not aware of the denomination key the wallet requested
-+ for the withdrawal. This response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The exchange is not aware of the denomination key the wallet requested for the withdrawal.
 HttpStatus: 404
 
 Value: 1111
 Name: WITHDRAW_RESERVE_SIGNATURE_INVALID
-Description: The signature of the reserve is not valid.  This response is provided
-+ with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature of the reserve is not valid.
 HttpStatus: 400
 
 Value: 1112
 Name: WITHDRAW_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
-Description: When computing the reserve history, we ended up with a negative
-+ overall balance, which should be impossible. This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: When computing the reserve history, we ended up with a negative overall balance, which should be impossible.
 HttpStatus: 500
 
 Value: 1113
 Name: WITHDRAW_RESERVE_HISTORY_IMPOSSIBLE
-Description: When computing the reserve history, we ended up with a negative
-+ overall balance, which should be impossible. This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: When computing the reserve history, we ended up with a negative overall balance, which should be impossible.
 HttpStatus: 500
 
 Value: 1114
 Name: WITHDRAW_VALIDITY_IN_FUTURE
 Description: Validity period of the coin to be withdrawn is in the future.
-+ Returned with an HTTP status of #MHD_HTTP_PRECONDITION_FAILED.
 HttpStatus: 412
 
 Value: 1115
 Name: WITHDRAW_VALIDITY_IN_PAST
-Description: Withdraw period of the coin to be withdrawn is in the past.  Returned
-+ with an HTTP status of #MHD_HTTP_GONE.
+Description: Withdraw period of the coin to be withdrawn is in the past.
 HttpStatus: 410
 
 Value: 1116
 Name: DENOMINATION_KEY_LOST
-Description: Withdraw period of the coin to be withdrawn is in the past.  Returned
-+ with an HTTP status of #MHD_HTTP_GONE.
+Description: Withdraw period of the coin to be withdrawn is in the past.
 HttpStatus: 410
 
 Value: 1117
 Name: WITHDRAW_RESERVE_BALANCE_CORRUPT
-Description: The exchange's database entry with the reserve balance summary is
-+ inconsistent with its own history of the reserve. Returned with an
-+ HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange's database entry with the reserve balance summary is inconsistent with its own history of the reserve.
 HttpStatus: 500
 
 Value: 1118
 Name: WITHDRAW_REPLY_MALFORMED
-Description: The exchange responded with a reply that did not satsify the protocol.
-+ This error is not used in the protocol but created client-side.
+Description: The exchange responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1119
 Name: WITHDRAW_UNBLIND_FAILURE
-Description: The client failed to unblind the blind signature. This error is not
-+ used in the protocol but created client-side.
+Description: The client failed to unblind the blind signature. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1150
 Name: RESERVE_STATUS_DB_ERROR
-Description: The exchange failed to obtain the transaction history of the given
-+ reserve from the database. This response is provided with HTTP status
-+ code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to obtain the transaction history of the given reserve from the database.
 HttpStatus: 500
 
 Value: 1151
 Name: RESERVE_STATUS_UNKNOWN
-Description: The reserve status was requested using a unknown key, to be returned
-+ with 404 Not Found.
+Description: The reserve status was requested using a unknown key, to be returned with 404 Not Found.
 HttpStatus: 0
 
 Value: 1152
 Name: RESERVE_STATUS_REPLY_MALFORMED
-Description: The exchange responded with a reply that did not satsify the protocol.
-+ This error is not used in the protocol but created client-side.
+Description: The exchange responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1200
 Name: DEPOSIT_INSUFFICIENT_FUNDS
-Description: The respective coin did not have sufficient residual value for the
-+ /deposit operation (i.e. due to double spending). The "history" in the
-+ respose provides the transaction history of the coin proving this
-+ fact.  This response is provided with HTTP status code
-+ #MHD_HTTP_CONFLICT.
+Description: The respective coin did not have sufficient residual value for the /deposit operation (i.e. due to double spending). The "history" in the respose provides the transaction history of the coin proving this fact.
 HttpStatus: 409
 
 Value: 1201
 Name: DEPOSIT_HISTORY_DB_ERROR
-Description: The exchange failed to obtain the transaction history of the given
-+ coin from the database (this does not happen merely because the coin
-+ is seen by the exchange for the first time). This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to obtain the transaction history of the given coin from the database (this does not happen merely because the coin is seen by the exchange for the first time).
 HttpStatus: 500
 
 Value: 1202
 Name: DEPOSIT_STORE_DB_ERROR
 Description: The exchange failed to store the /depost information in the database.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 1203
 Name: DEPOSIT_DB_DENOMINATION_KEY_UNKNOWN
-Description: The exchange database is unaware of the denomination key that signed
-+ the coin (however, the exchange process is; this is not supposed to
-+ happen; it can happen if someone decides to purge the DB behind the
-+ back of the exchange process).  Hence the deposit is being refused.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange database is unaware of the denomination key that signed the coin (however, the exchange process is; this is not supposed to happen; it can happen if someone decides to purge the DB behind the back of the exchange process).  Hence the deposit is being refused.
 HttpStatus: 500
 
 Value: 1204
 Name: DEPOSIT_DENOMINATION_KEY_UNKNOWN
-Description: The exchange was trying to lookup the denomination key for the purpose
-+ of a DEPOSIT operation. However, the denomination key is unavailable
-+ for that purpose. This can be because it is entirely unknown to the
-+ exchange or not in the validity period for the deposit operation.
-+ Hence the deposit is being refused.  This response is provided with
-+ HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The exchange was trying to lookup the denomination key for the purpose of a DEPOSIT operation. However, the denomination key is unavailable for that purpose. This can be because it is entirely unknown to the exchange or not in the validity period for the deposit operation. Hence the deposit is being refused.
 HttpStatus: 404
 
 Value: 1205
 Name: DEPOSIT_COIN_SIGNATURE_INVALID
-Description: The signature made by the coin over the deposit permission is not
-+ valid.  This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The signature made by the coin over the deposit permission is not valid.
 HttpStatus: 400
 
 Value: 1206
 Name: DEPOSIT_DENOMINATION_SIGNATURE_INVALID
-Description: The signature of the denomination key over the coin is not valid. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature of the denomination key over the coin is not valid.
 HttpStatus: 400
 
 Value: 1207
 Name: DEPOSIT_NEGATIVE_VALUE_AFTER_FEE
-Description: The stated value of the coin after the deposit fee is subtracted would
-+ be negative.  This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The stated value of the coin after the deposit fee is subtracted would be negative.
 HttpStatus: 400
 
 Value: 1208
 Name: DEPOSIT_REFUND_DEADLINE_AFTER_WIRE_DEADLINE
-Description: The stated refund deadline is after the wire deadline. This response
-+ is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The stated refund deadline is after the wire deadline.
 HttpStatus: 400
 
 Value: 1209
 Name: DEPOSIT_INVALID_WIRE_FORMAT_TYPE
-Description: The exchange does not recognize the validity of or support the given
-+ wire format type. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The exchange does not recognize the validity of or support the given wire format type.
 HttpStatus: 400
 
 Value: 1210
 Name: DEPOSIT_INVALID_WIRE_FORMAT_JSON
-Description: The exchange failed to canonicalize and hash the given wire format.
-+ For example, the merchant failed to provide the "salt" or a valid
-+ payto:// URI in the wire details.  Note that while the exchange will
-+ do some basic sanity checking on the wire details, it cannot warrant
-+ that the banking system will ultimately be able to route to the
-+ specified address, even if this check passed. This response is
-+ provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The exchange failed to canonicalize and hash the given wire format. For example, the merchant failed to provide the "salt" or a valid payto:// URI in the wire details.  Note that while the exchange will do some basic sanity checking on the wire details, it cannot warrant that the banking system will ultimately be able to route to the specified address, even if this check passed.
 HttpStatus: 400
 
 Value: 1211
 Name: DEPOSIT_INVALID_WIRE_FORMAT_CONTRACT_HASH_CONFLICT
-Description: The hash of the given wire address does not match the hash specified
-+ in the proposal data.  This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The hash of the given wire address does not match the hash specified in the proposal data.
 HttpStatus: 400
 
 Value: 1213
 Name: DEPOSIT_INVALID_WIRE_FORMAT_ACCOUNT_NUMBER
-Description: The exchange detected that the given account number is invalid for the
-+ selected wire format type.  This response is provided with HTTP status
-+ code #MHD_HTTP_BAD_REQUEST.
+Description: The exchange detected that the given account number is invalid for the selected wire format type.
 HttpStatus: 400
 
 Value: 1218
 Name: DEPOSIT_INVALID_TIMESTAMP
-Description: Timestamp included in deposit permission is intolerably far off with
-+ respect to the clock of the exchange.
+Description: Timestamp included in deposit permission is intolerably far off with respect to the clock of the exchange.
 HttpStatus: 0
 
 Value: 1219
 Name: DEPOSIT_DENOMINATION_VALIDITY_IN_FUTURE
-Description: Validity period of the denomination key is in the future.  Returned
-+ with an HTTP status of #MHD_HTTP_PRECONDITION_FAILED.
+Description: Validity period of the denomination key is in the future.
 HttpStatus: 412
 
 Value: 1220
 Name: DEPOSIT_DENOMINATION_EXPIRED
-Description: Denomination key of the coin is past the deposit deadline.  Returned
-+ with an HTTP status of #MHD_HTTP_GONE.
+Description: Denomination key of the coin is past the deposit deadline.
 HttpStatus: 410
 
 Value: 1221
 Name: DEPOSIT_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature provided by the exchange is not valid. Error created
-+ client-side.
+Description: The signature provided by the exchange is not valid. Error created client-side.
 HttpStatus: 0
 
 Value: 1222
 Name: DEPOSIT_CURRENCY_MISMATCH
-Description: The currency specified for the deposit is different from the currency
-+ of the coin.  This response is provided with HTTP status code
-+ #MHD_HTTP_PRECONDITION_FAILED.
+Description: The currency specified for the deposit is different from the currency of the coin.
 HttpStatus: 412
 
 Value: 1300
 Name: MELT_INSUFFICIENT_FUNDS
-Description: The respective coin did not have sufficient residual value for the
-+ /refresh/melt operation.  The "history" in this response provdes the
-+ "residual_value" of the coin, which may be less than its
-+ "original_value".  This response is provided with HTTP status code
-+ #MHD_HTTP_CONFLICT.
+Description: The respective coin did not have sufficient residual value for the /refresh/melt operation.  The "history" in this response provdes the "residual_value" of the coin, which may be less than its "original_value".
 HttpStatus: 409
 
 Value: 1301
 Name: MELT_DENOMINATION_KEY_NOT_FOUND
-Description: The respective coin did not have sufficient residual value for the
-+ /refresh/melt operation.  The "history" in this response provdes the
-+ "residual_value" of the coin, which may be less than its
-+ "original_value".  This response is provided with HTTP status code
-+ #MHD_HTTP_CONFLICT.
+Description: The respective coin did not have sufficient residual value for the /refresh/melt operation.  The "history" in this response provdes the "residual_value" of the coin, which may be less than its "original_value".
 HttpStatus: 409
 
 Value: 1302
 Name: MELT_COIN_HISTORY_COMPUTATION_FAILED
-Description: The exchange had an internal error reconstructing the transaction
-+ history of the coin that was being melted. This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange had an internal error reconstructing the transaction history of the coin that was being melted.
 HttpStatus: 500
 
 Value: 1303
 Name: MELT_DB_FETCH_ERROR
-Description: The exchange failed to check against historic melt data from database
-+ (as part of ensuring the idempotency of the operation). This response
-+ is provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to check against historic melt data from database (as part of ensuring the idempotency of the operation).
 HttpStatus: 500
 
 Value: 1304
 Name: MELT_DB_STORE_SESSION_ERROR
-Description: The exchange failed to store session data in the database. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to store session data in the database.
 HttpStatus: 500
 
 Value: 1305
 Name: MELT_FEES_EXCEED_CONTRIBUTION
-Description: The exchange encountered melt fees exceeding the melted coin's
-+ contribution.  This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The exchange encountered melt fees exceeding the melted coin's contribution.
 HttpStatus: 400
 
 Value: 1306
 Name: MELT_DENOMINATION_SIGNATURE_INVALID
-Description: The denomination key signature on the melted coin is invalid. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The denomination key signature on the melted coin is invalid.
 HttpStatus: 400
 
 Value: 1307
 Name: MELT_COIN_SIGNATURE_INVALID
-Description: The signature made with the coin to be melted is invalid. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature made with the coin to be melted is invalid.
 HttpStatus: 400
 
 Value: 1308
 Name: MELT_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
-Description: The exchange failed to obtain the transaction history of the given
-+ coin from the database while generating an insufficient funds errors.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to obtain the transaction history of the given coin from the database while generating an insufficient funds errors.
 HttpStatus: 500
 
 Value: 1309
 Name: MELT_COIN_EXPIRED_NO_ZOMBIE
-Description: The denomination of the given coin has past its expiration date and it
-+ is also not a valid zombie (that is, was not refreshed with the fresh
-+ coin being subjected to recoup).
+Description: The denomination of the given coin has past its expiration date and it is also not a valid zombie (that is, was not refreshed with the fresh coin being subjected to recoup).
 HttpStatus: 0
 
 Value: 1310
 Name: MELT_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature returned by the exchange in a melt request was
-+ malformed. Error created client-side.
+Description: The signature returned by the exchange in a melt request was malformed. Error created client-side.
 HttpStatus: 0
 
 Value: 1311
 Name: MELT_CURRENCY_MISMATCH
-Description: The currency specified for the melt amount is different from the
-+ currency of the coin.  This response is provided with HTTP status code
-+ #MHD_HTTP_PRECONDITION_FAILED.
+Description: The currency specified for the melt amount is different from the currency of the coin.
 HttpStatus: 412
 
 Value: 1351
 Name: REFRESH_RECOUP_DENOMINATION_KEY_NOT_FOUND
-Description: The exchange is unaware of the denomination key that was used to sign
-+ the melted zombie coin.  This response is provided with HTTP status
-+ code #MHD_HTTP_NOT_FOUND.
+Description: The exchange is unaware of the denomination key that was used to sign the melted zombie coin.
 HttpStatus: 404
 
 Value: 1352
 Name: REFRESH_RECOUP_DENOMINATION_VALIDITY_IN_FUTURE
-Description: Validity period of the denomination key is in the future.  Returned
-+ with an HTTP status of #MHD_HTTP_PRECONDITION_FAILED.
+Description: Validity period of the denomination key is in the future.
 HttpStatus: 412
 
 Value: 1353
 Name: REFRESH_RECOUP_DENOMINATION_EXPIRED
-Description: Denomination key of the coin is past the deposit deadline.  Returned
-+ with an HTTP status of #MHD_HTTP_GONE.
+Description: Denomination key of the coin is past the deposit deadline.
 HttpStatus: 410
 
 Value: 1354
 Name: REFRESH_ZOMBIE_DENOMINATION_EXPIRED
-Description: Denomination key of the coin is past the deposit deadline.  Returned
-+ with an HTTP status of #MHD_HTTP_GONE.
+Description: Denomination key of the coin is past the deposit deadline.
 HttpStatus: 410
 
 Value: 1370
 Name: REVEAL_COMMITMENT_VIOLATION
-Description: The provided transfer keys do not match up with the original
-+ commitment.  Information about the original commitment is included in
-+ the response.  This response is provided with HTTP status code
-+ #MHD_HTTP_CONFLICT.
+Description: The provided transfer keys do not match up with the original commitment.  Information about the original commitment is included in the response.
 HttpStatus: 409
 
 Value: 1371
 Name: REVEAL_SIGNING_ERROR
-Description: Failed to produce the blinded signatures over the coins to be
-+ returned. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Failed to produce the blinded signatures over the coins to be returned.
 HttpStatus: 500
 
 Value: 1372
 Name: REVEAL_SESSION_UNKNOWN
-Description: The exchange is unaware of the refresh session specified in the
-+ request. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The exchange is unaware of the refresh session specified in the request.
 HttpStatus: 400
 
 Value: 1373
 Name: REVEAL_DB_FETCH_SESSION_ERROR
 Description: The exchange failed to retrieve valid session data from the database.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 1374
 Name: REVEAL_DB_FETCH_REVEAL_ERROR
-Description: The exchange failed to retrieve previously revealed data from the
-+ database.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to retrieve previously revealed data from the database.
 HttpStatus: 500
 
 Value: 1375
 Name: REVEAL_DB_COMMIT_ERROR
 Description: The exchange failed to retrieve commitment data from the database.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 1376
 Name: REVEAL_CNC_TRANSFER_ARRAY_SIZE_INVALID
-Description: The size of the cut-and-choose dimension of the private transfer keys
-+ request does not match #TALER_CNC_KAPPA - 1. This response is provided
-+ with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The size of the cut-and-choose dimension of the private transfer keys request does not match #TALER_CNC_KAPPA - 1.
 HttpStatus: 400
 
 Value: 1377
 Name: REVEAL_NEW_DENOMS_ARRAY_SIZE_EXCESSIVE
-Description: The number of coins to be created in refresh exceeds the limits of the
-+ exchange. private transfer keys request does not match
-+ #TALER_CNC_KAPPA - 1. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The number of coins to be created in refresh exceeds the limits of the exchange. private transfer keys request does not match #TALER_CNC_KAPPA - 1.
 HttpStatus: 400
 
 Value: 1378
 Name: REVEAL_NEW_DENOMS_ARRAY_SIZE_MISMATCH
-Description: The number of envelopes given does not match the number of
-+ denomination keys given. This response is provided with HTTP status
-+ code #MHD_HTTP_BAD_REQUEST.
+Description: The number of envelopes given does not match the number of denomination keys given.
 HttpStatus: 400
 
 Value: 1379
 Name: REVEAL_COST_CALCULATION_OVERFLOW
-Description: The exchange encountered a numeric overflow totaling up the cost for
-+ the refresh operation.  This response is provided with HTTP status
-+ code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange encountered a numeric overflow totaling up the cost for the refresh operation.
 HttpStatus: 500
 
 Value: 1380
 Name: REVEAL_AMOUNT_INSUFFICIENT
-Description: The exchange's cost calculation shows that the melt amount is below
-+ the costs of the transaction.  This response is provided with HTTP
-+ status code #MHD_HTTP_BAD_REQUEST.
+Description: The exchange's cost calculation shows that the melt amount is below the costs of the transaction.
 HttpStatus: 400
 
 Value: 1381
 Name: REVEAL_FRESH_DENOMINATION_KEY_NOT_FOUND
-Description: The exchange is unaware of the denomination key that was requested for
-+ one of the fresh coins.  This response is provided with HTTP status
-+ code #MHD_HTTP_BAD_REQUEST.
+Description: The exchange is unaware of the denomination key that was requested for one of the fresh coins.
 HttpStatus: 400
 
 Value: 1382
 Name: REVEAL_LINK_SIGNATURE_INVALID
-Description: The signature made with the coin over the link data is invalid. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature made with the coin over the link data is invalid.
 HttpStatus: 400
 
 Value: 1383
 Name: REVEAL_KEYS_MISSING
-Description: The exchange failed to generate the signature as it could not find the
-+ signing key for the denomination. This response is provided with HTTP
-+ status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to generate the signature as it could not find the signing key for the denomination.
 HttpStatus: 500
 
 Value: 1384
@@ -768,329 +579,237 @@ HttpStatus: 0
 
 Value: 1385
 Name: REVEAL_REPLY_MALFORMED
-Description: The exchange responded with a reply that did not satsify the protocol.
-+ This error is not used in the protocol but created client-side.
+Description: The exchange responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1400
 Name: LINK_COIN_UNKNOWN
 Description: The coin specified in the link request is unknown to the exchange.
-+ This response is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
 HttpStatus: 404
 
 Value: 1401
 Name: LINK_REPLY_MALFORMED
-Description: The exchange responded with a reply that did not satsify the protocol.
-+ This error is not used in the protocol but created client-side.
+Description: The exchange responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1500
 Name: REFUND_COIN_NOT_FOUND
-Description: The exchange knows literally nothing about the coin we were asked to
-+ refund. But without a transaction history, we cannot issue a refund.
-+ This is kind-of OK, the owner should just refresh it directly without
-+ executing the refund.  This response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The exchange knows literally nothing about the coin we were asked to refund. But without a transaction history, we cannot issue a refund. This is kind-of OK, the owner should just refresh it directly without executing the refund.
 HttpStatus: 404
 
 Value: 1501
 Name: REFUND_CONFLICT
-Description: We could not process the refund request as the coin's transaction
-+ history does not permit the requested refund at this time.  The
-+ "history" in the response proves this.  This response is provided with
-+ HTTP status code #MHD_HTTP_CONFLICT.
+Description: We could not process the refund request as the coin's transaction history does not permit the requested refund at this time.  The "history" in the response proves this.
 HttpStatus: 409
 
 Value: 1503
 Name: REFUND_DEPOSIT_NOT_FOUND
-Description: The exchange knows about the coin we were asked to refund, but not
-+ about the specific /deposit operation.  Hence, we cannot issue a
-+ refund (as we do not know if this merchant public key is authorized to
-+ do a refund).  This response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The exchange knows about the coin we were asked to refund, but not about the specific /deposit operation.  Hence, we cannot issue a refund (as we do not know if this merchant public key is authorized to do a refund).
 HttpStatus: 404
 
 Value: 1504
 Name: REFUND_CURRENCY_MISMATCH
-Description: The currency specified for the refund is different from the currency
-+ of the coin.  This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The currency specified for the refund is different from the currency of the coin.
 HttpStatus: 400
 
 Value: 1505
 Name: REFUND_DB_INCONSISTENT
-Description: When we tried to check if we already paid out the coin, the exchange's
-+ database suddenly disagreed with data it previously provided (internal
-+ inconsistency). This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: When we tried to check if we already paid out the coin, the exchange's database suddenly disagreed with data it previously provided (internal inconsistency).
 HttpStatus: 500
 
 Value: 1506
 Name: REFUND_MERCHANT_ALREADY_PAID
-Description: The exchange can no longer refund the customer/coin as the money was
-+ already transferred (paid out) to the merchant. (It should be past the
-+ refund deadline.) This response is provided with HTTP status code
-+ #MHD_HTTP_GONE.
+Description: The exchange can no longer refund the customer/coin as the money was already transferred (paid out) to the merchant. (It should be past the refund deadline.)
 HttpStatus: 410
 
 Value: 1507
 Name: REFUND_INSUFFICIENT_FUNDS
-Description: The amount the exchange was asked to refund exceeds (with fees) the
-+ total amount of the deposit (including fees). This response is
-+ provided with HTTP status code #MHD_HTTP_PRECONDITION_FAILED.
+Description: The amount the exchange was asked to refund exceeds (with fees) the total amount of the deposit (including fees).
 HttpStatus: 412
 
 Value: 1508
 Name: REFUND_DENOMINATION_KEY_NOT_FOUND
-Description: The exchange failed to recover information about the denomination key
-+ of the refunded coin (even though it recognizes the key).  Hence it
-+ could not check the fee strucutre. This response is provided with HTTP
-+ status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to recover information about the denomination key of the refunded coin (even though it recognizes the key).  Hence it could not check the fee strucutre.
 HttpStatus: 500
 
 Value: 1509
 Name: REFUND_FEE_TOO_LOW
-Description: The refund fee specified for the request is lower than the refund fee
-+ charged by the exchange for the given denomination key of the refunded
-+ coin. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The refund fee specified for the request is lower than the refund fee charged by the exchange for the given denomination key of the refunded coin.
 HttpStatus: 400
 
 Value: 1510
 Name: REFUND_STORE_DB_ERROR
 Description: The exchange failed to store the refund information to its database.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 1511
 Name: REFUND_FEE_CURRENCY_MISMATCH
-Description: The refund fee is specified in a different currency than the refund
-+ amount. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The refund fee is specified in a different currency than the refund amount.
 HttpStatus: 400
 
 Value: 1512
 Name: REFUND_FEE_ABOVE_AMOUNT
-Description: The refunded amount is smaller than the refund fee, which would result
-+ in a negative refund. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The refunded amount is smaller than the refund fee, which would result in a negative refund.
 HttpStatus: 400
 
 Value: 1513
 Name: REFUND_MERCHANT_SIGNATURE_INVALID
-Description: The signature of the merchant is invalid. This response is provided
-+ with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature of the merchant is invalid.
 HttpStatus: 400
 
 Value: 1514
 Name: REFUND_MERCHANT_SIGNING_FAILED
 Description: Merchant backend failed to create the refund confirmation signature.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 1515
 Name: REFUND_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature returned by the exchange in a refund request was
-+ malformed. Error created client-side.
+Description: The signature returned by the exchange in a refund request was malformed. Error created client-side.
 HttpStatus: 0
 
 Value: 1600
 Name: ADMIN_ADD_INCOMING_WIREFORMAT_UNSUPPORTED
-Description: The wire format specified in the "sender_account_details" is not
-+ understood or not supported by this exchange. Returned with an HTTP
-+ status code of #MHD_HTTP_NOT_FOUND. (As we did not find an
-+ interpretation of the wire format.)
+Description: The wire format specified in the "sender_account_details" is not understood or not supported by this exchange.
 HttpStatus: 404
 
 Value: 1601
 Name: ADMIN_ADD_INCOMING_CURRENCY_UNSUPPORTED
-Description: The currency specified in the "amount" parameter is not supported by
-+ this exhange.  Returned with an HTTP status code of
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The currency specified in the "amount" parameter is not supported by this exhange.
 HttpStatus: 400
 
 Value: 1602
 Name: ADMIN_ADD_INCOMING_DB_STORE
-Description: The exchange failed to store information about the incoming transfer
-+ in its database.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to store information about the incoming transfer in its database.
 HttpStatus: 500
 
 Value: 1700
 Name: TRANSFERS_GET_DB_FETCH_FAILED
-Description: The exchange encountered an error (that is not about not finding the
-+ wire transfer) trying to lookup a wire transfer identifier in the
-+ database.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange encountered an error (that is not about not finding the wire transfer) trying to lookup a wire transfer identifier in the database.
 HttpStatus: 500
 
 Value: 1701
 Name: TRANSFERS_GET_DB_INCONSISTENT
-Description: The exchange found internally inconsistent data when resolving a wire
-+ transfer identifier in the database.  This response is provided with
-+ HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange found internally inconsistent data when resolving a wire transfer identifier in the database.
 HttpStatus: 500
 
 Value: 1702
 Name: TRANSFERS_GET_WTID_NOT_FOUND
-Description: The exchange did not find information about the specified wire
-+ transfer identifier in the database.  This response is provided with
-+ HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The exchange did not find information about the specified wire transfer identifier in the database.
 HttpStatus: 404
 
 Value: 1703
 Name: TRANSFERS_GET_WIRE_FEE_NOT_FOUND
-Description: The exchange did not find information about the wire transfer fees it
-+ charged. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange did not find information about the wire transfer fees it charged.
 HttpStatus: 500
 
 Value: 1704
 Name: TRANSFERS_GET_WIRE_FEE_INCONSISTENT
-Description: The exchange found a wire fee that was above the total transfer value
-+ (and thus could not have been charged). This response is provided with
-+ HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange found a wire fee that was above the total transfer value (and thus could not have been charged).
 HttpStatus: 500
 
 Value: 1705
 Name: TRANSFERS_GET_REPLY_MALFORMED
-Description: The exchange responded with a reply that did not satsify the protocol.
-+ This error is not used in the protocol but created client-side.
+Description: The exchange responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1800
 Name: DEPOSITS_GET_DB_FEE_INCONSISTENT
-Description: The exchange found internally inconsistent fee data when resolving a
-+ transaction in the database.  This response is provided with HTTP
-+ status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange found internally inconsistent fee data when resolving a transaction in the database.
 HttpStatus: 500
 
 Value: 1801
 Name: DEPOSITS_GET_DB_FETCH_FAILED
-Description: The exchange encountered an error (that is not about not finding the
-+ transaction) trying to lookup a transaction in the database.  This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange encountered an error (that is not about not finding the transaction) trying to lookup a transaction in the database.
 HttpStatus: 500
 
 Value: 1802
 Name: DEPOSITS_GET_NOT_FOUND
-Description: The exchange did not find information about the specified transaction
-+ in the database.  This response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The exchange did not find information about the specified transaction in the database.
 HttpStatus: 404
 
 Value: 1803
 Name: DEPOSITS_GET_WTID_RESOLUTION_ERROR
-Description: The exchange failed to identify the wire transfer of the transaction
-+ (or information about the plan that it was supposed to still happen in
-+ the future).  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to identify the wire transfer of the transaction (or information about the plan that it was supposed to still happen in the future).
 HttpStatus: 500
 
 Value: 1804
 Name: DEPOSITS_GET_MERCHANT_SIGNATURE_INVALID
-Description: The signature of the merchant is invalid. This response is provided
-+ with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature of the merchant is invalid.
 HttpStatus: 400
 
 Value: 1850
 Name: RECOUP_DENOMINATION_KEY_UNKNOWN
-Description: The given denomination key is not in the "recoup" set of the exchange
-+ right now.  This response is provided with an HTTP status code of
-+ #MHD_HTTP_NOT_FOUND.
+Description: The given denomination key is not in the "recoup" set of the exchange right now.
 HttpStatus: 404
 
 Value: 1851
 Name: RECOUP_SIGNATURE_INVALID
-Description: The given coin signature is invalid for the request. This response is
-+ provided with an HTTP status code of #MHD_HTTP_FORBIDDEN.
+Description: The given coin signature is invalid for the request.
 HttpStatus: 403
 
 Value: 1852
 Name: RECOUP_DENOMINATION_SIGNATURE_INVALID
-Description: The signature of the denomination key over the coin is not valid. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature of the denomination key over the coin is not valid.
 HttpStatus: 400
 
 Value: 1853
 Name: RECOUP_DB_FETCH_FAILED
-Description: The exchange failed to access its own database about reserves. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to access its own database about reserves.
 HttpStatus: 500
 
 Value: 1854
 Name: RECOUP_WITHDRAW_NOT_FOUND
-Description: The exchange could not find the corresponding withdraw operation. The
-+ request is denied.  This response is provided with an HTTP status code
-+ of #MHD_HTTP_NOT_FOUND.
+Description: The exchange could not find the corresponding withdraw operation. The request is denied.
 HttpStatus: 404
 
 Value: 1855
 Name: RECOUP_HISTORY_DB_ERROR
-Description: The exchange obtained an internally inconsistent transaction history
-+ for the given coin. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange obtained an internally inconsistent transaction history for the given coin.
 HttpStatus: 500
 
 Value: 1856
 Name: RECOUP_DB_PUT_FAILED
-Description: The exchange failed to store information about the recoup to be
-+ performed in the database. This response is provided with HTTP status
-+ code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to store information about the recoup to be performed in the database.
 HttpStatus: 500
 
 Value: 1857
 Name: RECOUP_COIN_BALANCE_ZERO
-Description: The coin's remaining balance is zero.  The request is denied. This
-+ response is provided with an HTTP status code of #MHD_HTTP_FORBIDDEN.
+Description: The coin's remaining balance is zero.  The request is denied.
 HttpStatus: 403
 
 Value: 1858
 Name: RECOUP_BLINDING_FAILED
-Description: The exchange failed to reproduce the coin's blinding. This response is
-+ provided with an HTTP status code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to reproduce the coin's blinding.
 HttpStatus: 500
 
 Value: 1859
 Name: RECOUP_COIN_BALANCE_NEGATIVE
-Description: The coin's remaining balance is zero.  The request is denied. This
-+ response is provided with an HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR
+Description: The coin's remaining balance is zero.  The request is denied.
 HttpStatus: 500
 
 Value: 1860
 Name: RECOUP_DENOMINATION_VALIDITY_IN_FUTURE
-Description: Validity period of the denomination key is in the future.  Returned
-+ with an HTTP status of #MHD_HTTP_PRECONDITION_FAILED.
+Description: Validity period of the denomination key is in the future.
 HttpStatus: 412
 
 Value: 1861
 Name: RECOUP_REPLY_MALFORMED
-Description: The exchange responded with a reply that did not satsify the protocol.
-+ This error is not used in the protocol but created client-side.
+Description: The exchange responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client-side.
 HttpStatus: 0
 
 Value: 1900
 Name: KEYS_HAVE_NOT_NUMERIC
-Description: The "have" parameter was not a natural number. This response is
-+ provied with an HTTP status code of #MHD_HTTP_BAD_REQUEST.
+Description: The "have" parameter was not a natural number.
 HttpStatus: 400
 
 Value: 1901
 Name: KEYS_MISSING
-Description: We currently cannot find any keys. This response is provied with an
-+ HTTP status code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We currently cannot find any keys.
 HttpStatus: 500
 
 Value: 1902
 Name: KEYS_TIMETRAVEL_FORBIDDEN
-Description: This exchange does not allow clients to request /keys for times other
-+ than the current (exchange) time. This response is provied with an
-+ HTTP status code of #MHD_HTTP_FORBIDDEN.
+Description: This exchange does not allow clients to request /keys for times other than the current (exchange) time.
 HttpStatus: 403
 
 Value: 1903
@@ -1100,468 +819,346 @@ HttpStatus: 0
 
 Value: 2000
 Name: INSTANCE_UNKNOWN
-Description: The backend could not find the merchant instance specified in the
-+ request.   This response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The backend could not find the merchant instance specified in the request.
 HttpStatus: 404
 
 Value: 2002
 Name: PROPOSAL_INSTANCE_CONFIGURATION_LACKS_WIRE
-Description: The backend lacks a wire transfer method configuration option for the
-+ given instance.
+Description: The backend lacks a wire transfer method configuration option for the given instance.
 HttpStatus: 0
 
 Value: 2100
 Name: PAY_MERCHANT_INVALID_RESPONSE
-Description: The merchant failed to provide a meaningful response to a /pay
-+ request.  This error is created client-side.
+Description: The merchant failed to provide a meaningful response to a /pay request.  This error is created client-side.
 HttpStatus: 0
 
 Value: 2101
 Name: PAY_EXCHANGE_FAILED
-Description: The exchange failed to provide a meaningful response to a /deposit
-+ request.  This response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY, or #MHD_HTTP_CONFLICT in case the
-+ exchange reports #TALER_EC_DEPOSIT_INSUFFICIENT_FUNDS (aka double
-+ spending).
+Description: The exchange failed to provide a meaningful response to a /deposit request.
 HttpStatus: 424
-HttpStatus: 409
+# This code has two associated HTTP status codes, but entering both in the registry
+# causes two conflicting definitions in the C header generated.
+# HttpStatus: 409
 
 Value: 2102
 Name: PAY_DB_STORE_PAY_ERROR
-Description: The merchant failed to commit the exchanges' response to a /deposit
-+ request to its database.  This response is provided with HTTP status
-+ code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to commit the exchanges' response to a /deposit request to its database.
 HttpStatus: 500
 
 Value: 2103
 Name: PAY_EXCHANGE_REJECTED
 Description: The specified exchange is not supported/trusted by this merchant.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_PRECONDITION_FAILED.
 HttpStatus: 412
 
 Value: 2104
 Name: PAY_DENOMINATION_KEY_NOT_FOUND
-Description: The denomination key used for payment is not listed among the
-+ denomination keys of the exchange.  This response is provided with
-+ HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The denomination key used for payment is not listed among the denomination keys of the exchange.
 HttpStatus: 400
 
 Value: 2105
 Name: PAY_DENOMINATION_KEY_AUDITOR_FAILURE
-Description: The denomination key used for payment is not audited by an auditor
-+ approved by the merchant.  This response is provided with HTTP status
-+ code #MHD_HTTP_BAD_REQUEST.
+Description: The denomination key used for payment is not audited by an auditor approved by the merchant.
 HttpStatus: 400
 
 Value: 2106
 Name: PAY_AMOUNT_OVERFLOW
-Description: There was an integer overflow totaling up the amounts or deposit fees
-+ in the payment.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: There was an integer overflow totaling up the amounts or deposit fees in the payment.
 HttpStatus: 500
 
 Value: 2107
 Name: PAY_FEES_EXCEED_PAYMENT
-Description: The deposit fees exceed the total value of the payment. This response
-+ is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The deposit fees exceed the total value of the payment.
 HttpStatus: 400
 
 Value: 2108
 Name: PAY_PAYMENT_INSUFFICIENT_DUE_TO_FEES
-Description: After considering deposit and wire fees, the payment is insufficient
-+ to satisfy the required amount for the contract.  The client should
-+ revisit the logic used to calculate fees it must cover. This response
-+ is provided with HTTP status code #MHD_HTTP_ACCEPTED.
+Description: After considering deposit and wire fees, the payment is insufficient to satisfy the required amount for the contract.  The client should revisit the logic used to calculate fees it must cover.
 HttpStatus: 202
 
 Value: 2109
 Name: PAY_PAYMENT_INSUFFICIENT
-Description: Even if we do not consider deposit and wire fees, the payment is
-+ insufficient to satisfy the required amount for the contract.  This
-+ response is provided with HTTP status code #MHD_HTTP_ACCEPTED.
+Description: Even if we do not consider deposit and wire fees, the payment is insufficient to satisfy the required amount for the contract.
 HttpStatus: 202
 
 Value: 2110
 Name: PAY_COIN_SIGNATURE_INVALID
-Description: The signature over the contract of one of the coins was invalid. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The signature over the contract of one of the coins was invalid.
 HttpStatus: 400
 
 Value: 2111
 Name: PAY_EXCHANGE_TIMEOUT
-Description: We failed to contact the exchange for the /pay request. This response
-+ is provided with HTTP status code #MHD_HTTP_REQUEST_TIMEOUT.
+Description: We failed to contact the exchange for the /pay request.
 HttpStatus: 408
 
 Value: 2112
 Name: PAY_EXCHANGE_LOOKUP_FAILED
-Description: When we tried to find information about the exchange to issue the
-+ deposit, we failed.  This usually only happens if the merchant backend
-+ is somehow unable to get its own HTTP client logic to work. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: When we tried to find information about the exchange to issue the deposit, we failed.  This usually only happens if the merchant backend is somehow unable to get its own HTTP client logic to work.
 HttpStatus: 500
 
 Value: 2114
 Name: PAY_REFUND_DEADLINE_PAST_WIRE_TRANSFER_DEADLINE
 Description: The refund deadline in the contract is after the transfer deadline.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR as this should have been caught when
-+ the offer was first setup.
 HttpStatus: 500
 
 Value: 2115
 Name: PAY_COINS_ARRAY_EMPTY
-Description: The request fails to provide coins for the payment. This response is
-+ provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The request fails to provide coins for the payment.
 HttpStatus: 400
 
 Value: 2116
 Name: PAY_DB_FETCH_PAY_ERROR
-Description: The merchant failed to fetch the contract terms from the merchant's
-+ database.  This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to fetch the contract terms from the merchant's database.
 HttpStatus: 500
 
 Value: 2117
 Name: PAY_DB_FETCH_TRANSACTION_ERROR
-Description: The merchant failed to fetch the merchant's previous state with
-+ respect to transactions from its database.  This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to fetch the merchant's previous state with respect to transactions from its database.
 HttpStatus: 500
 
 Value: 2119
 Name: PAY_DB_STORE_TRANSACTION_ERROR
-Description: The merchant failed to store the merchant's state with respect to the
-+ transaction in its database.  This response is provided with HTTP
-+ status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to store the merchant's state with respect to the transaction in its database.
 HttpStatus: 500
 
 Value: 2120
 Name: PAY_EXCHANGE_KEYS_FAILURE
-Description: The exchange failed to provide a valid response to the merchant's
-+ /keys request. This response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The exchange failed to provide a valid response to the merchant's /keys request.
 HttpStatus: 424
 
 Value: 2121
 Name: PAY_OFFER_EXPIRED
-Description: The payment is too late, the offer has expired. This response is
-+ provided with HTTP status code #MHD_HTTP_GONE.
+Description: The payment is too late, the offer has expired.
 HttpStatus: 410
 
 Value: 2122
 Name: PAY_MERCHANT_FIELD_MISSING
-Description: The "merchant" field is missing in the proposal data. This response is
-+ provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The "merchant" field is missing in the proposal data.
 HttpStatus: 400
 
 Value: 2123
 Name: PAY_FAILED_COMPUTE_PROPOSAL_HASH
-Description: Failed computing a hash code (likely server out-of-memory). This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Failed computing a hash code (likely server out-of-memory).
 HttpStatus: 500
 
 Value: 2124
 Name: PAY_WIRE_HASH_UNKNOWN
-Description: Failed to locate merchant's account information matching the wire hash
-+ given in the proposal. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Failed to locate merchant's account information matching the wire hash given in the proposal.
 HttpStatus: 500
 
 Value: 2125
 Name: PAY_WIRE_FEE_CURRENCY_MISMATCH
 Description: We got different currencies for the wire fee and the maximum wire fee.
-+ This response is provided with HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 2127
 Name: PAY_WRONG_INSTANCE
-Description: A unknown merchant public key was included in the payment.  That
-+ happens typically when the wallet sends the payment to the wrong
-+ merchant instance. This response is provided with an HTTP status code
-+ of #MHD_HTTP_NOT_FOUND.
+Description: A unknown merchant public key was included in the payment.  That happens typically when the wallet sends the payment to the wrong merchant instance.
 HttpStatus: 404
 
 Value: 2128
 Name: PAY_EXCHANGE_HAS_NO_KEYS
 Description: The exchange failed to give us a response when we asked for /keys.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY.
 HttpStatus: 424
 
 Value: 2129
 Name: PAY_DENOMINATION_DEPOSIT_EXPIRED
-Description: The deposit time for the denomination has expired. This response is
-+ provided with HTTP status code #MHD_HTTP_GONE.
+Description: The deposit time for the denomination has expired.
 HttpStatus: 410
 
 Value: 2130
 Name: PAY_PROPOSAL_NOT_FOUND
-Description: The proposal is not known to the backend. This response is provided
-+ with an HTTP status code of #MHD_HTTP_NOT_FOUND.
+Description: The proposal is not known to the backend.
 HttpStatus: 404
 
 Value: 2131
 Name: PAY_EXCHANGE_WIRE_FEE_ADDITION_FAILED
-Description: The exchange of the deposited coin charges a wire fee that could not
-+ be added to the total (total amount too high).  This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange of the deposited coin charges a wire fee that could not be added to the total (total amount too high).
 HttpStatus: 500
 
 Value: 2132
 Name: PAY_REFUNDED
-Description: The contract was not fully paid because of refunds. Note that clients
-+ MAY treat this as paid if, for example, contracts must be executed
-+ despite of refunds. This response is provided with HTTP status code
-+ #MHD_HTTP_PAYMENT_REQUIRED.
+Description: The contract was not fully paid because of refunds. Note that clients MAY treat this as paid if, for example, contracts must be executed despite of refunds.
 HttpStatus: 402
 
 Value: 2133
 Name: PAY_REFUNDS_EXCEED_PAYMENTS
-Description: According to our database, we have refunded more than we were paid
-+ (which should not be possible). This response is provided with HTTP
-+ status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: According to our database, we have refunded more than we were paid (which should not be possible).
 HttpStatus: 500
 
 Value: 2134
 Name: PAY_ABORT_REFUND_REFUSED_PAYMENT_COMPLETE
-Description: Legacy stuff. Remove me with protocol v1. This response is provided
-+ with HTTP status code #MHD_HTTP_PREREQUISITE.
+Description: Legacy stuff. Remove me with protocol v1.
 HttpStatus: 0
 
 Value: 2150
 Name: ABORT_EXCHANGE_KEYS_FAILURE
-Description: The merchant failed to contact the exchange. This response is provided
-+ with HTTP status code of #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The merchant failed to contact the exchange.
 HttpStatus: 424
 
 Value: 2151
 Name: ABORT_EXCHANGE_REFUND_FAILED
-Description: The merchant failed to send the exchange the refund request. This
-+ response is provided with HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to send the exchange the refund request.
 HttpStatus: 500
 
 Value: 2152
 Name: ABORT_EXCHANGE_LOOKUP_FAILED
-Description: The merchant failed to find the exchange to process the lookup. This
-+ response is provided with HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to find the exchange to process the lookup.
 HttpStatus: 500
 
 Value: 2153
 Name: ABORT_DB_STORE_ABORT_ERROR
-Description: The merchant failed to store the abort request in its database. This
-+ response is provided with HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to store the abort request in its database.
 HttpStatus: 500
 
 Value: 2154
 Name: ABORT_DB_STORE_TRANSACTION_ERROR
-Description: The merchant failed to repeatedly serialize the transaction. This
-+ response is provided with HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to repeatedly serialize the transaction.
 HttpStatus: 500
 
 Value: 2155
 Name: ABORT_DB_FETCH_TRANSACTION_ERROR
-Description: The merchant failed in the lookup part of the transaction. This
-+ response is provided with HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed in the lookup part of the transaction.
 HttpStatus: 500
 
 Value: 2156
 Name: ABORT_CONTRACT_NOT_FOUND
-Description: The merchant could not find the contract. This response is provided
-+ with HTTP status code of #MHD_HTTP_NOT_FOUND.
+Description: The merchant could not find the contract.
 HttpStatus: 404
 
 Value: 2157
 Name: ABORT_REFUND_REFUSED_PAYMENT_COMPLETE
 Description: The payment was already completed and thus cannot be aborted anymore.
-+ This response is provided with HTTP status code of
-+ #MHD_HTTP_PRECONDITION_FAILED.
 HttpStatus: 412
 
 Value: 2158
 Name: ABORT_CONTRACT_HASH_MISSMATCH
-Description: The hash provided by the wallet does not match the order. This
-+ response is provided with HTTP status code of #MHD_HTTP_FORBIDDEN.
+Description: The hash provided by the wallet does not match the order.
 HttpStatus: 403
 
 Value: 2159
 Name: ABORT_COINS_ARRAY_EMPTY
-Description: The array of coins cannot be empty. This response is provided with
-+ HTTP status code of #MHD_HTTP_BAD_REQUEST.
+Description: The array of coins cannot be empty.
 HttpStatus: 400
 
 Value: 2160
 Name: ABORT_EXCHANGE_TIMEOUT
-Description: The merchant experienced a timeout processing the request. This
-+ response is provided with HTTP status code of
-+ #MHD_HTTP_REQUEST_TIMEOUT.
+Description: The merchant experienced a timeout processing the request.
 HttpStatus: 408
 
 Value: 2200
 Name: HISTORY_TIMESTAMP_OVERFLOW
-Description: Integer overflow with specified timestamp argument detected. This
-+ response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: Integer overflow with specified timestamp argument detected.
 HttpStatus: 400
 
 Value: 2201
 Name: HISTORY_DB_FETCH_ERROR
-Description: Failed to retrieve history from merchant database. This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Failed to retrieve history from merchant database.
 HttpStatus: 500
 
 Value: 2250
 Name: POLL_PAYMENT_CONTRACT_NOT_FOUND
 Description: The backend could not find the contract specified in the request.
-+ This response is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
 HttpStatus: 404
 
 Value: 2251
 Name: POLL_PAYMENT_REPLY_MALFORMED
-Description: The response provided by the merchant backend was malformed. This
-+ error is created client-side.
+Description: The response provided by the merchant backend was malformed. This error is created client-side.
 HttpStatus: 0
 
 Value: 2300
 Name: TRACK_TRANSACTION_EXCHANGE_TIMEOUT
 Description: We failed to contact the exchange for the /track/transaction request.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_SERVICE_UNAVAILABLE.
 HttpStatus: 503
 
 Value: 2301
 Name: TRACK_TRANSACTION_EXCHANGE_KEYS_FAILURE
-Description: We failed to get a valid /keys response from the exchange for the
-+ /track/transaction request.  This response is provided with HTTP
-+ status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: We failed to get a valid /keys response from the exchange for the /track/transaction request.
 HttpStatus: 424
 
 Value: 2302
 Name: TRACK_TRANSACTION_TRANSACTION_UNKNOWN
 Description: The backend could not find the transaction specified in the request.
-+ This response is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
 HttpStatus: 404
 
 Value: 2303
 Name: TRACK_TRANSACTION_DB_FETCH_TRANSACTION_ERROR
-Description: The backend had a database access error trying to retrieve transaction
-+ data from its database. The response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend had a database access error trying to retrieve transaction data from its database.
 HttpStatus: 500
 
 Value: 2304
 Name: TRACK_TRANSACTION_DB_FETCH_PAYMENT_ERROR
-Description: The backend had a database access error trying to retrieve payment
-+ data from its database. The response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend had a database access error trying to retrieve payment data from its database.
 HttpStatus: 500
 
 Value: 2305
 Name: TRACK_TRANSACTION_DB_NO_DEPOSITS_ERROR
-Description: The backend found no applicable deposits in the database. This is odd,
-+ as we know about the transaction, but not about deposits we made for
-+ the transaction.  The response is provided with HTTP status code
-+ #MHD_HTTP_NOT_FOUND.
+Description: The backend found no applicable deposits in the database. This is odd, as we know about the transaction, but not about deposits we made for the transaction.
 HttpStatus: 404
 
 Value: 2306
 Name: TRACK_TRANSACTION_COIN_TRACE_ERROR
-Description: We failed to obtain a wire transfer identifier for one of the coins in
-+ the transaction.  The response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY if the exchange had a hard error, or
-+ #MHD_HTTP_ACCEPTED if the exchange signaled that the transfer was in
-+ progress.
+Description: We failed to obtain a wire transfer identifier for one of the coins in the transaction.
 HttpStatus: 424
 HttpStatus: 202
 
 Value: 2307
 Name: TRACK_TRANSACTION_WIRE_TRANSFER_TRACE_ERROR
-Description: We failed to obtain the full wire transfer identifier for the transfer
-+ one of the coins was aggregated into. The response is provided with
-+ HTTP status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: We failed to obtain the full wire transfer identifier for the transfer one of the coins was aggregated into.
 HttpStatus: 424
 
 Value: 2308
 Name: TRACK_TRANSACTION_CONFLICTING_REPORTS
-Description: We got conflicting reports from the exhange with respect to which
-+ transfers are included in which aggregate. The response is provided
-+ with HTTP status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: We got conflicting reports from the exhange with respect to which transfers are included in which aggregate.
 HttpStatus: 424
 
 Value: 2350
 Name: GET_TRANSFERS_DB_FETCH_ERROR
-Description: We did failed to retrieve information from our database. The response
-+ is provided with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We did failed to retrieve information from our database.
 HttpStatus: 500
 
 Value: 2400
 Name: POST_TRANSFERS_EXCHANGE_TIMEOUT
 Description: We failed to contact the exchange for the /track/transfer request.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_SERVICE_UNAVAILABLE.
 HttpStatus: 503
 
 Value: 2401
 Name: POST_TRANSFERS_EXCHANGE_KEYS_FAILURE
-Description: We failed to obtain an acceptable /keys response from the exchange for
-+ the /track/transfer request.  This response is provided with HTTP
-+ status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: We failed to obtain an acceptable /keys response from the exchange for the /track/transfer request.
 HttpStatus: 424
 
 Value: 2402
 Name: POST_TRANSFERS_DB_STORE_COIN_ERROR
-Description: We failed to persist coin wire transfer information in our merchant
-+ database. The response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to persist coin wire transfer information in our merchant database.
 HttpStatus: 500
 
 Value: 2403
 Name: POST_TRANSFERS_REQUEST_ERROR
-Description: We internally failed to execute the /track/transfer request. The
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We internally failed to execute the /track/transfer request.
 HttpStatus: 500
 
 Value: 2404
 Name: POST_TRANSFERS_DB_STORE_TRANSFER_ERROR
-Description: We failed to persist wire transfer information in our merchant
-+ database. The response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to persist wire transfer information in our merchant database.
 HttpStatus: 500
 
 Value: 2405
 Name: POST_TRANSFERS_EXCHANGE_ERROR
-Description: The exchange returned an error from /track/transfer. The response is
-+ provided with HTTP status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The exchange returned an error from /track/transfer.
 HttpStatus: 424
 
 Value: 2406
 Name: POST_TRANSFERS_DB_FETCH_DEPOSIT_ERROR
-Description: We failed to fetch deposit information from our merchant database. The
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to fetch deposit information from our merchant database.
 HttpStatus: 500
 
 Value: 2407
 Name: POST_TRANSFERS_DB_INTERNAL_LOGIC_ERROR
-Description: We encountered an internal logic error. The response is provided with
-+ HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We encountered an internal logic error.
 HttpStatus: 500
 
 Value: 2408
 Name: POST_TRANSFERS_CONFLICTING_REPORTS
-Description: The exchange gave conflicting information about a coin which has been
-+ wire transferred. The response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The exchange gave conflicting information about a coin which has been wire transferred.
 HttpStatus: 424
 
 Value: 2409
@@ -1571,333 +1168,252 @@ HttpStatus: 0
 
 Value: 2410
 Name: POST_TRANSFERS_JSON_BAD_WIRE_FEE
-Description: The exchange charged a different wire fee than what it originally
-+ advertised, and it is higher.  The response is provided with an HTTP
-+ status of #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The exchange charged a different wire fee than what it originally advertised, and it is higher.
 HttpStatus: 424
 
 Value: 2411
 Name: POST_TRANSFERS_ACCOUNT_NOT_FOUND
-Description: We did not find the account that the transfer was made to. The
-+ response is provided with an HTTP status of #MHD_HTTP_NOT_FOUND.
+Description: We did not find the account that the transfer was made to.
 HttpStatus: 404
 
 Value: 2412
 Name: POST_TRANSFERS_DB_STORE_ERROR
-Description: We did failed to store information in our database. The response is
-+ provided with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We did failed to store information in our database.
 HttpStatus: 500
 
 Value: 2413
 Name: POST_TRANSFERS_DB_LOOKUP_ERROR
-Description: We did failed to retrieve information from our database. The response
-+ is provided with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We did failed to retrieve information from our database.
 HttpStatus: 500
 
 Value: 2450
 Name: POST_INSTANCES_ALREADY_EXISTS
-Description: The merchant backend cannot create an instance under the given
-+ identifier as one already exists. Use PATCH to modify the existing
-+ entry.  The response is provied with an HTTP status of
-+ #MHD_HTTP_CONFLICT.
+Description: The merchant backend cannot create an instance under the given identifier as one already exists. Use PATCH to modify the existing entry.
 HttpStatus: 409
 
 Value: 2451
 Name: POST_INSTANCES_BAD_PAYTO_URIS
-Description: The merchant backend cannot create an instance because the specified
-+ bank accounts are somehow invalid. The response is provied with an
-+ HTTP status of #MHD_HTTP_BAD_REQUEST.
+Description: The merchant backend cannot create an instance because the specified bank accounts are somehow invalid.
 HttpStatus: 400
 
 Value: 2452
 Name: POST_INSTANCES_DB_START_ERROR
-Description: The merchant backend cannot create an instance because it failed to
-+ start the database transaction. The response is provied with an HTTP
-+ status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend cannot create an instance because it failed to start the database transaction.
 HttpStatus: 500
 
 Value: 2453
 Name: POST_INSTANCES_DB_COMMIT_ERROR
-Description: The merchant backend cannot create an instance because it failed to
-+ commit the database transaction. The response is provied with an HTTP
-+ status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend cannot create an instance because it failed to commit the database transaction.
 HttpStatus: 500
 
 Value: 2454
 Name: DELETE_INSTANCES_ID_DB_HARD_FAILURE
-Description: The merchant backend cannot delete an instance because it failed to
-+ commit the database transaction. The response is provied with an HTTP
-+ status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend cannot delete an instance because it failed to commit the database transaction.
 HttpStatus: 500
 
 Value: 2455
 Name: DELETE_INSTANCES_ID_NO_SUCH_INSTANCE
-Description: The merchant backend cannot delete the data because it already does
-+ not exist. The response is provied with an HTTP status of
-+ #MHD_HTTP_NOT_FOUND.
+Description: The merchant backend cannot delete the data because it already does not exist.
 HttpStatus: 404
 
 Value: 2456
 Name: PATCH_INSTANCES_BAD_PAYTO_URIS
-Description: The merchant backend cannot update an instance because the specified
-+ bank accounts are somehow invalid. The response is provied with an
-+ HTTP status of #MHD_HTTP_BAD_REQUEST.
+Description: The merchant backend cannot update an instance because the specified bank accounts are somehow invalid.
 HttpStatus: 400
 
 Value: 2457
 Name: PATCH_INSTANCES_DB_START_ERROR
-Description: The merchant backend cannot patch an instance because it failed to
-+ start the database transaction. The response is provied with an HTTP
-+ status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend cannot patch an instance because it failed to start the database transaction.
 HttpStatus: 500
 
 Value: 2458
 Name: PATCH_INSTANCES_DB_COMMIT_ERROR
-Description: The merchant backend cannot patch an instance because it failed to
-+ commit the database transaction. The response is provied with an HTTP
-+ status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend cannot patch an instance because it failed to commit the database transaction.
 HttpStatus: 500
 
 Value: 2500
 Name: MAP_IN_UNMATCHED_HASH
-Description: The hash provided in the request of /map/in does not match the
-+ contract sent alongside in the same request.
+Description: The hash provided in the request of /map/in does not match the contract sent alongside in the same request.
 HttpStatus: 0
 
 Value: 2501
 Name: PROPOSAL_STORE_DB_ERROR
-Description: The backend encountered an error while trying to store the
-+ h_contract_terms into the database. The response is provided with HTTP
-+ status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend encountered an error while trying to store the h_contract_terms into the database.
 HttpStatus: 500
 
 Value: 2502
 Name: PROPOSAL_LOOKUP_DB_ERROR
-Description: The backend encountered an error while trying to retrieve the proposal
-+ data from database.  Likely to be an internal error. The response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend encountered an error while trying to retrieve the proposal data from database.  Likely to be an internal error.
 HttpStatus: 500
 
 Value: 2503
 Name: PROPOSAL_LOOKUP_NOT_FOUND
-Description: The proposal being looked up is not found on this merchant. Returned
-+ with an HTTP status code of #MHD_HTTP_NOT_FOUND
+Description: The proposal being looked up is not found on this merchant.
 HttpStatus: 404
 
 Value: 2504
 Name: PROPOSAL_NO_LOCALTIME
-Description: The proposal had no timestamp and the backend failed to obtain the
-+ local time. Likely to be an internal error. The response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The proposal had no timestamp and the backend failed to obtain the local time. Likely to be an internal error.
 HttpStatus: 500
 
 Value: 2505
 Name: PROPOSAL_ORDER_PARSE_ERROR
-Description: The order provided to the backend could not be parsed, some required
-+ fields were missing or ill-formed. Returned with an HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The order provided to the backend could not be parsed, some required fields were missing or ill-formed.
 HttpStatus: 400
 
 Value: 2506
 Name: PROPOSAL_STORE_DB_ERROR_HARD
-Description: The backend encountered an error while trying to find the existing
-+ proposal in the database. The response is provided with HTTP status
-+ code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend encountered an error while trying to find the existing proposal in the database.
 HttpStatus: 500
 
 Value: 2507
 Name: PROPOSAL_STORE_DB_ERROR_SOFT
-Description: The backend encountered an error while trying to find the existing
-+ proposal in the database. The response is provided with HTTP status
-+ code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend encountered an error while trying to find the existing proposal in the database.
 HttpStatus: 500
 
 Value: 2508
 Name: PROPOSAL_STORE_DB_ERROR_ALREADY_EXISTS
-Description: The backend encountered an error: the proposal already exists. The
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend encountered an error: the proposal already exists.
 HttpStatus: 500
 
 Value: 2509
 Name: PROPOSAL_ORDER_BAD_CURRENCY
-Description: The order provided to the backend uses an amount in a currency that
-+ does not match the backend's configuration. Returned with HTTP status
-+ code #MHD_HTTP_BAD_REQUEST.
+Description: The order provided to the backend uses an amount in a currency that does not match the backend's configuration.
 HttpStatus: 400
 
 Value: 2510
 Name: PROPOSAL_REPLY_MALFORMED
-Description: The response provided by the merchant backend was malformed. This
-+ error is created client-side.
+Description: The response provided by the merchant backend was malformed. This error is created client-side.
 HttpStatus: 0
 
 Value: 2511
 Name: ORDERS_DELETE_NO_SUCH_ORDER
-Description: The order provided to the backend could not be deleted, it is not
-+ known. Returned with an HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The order provided to the backend could not be deleted, it is not known.
 HttpStatus: 404
 
 Value: 2512
 Name: ORDERS_DELETE_AWAITING_PAYMENT
-Description: The order provided to the backend could not be deleted, our offer is
-+ still valid and awaiting payment. Returned with an HTTP status code
-+ #MHD_HTTP_CONFLICT.
+Description: The order provided to the backend could not be deleted, our offer is still valid and awaiting payment.
 HttpStatus: 409
 
 Value: 2513
 Name: ORDERS_DELETE_DB_HARD_FAILURE
-Description: The order provided to the backend could not be deleted, due to a
-+ database error. Returned with an HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The order provided to the backend could not be deleted, due to a database error.
 HttpStatus: 500
 
 Value: 2514
 Name: ORDERS_LOOKUP_PRODUCT_DB_HARD_FAILURE
-Description: The order provided to the backend could not be completed, due to a
-+ database error trying to fetch product inventory data. Returned with
-+ an HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The order provided to the backend could not be completed, due to a database error trying to fetch product inventory data.
 HttpStatus: 500
 
 Value: 2515
 Name: ORDERS_LOOKUP_PRODUCT_DB_SOFT_FAILURE
-Description: The order provided to the backend could not be completed, due to a
-+ database serialization error (which should be impossible) trying to
-+ fetch product inventory data. Returned with an HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The order provided to the backend could not be completed, due to a database serialization error (which should be impossible) trying to fetch product inventory data.
 HttpStatus: 500
 
 Value: 2516
 Name: ORDERS_LOOKUP_PRODUCT_NOT_FOUND
-Description: The order provided to the backend could not be completed, because a
-+ product to be completed via inventory data is not actually in our
-+ inventory. Returned with an HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The order provided to the backend could not be completed, because a product to be completed via inventory data is not actually in our inventory.
 HttpStatus: 404
 
 Value: 2517
 Name: ORDERS_GET_DB_LOOKUP_ERROR
-Description: We could not obtain a list of all orders because of a database
-+ failure. Returned with an HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We could not obtain a list of all orders because of a database failure.
 HttpStatus: 500
 
 Value: 2518
 Name: ORDERS_CLAIM_HARD_DB_ERROR
-Description: We could not claim the order because of a database failure. Returned
-+ with an HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We could not claim the order because of a database failure.
 HttpStatus: 500
 
 Value: 2519
 Name: ORDERS_CLAIM_SOFT_DB_ERROR
-Description: We could not claim the order because of a database serialization
-+ failure. Returned with an HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We could not claim the order because of a database serialization failure.
 HttpStatus: 500
 
 Value: 2520
 Name: ORDERS_CLAIM_NOT_FOUND
 Description: We could not claim the order because the backend is unaware of it.
-+ Returned with an HTTP status code #MHD_HTTP_NOT_FOUND.
 HttpStatus: 404
 
 Value: 2521
 Name: ORDERS_ALREADY_CLAIMED
 Description: We could not claim the order because someone else claimed it first.
-+ Returned with an HTTP status code #MHD_HTTP_CONFLICT.
 HttpStatus: 409
 
 Value: 2550
 Name: GET_PRODUCTS_DB_LOOKUP_ERROR
-Description: The merchant backend failed to lookup the products. The response is
-+ provied with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend failed to lookup the products.
 HttpStatus: 500
 
 Value: 2551
 Name: PRODUCTS_POST_DB_START_ERROR
-Description: The merchant backend failed to start the transaction. The response is
-+ provied with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend failed to start the transaction.
 HttpStatus: 500
 
 Value: 2552
 Name: PRODUCTS_POST_CONFLICT_PRODUCT_EXISTS
-Description: The product ID exists. The response is provied with an HTTP status of
-+ #MHD_HTTP_CONFLICT.
+Description: The product ID exists.
 HttpStatus: 409
 
 Value: 2553
 Name: PRODUCTS_POST_DB_COMMIT_SOFT_ERROR
-Description: The merchant backend failed to serialize the transaction. The response
-+ is provied with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend failed to serialize the transaction.
 HttpStatus: 500
 
 Value: 2554
 Name: PRODUCTS_POST_DB_COMMIT_HARD_ERROR
-Description: The merchant backend failed to commit the transaction. The response is
-+ provied with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend failed to commit the transaction.
 HttpStatus: 500
 
 Value: 2555
 Name: PRODUCTS_PATCH_DB_COMMIT_HARD_ERROR
-Description: The merchant backend failed to commit the transaction. The response is
-+ provied with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant backend failed to commit the transaction.
 HttpStatus: 500
 
 Value: 2556
 Name: PRODUCTS_PATCH_UNKNOWN_PRODUCT
-Description: The merchant backend did not find the product to be updated. The
-+ response is provied with an HTTP status of #MHD_HTTP_NOT_FOUND.
+Description: The merchant backend did not find the product to be updated.
 HttpStatus: 404
 
 Value: 2557
 Name: PRODUCTS_PATCH_TOTAL_LOST_REDUCED
-Description: The update would have reduced the total amount of product lost, which
-+ is not allowed. The response is provied with an HTTP status of
-+ #MHD_HTTP_CONFLICT.
+Description: The update would have reduced the total amount of product lost, which is not allowed.
 HttpStatus: 409
 
 Value: 2558
 Name: PRODUCTS_PATCH_TOTAL_LOST_EXCEEDS_STOCKS
-Description: The update would have mean that more stocks were lost than what
-+ remains from total inventory after sales, which is not allowed. The
-+ response is provied with an HTTP status of #MHD_HTTP_CONFLICT.
+Description: The update would have mean that more stocks were lost than what remains from total inventory after sales, which is not allowed.
 HttpStatus: 409
 
 Value: 2559
 Name: PRODUCTS_PATCH_TOTAL_STOCKED_REDUCED
-Description: The update would have reduced the total amount of product in stock,
-+ which is not allowed. The response is provied with an HTTP status of
-+ #MHD_HTTP_CONFLICT.
+Description: The update would have reduced the total amount of product in stock, which is not allowed.
 HttpStatus: 409
 
 Value: 2560
 Name: PRODUCTS_LOCK_INSUFFICIENT_STOCKS
-Description: The lock request is for more products than we have left (unlocked) in
-+ stock. The response is provied with an HTTP status of
-+ #MHD_HTTP_CONFLICT.
+Description: The lock request is for more products than we have left (unlocked) in stock.
 HttpStatus: 409
 
 Value: 2561
 Name: PRODUCTS_LOCK_UNKNOWN_PRODUCT
-Description: The lock request is for an unknown product. The response is provied
-+ with an HTTP status of #MHD_HTTP_NOT_FOUND.
+Description: The lock request is for an unknown product.
 HttpStatus: 404
 
 Value: 2562
 Name: PRODUCTS_DELETE_DB_HARD_FAILURE
-Description: The deletion request resulted in a hard database error. The response
-+ is provied with an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The deletion request resulted in a hard database error.
 HttpStatus: 500
 
 Value: 2563
 Name: PRODUCTS_DELETE_NO_SUCH_PRODUCT
-Description: The deletion request was for a product unknown to the backend. The
-+ response is provied with an HTTP status of #MHD_HTTP_NOT_FOUND.
+Description: The deletion request was for a product unknown to the backend.
 HttpStatus: 404
 
 Value: 2564
 Name: PRODUCTS_DELETE_CONFLICTING_LOCK
-Description: The deletion request is for a product that is locked. The response is
-+ provied with an HTTP status of #MHD_HTTP_CONFLICT.
+Description: The deletion request is for a product that is locked.
 HttpStatus: 409
 
 Value: 2600
@@ -1912,30 +1428,22 @@ HttpStatus: 0
 
 Value: 2602
 Name: REFUND_INCONSISTENT_AMOUNT
-Description: The amount to be refunded is inconsistent: either is lower than the
-+ previous amount being awarded, or it is too big to be paid back. In
-+ this second case, the fault stays on the business dept. side. Returned
-+ with an HTTP status of #MHD_HTTP_CONFLICT.
+Description: The amount to be refunded is inconsistent: either is lower than the previous amount being awarded, or it is too big to be paid back. In this second case, the fault stays on the business dept. side.
 HttpStatus: 409
 
 Value: 2603
 Name: REFUND_LOOKUP_DB_ERROR
-Description: The backend encountered an error while trying to retrieve the payment
-+ data from database.  Likely to be an internal error.
+Description: The backend encountered an error while trying to retrieve the payment data from database.  Likely to be an internal error.
 HttpStatus: 0
 
 Value: 2604
 Name: REFUND_MERCHANT_DB_COMMIT_ERROR
-Description: The backend encountered an error while trying to retrieve the payment
-+ data from database.  Likely to be an internal error.
+Description: The backend encountered an error while trying to retrieve the payment data from database.  Likely to be an internal error.
 HttpStatus: 0
 
 Value: 2605
 Name: PAY_DB_STORE_PAYMENTS_ERROR
-Description: Payments are stored in a single db transaction; this error indicates
-+ that one db operation within that transaction failed.  This might
-+ involve storing of coins or other related db operations, like
-+ starting/committing the db transaction or marking a contract as paid.
+Description: Payments are stored in a single db transaction; this error indicates that one db operation within that transaction failed.  This might involve storing of coins or other related db operations, like starting/committing the db transaction or marking a contract as paid.
 HttpStatus: 0
 
 Value: 2606
@@ -1945,126 +1453,92 @@ HttpStatus: 0
 
 Value: 2607
 Name: REFUND_LOOKUP_NO_REFUND
-Description: The merchant backend is not available of any applicable refund(s) for
-+ this order. Returned with an HTTP status of #MHD_HTTP_NOT_FOUND.
+Description: The merchant backend is not available of any applicable refund(s) for this order.
 HttpStatus: 404
 
 Value: 2650
 Name: RESERVES_POST_UNSUPPORTED_WIRE_METHOD
-Description: The requested wire method is not supported by the exchange. Returned
-+ with an HTTP status of #MHD_HTTP_CONFLICT.
+Description: The requested wire method is not supported by the exchange.
 HttpStatus: 409
 
 Value: 2651
 Name: RESERVES_POST_DB_COMMIT_HARD_ERROR
-Description: The backend failed to commit the result to the database. Returned with
-+ an HTTP status of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend failed to commit the result to the database.
 HttpStatus: 500
 
 Value: 2652
 Name: GET_RESERVES_DB_LOOKUP_ERROR
-Description: The backend failed to fetch the requested information from the
-+ database. Returned with an HTTP status of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend failed to fetch the requested information from the database.
 HttpStatus: 500
 
 Value: 2701
 Name: TIP_AUTHORIZE_INSTANCE_DOES_NOT_TIP
-Description: The backend knows the instance that was supposed to support the tip,
-+ but it was not configured for tipping (i.e. has no exchange associated
-+ with it).  Likely to be a configuration error. Returned with an HTTP
-+ status code of #MHD_HTTP_PRECONDITION_FAILED.
+Description: The backend knows the instance that was supposed to support the tip, but it was not configured for tipping (i.e. has no exchange associated with it).  Likely to be a configuration error.
 HttpStatus: 412
 
 Value: 2702
 Name: TIP_AUTHORIZE_RESERVE_EXPIRED
-Description: The reserve that was used to fund the tips has expired. Returned with
-+ an HTTP status code of #MHD_HTTP_GONE.
+Description: The reserve that was used to fund the tips has expired.
 HttpStatus: 410
 
 Value: 2703
 Name: TIP_AUTHORIZE_RESERVE_UNKNOWN
 Description: The reserve that was used to fund the tips was not found in the DB.
-+ Returned with an HTTP status code of #MHD_HTTP_SERVICE_UNAVAILABLE.
 HttpStatus: 503
 
 Value: 2704
 Name: TIP_AUTHORIZE_INSUFFICIENT_FUNDS
-Description: The backend knows the instance that was supposed to support the tip,
-+ and it was configured for tipping. However, the funds remaining are
-+ insufficient to cover the tip, and the merchant should top up the
-+ reserve. Returned with an HTTP status code of #MHD_HTTP_PRECONDITION
-+ FAILED.
+Description: The backend knows the instance that was supposed to support the tip, and it was configured for tipping. However, the funds remaining are insufficient to cover the tip, and the merchant should top up the reserve.
 HttpStatus: 0
 
 Value: 2705
 Name: TIP_AUTHORIZE_DB_HARD_ERROR
-Description: The backend had trouble accessing the database to persist information
-+ about the tip authorization. Returned with an HTTP status code of
-+ internal error.
+Description: The backend had trouble accessing the database to persist information about the tip authorization. Returned with an HTTP status code of internal error.
 HttpStatus: 0
 
 Value: 2706
 Name: TIP_AUTHORIZE_DB_SOFT_ERROR
-Description: The backend had trouble accessing the database to persist information
-+ about the tip authorization. The problem might be fixable by repeating
-+ the transaction.
+Description: The backend had trouble accessing the database to persist information about the tip authorization. The problem might be fixable by repeating the transaction.
 HttpStatus: 0
 
 Value: 2707
 Name: TIP_QUERY_RESERVE_STATUS_FAILED_EXCHANGE_DOWN
-Description: The backend failed to obtain a reserve status from the exchange. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend failed to obtain a reserve status from the exchange.
 HttpStatus: 424
 
 Value: 2708
 Name: TIP_QUERY_RESERVE_HISTORY_FAILED_EMPTY
-Description: The backend got an empty (!) reserve history from the exchange. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend got an empty (!) reserve history from the exchange.
 HttpStatus: 424
 
 Value: 2709
 Name: TIP_QUERY_RESERVE_HISTORY_INVALID_NO_DEPOSIT
-Description: The backend got an invalid reserve history (fails to start with a
-+ deposit) from the exchange. This response is provided with HTTP status
-+ code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend got an invalid reserve history (fails to start with a deposit) from the exchange.
 HttpStatus: 424
 
 Value: 2710
 Name: TIP_QUERY_RESERVE_UNKNOWN_TO_EXCHANGE
-Description: The backend got an 404 response from the exchange when it inquired
-+ about the reserve history. The response is provided with HTTP status
-+ code #MHD_HTTP_SERVICE_UNAVAILABLE.
+Description: The backend got an 404 response from the exchange when it inquired about the reserve history.
 HttpStatus: 503
 
 Value: 2711
 Name: TIP_QUERY_RESERVE_CURRENCY_MISMATCH
-Description: The backend got a reserve with a currency that does not match the
-+ backend's currency. The response is provided with HTTP status code
-+ #MHD_HTTP_SERVICE_UNAVAILABLE.
+Description: The backend got a reserve with a currency that does not match the backend's currency.
 HttpStatus: 503
 
 Value: 2712
 Name: TIP_QUERY_RESERVE_HISTORY_ARITHMETIC_ISSUE_DEPOSIT
-Description: The backend got a reserve history with amounts it cannot process
-+ (addition failure in deposits). The response is provided with HTTP
-+ status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend got a reserve history with amounts it cannot process (addition failure in deposits).
 HttpStatus: 424
 
 Value: 2713
 Name: TIP_QUERY_RESERVE_HISTORY_ARITHMETIC_ISSUE_WITHDRAW
-Description: The backend got a reserve history with amounts it cannot process
-+ (addition failure in withdraw amounts). The response is provided with
-+ HTTP status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend got a reserve history with amounts it cannot process (addition failure in withdraw amounts).
 HttpStatus: 424
 
 Value: 2714
 Name: TIP_QUERY_RESERVE_HISTORY_ARITHMETIC_ISSUE_CLOSED
-Description: The backend got a reserve history with amounts it cannot process
-+ (addition failure in closing amounts). The response is provided with
-+ HTTP status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend got a reserve history with amounts it cannot process (addition failure in closing amounts).
 HttpStatus: 424
 
 Value: 2715
@@ -2080,115 +1554,86 @@ HttpStatus: 0
 Value: 2717
 Name: TIP_QUERY_RESERVE_HISTORY_FAILED
 Description: The backend got an unexpected resever history reply from the exchange.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_FAILED_DEPENDENCY.
 HttpStatus: 424
 
 Value: 2718
 Name: TIP_QUERY_RESERVE_HISTORY_ARITHMETIC_ISSUE_RECOUP
-Description: The backend got a reserve history with amounts it cannot process
-+ (addition failure in withdraw amounts). The response is provided with
-+ HTTP status code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The backend got a reserve history with amounts it cannot process (addition failure in withdraw amounts).
 HttpStatus: 424
 
 Value: 2719
 Name: TIP_QUERY_INSTANCE_DOES_NOT_TIP
-Description: The backend knows the instance that was supposed to support the tip,
-+ but it was not configured for tipping (i.e. has no exchange associated
-+ with it).  Likely to be a configuration error. Returned with an HTTP
-+ status code of #MHD_HTTP_PRECONDITION_FAILED.
+Description: The backend knows the instance that was supposed to support the tip, but it was not configured for tipping (i.e. has no exchange associated with it).  Likely to be a configuration error.
 HttpStatus: 412
 
 Value: 2720
 Name: TIP_QUERY_TIP_ID_UNKNOWN
-Description: The tip id is unknown.  This could happen if the tip id is wrong or
-+ the tip authorization expired.
+Description: The tip id is unknown.  This could happen if the tip id is wrong or the tip authorization expired.
 HttpStatus: 0
 
 Value: 2721
 Name: RESERVES_DELETE_DB_HARD_FAILURE
-Description: The reserve could not be deleted due to a database failure. Returned
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The reserve could not be deleted due to a database failure.
 HttpStatus: 500
 
 Value: 2722
 Name: RESERVES_DELETE_NO_SUCH_RESERVE
-Description: The reserve could not be deleted because it is unknown. Returned with
-+ HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The reserve could not be deleted because it is unknown.
 HttpStatus: 404
 
 Value: 2723
 Name: TIP_LOOKUP_RESERVE_DB_FAILURE
-Description: The backend got an unexpected error trying to lookup reserve details
-+ from the backend. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend got an unexpected error trying to lookup reserve details from the backend.
 HttpStatus: 500
 
 Value: 2724
 Name: TIP_AUTHORIZE_DB_SERIALIZATION_FAILURE
-Description: The backend repeatedly failed to serialize the transaction to
-+ authorize the tip. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend repeatedly failed to serialize the transaction to authorize the tip.
 HttpStatus: 500
 
 Value: 2725
 Name: TIP_AUTHORIZE_DB_START_FAILURE
-Description: The backend failed to start the transaction to authorize the tip. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend failed to start the transaction to authorize the tip.
 HttpStatus: 500
 
 Value: 2726
 Name: TIP_AUTHORIZE_DB_LOOKUP_RESERVE_FAILURE
 Description: The backend failed looking up the reserve needed to authorize the tip.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 2727
 Name: TIP_AUTHORIZE_DB_RESERVE_NOT_FOUND
-Description: The backend failed to find a reserve needed to authorize the tip. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_SERVICE_UNAVAILABLE.
+Description: The backend failed to find a reserve needed to authorize the tip.
 HttpStatus: 503
 
 Value: 2728
 Name: TIP_AUTHORIZE_DB_RESERVE_INVARIANT_FAILURE
-Description: The backend encountered an internal invariant violation. This response
-+ is provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The backend encountered an internal invariant violation.
 HttpStatus: 500
 
 Value: 2729
 Name: TIP_AUTHORIZE_DB_RESERVE_EXPIRED
-Description: The selected exchange expired. This response is provided with HTTP
-+ status code #MHD_HTTP_GONE.
+Description: The selected exchange expired.
 HttpStatus: 410
 
 Value: 2730
 Name: TIP_AUTHORIZE_DB_UPDATE_RESERVE_FAILURE
 Description: The backend failed updating the reserve needed to authorize the tip.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
 HttpStatus: 500
 
 Value: 2750
 Name: TIP_ENABLE_DB_TRANSACTION_ERROR
-Description: The backend had trouble accessing the database to persist information
-+ about enabling tips. Returned with an HTTP status code of internal
-+ error.
+Description: The backend had trouble accessing the database to persist information about enabling tips. Returned with an HTTP status code of internal error.
 HttpStatus: 0
 
 Value: 2800
 Name: TIP_PICKUP_TIP_ID_UNKNOWN
 Description: The tip ID is unknown.  This could happen if the tip has expired.
-+ Returned with an HTTP status code of #MHD_HTTP_NOT_FOUND.
 HttpStatus: 404
 
 Value: 2801
 Name: TIP_PICKUP_NO_FUNDS
-Description: The amount requested exceeds the remaining tipping balance for this
-+ tip ID. Returned with an HTTP status code of "Conflict" (as it
-+ conflicts with a previous pickup operation).
+Description: The amount requested exceeds the remaining tipping balance for this tip ID. Returned with an HTTP status code of "Conflict" (as it conflicts with a previous pickup operation).
 HttpStatus: 0
 
 Value: 2802
@@ -2198,300 +1643,242 @@ HttpStatus: 0
 
 Value: 2803
 Name: TIP_PICKUP_DB_ERROR_HARD
-Description: We encountered a DB error, repeating the request will not help. This
-+ is an internal server error.
+Description: We encountered a DB error, repeating the request will not help. This is an internal server error.
 HttpStatus: 0
 
 Value: 2804
 Name: TIP_PICKUP_AMOUNT_CHANGED
-Description: The same pickup ID was already used for picking up a different amount.
-+ This points to a very strange internal error as the pickup ID is
-+ derived from the denomination key which is tied to a particular
-+ amount. Hence this should also be an internal server error.
+Description: The same pickup ID was already used for picking up a different amount. This points to a very strange internal error as the pickup ID is derived from the denomination key which is tied to a particular amount. Hence this should also be an internal server error.
 HttpStatus: 0
 
 Value: 2805
 Name: TIP_PICKUP_EXCHANGE_DOWN
 Description: We failed to contact the exchange to obtain the denomination keys.
-+ Returned with a response code #MHD_HTTP_FAILED_DEPENDENCY.
 HttpStatus: 424
 
 Value: 2806
 Name: TIP_PICKUP_EXCHANGE_LACKED_KEYS
-Description: We contacted the exchange to obtain any denomination keys, but got no
-+ valid keys. Returned with a response code #MHD_HTTP_FAILED_DEPENDENCY.
+Description: We contacted the exchange to obtain any denomination keys, but got no valid keys.
 HttpStatus: 424
 
 Value: 2807
 Name: TIP_PICKUP_EXCHANGE_LACKED_KEY
-Description: We contacted the exchange to obtain at least one of the denomination
-+ keys specified in the request. Returned with a response code "not
-+ found" (404).
+Description: We contacted the exchange to obtain at least one of the denomination keys specified in the request. Returned with a response code "not found" (404).
 HttpStatus: 0
 
 Value: 2808
 Name: TIP_PICKUP_EXCHANGE_AMOUNT_OVERFLOW
 Description: We encountered an arithmetic issue totaling up the amount to withdraw.
-+ Returned with a response code of #MHD_HTTP_BAD_REQUEST.
 HttpStatus: 400
 
 Value: 2809
 Name: TIP_PICKUP_EXCHANGE_TOO_MANY_PLANCHETS
-Description: The number of planchets specified exceeded the limit. Returned with a
-+ response code of #MHD_HTTP_BAD_REQUEST.
+Description: The number of planchets specified exceeded the limit.
 HttpStatus: 400
 
 Value: 2810
 Name: TIP_PICKUP_WITHDRAW_FAILED
-Description: The merchant failed to initialize the withdraw operaiton. Returned
-+ with a response code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to initialize the withdraw operaiton.
 HttpStatus: 500
 
 Value: 2811
 Name: TIP_PICKUP_WITHDRAW_FAILED_AT_EXCHANGE
-Description: The merchant failed to initialize the withdraw operaiton. Returned
-+ with a response code of #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The merchant failed to initialize the withdraw operaiton.
 HttpStatus: 424
 
 Value: 2812
 Name: TIP_PICKUP_UNBLIND_FAILURE
-Description: The client failed to unblind the signature returned by the merchant.
-+ Generated client-side.
+Description: The client failed to unblind the signature returned by the merchant. Generated client-side.
 HttpStatus: 0
 
 Value: 2813
 Name: GET_TIPS_DB_LOOKUP_ERROR
-Description: Merchant failed to access its database to lookup the tip. Returned
-+ with a response code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Merchant failed to access its database to lookup the tip.
 HttpStatus: 500
 
 Value: 2814
 Name: GET_TIPS_ID_UNKNOWN
-Description: Merchant failed find the tip in its database. Returned with a response
-+ code of #MHD_HTTP_NOT_FOUND.
+Description: Merchant failed find the tip in its database.
 HttpStatus: 404
 
 Value: 2815
 Name: TIP_PICKUP_CONTACT_EXCHANGE_ERROR
-Description: The merchant failed to contact the exchange. Returned with a response
-+ code of #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The merchant failed to contact the exchange.
 HttpStatus: 424
 
 Value: 2816
 Name: TIP_PICKUP_EXCHANGE_KEYS_ERROR
-Description: The merchant failed to obtain keys from the exchange. Returned with a
-+ response code of #MHD_HTTP_FAILED_DEPENDENCY.
+Description: The merchant failed to obtain keys from the exchange.
 HttpStatus: 424
 
 Value: 2817
 Name: TIP_PICKUP_DB_STORE_HARD_ERROR
-Description: The merchant failed to store data in its own database. Returned with a
-+ response code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to store data in its own database.
 HttpStatus: 500
 
 Value: 2818
 Name: TIP_PICKUP_EXCHANGE_TIMEOUT
 Description: The merchant failed to get a timely response from the exchange.
-+ Returned with a response code of #MHD_HTTP_REQUEST_TIMEOUT.
 HttpStatus: 408
 
 Value: 2819
 Name: TIP_PICKUP_EXCHANGE_ERROR
 Description: The exchange returned a failure code for the withdraw operation.
-+ Returned with a response code of #MHD_HTTP_FAILED_DEPENDENCY.
 HttpStatus: 424
 
 Value: 2820
 Name: TIP_PICKUP_SUMMATION_FAILED
-Description: The merchant failed to add up the amounts to compute the pick up
-+ value. Returned with a response code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to add up the amounts to compute the pick up value.
 HttpStatus: 500
 
 Value: 2821
 Name: TIP_PICKUP_HAS_EXPIRED
-Description: The tip expired. Returned with a response code of #MHD_HTTP_GONE.
+Description: The tip expired.
 HttpStatus: 410
 
 Value: 2822
 Name: TIP_PICKUP_AMOUNT_EXCEEDS_TIP_REMAINING
-Description: The requested withdraw amount exceeds the amount remaining to be
-+ picked up. Returned with a response code of #MHD_HTTP_BAD_REQUEST.
+Description: The requested withdraw amount exceeds the amount remaining to be picked up.
 HttpStatus: 400
 
 Value: 2823
 Name: TIP_PICKUP_DB_STORE_SOFT_ERROR
-Description: The merchant failed to store data in its own database. Returned with a
-+ response code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The merchant failed to store data in its own database.
 HttpStatus: 500
 
 Value: 2824
 Name: TIP_PICKUP_DENOMINATION_UNKNOWN
-Description: The merchant did not find the specified denomination key in the
-+ exchange's key set. Returned with a response code of
-+ #MHD_HTTP_CONFLICT.
+Description: The merchant did not find the specified denomination key in the exchange's key set.
 HttpStatus: 409
 
 Value: 2900
 Name: GET_ORDERS_DB_LOOKUP_ERROR
-Description: We failed to fetch contract terms from our merchant database. The
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to fetch contract terms from our merchant database.
 HttpStatus: 500
 
 Value: 2901
 Name: GET_ORDERS_ID_UNKNOWN
-Description: We failed to find the contract terms from our merchant database. The
-+ response is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: We failed to find the contract terms from our merchant database.
 HttpStatus: 404
 
 Value: 2902
 Name: GET_ORDERS_WRONG_CONTRACT
-Description: The contract hash provided by the wallet does not match the order. The
-+ response is provided with HTTP status code #MHD_HTTP_FORBIDDEN.
+Description: The contract hash provided by the wallet does not match the order.
 HttpStatus: 403
 
 Value: 2911
 Name: CHECK_PAYMENT_DB_FETCH_CONTRACT_TERMS_ERROR
-Description: We failed to contract terms from our merchant database. The response
-+ is provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to contract terms from our merchant database.
 HttpStatus: 500
 
 Value: 2912
 Name: CHECK_PAYMENT_DB_FETCH_ORDER_ERROR
-Description: We failed to contract terms from our merchant database. The response
-+ is provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to contract terms from our merchant database.
 HttpStatus: 500
 
 Value: 2913
 Name: CHECK_PAYMENT_ORDER_ID_UNKNOWN
-Description: The order id we're checking is unknown, likely the frontend did not
-+ create the order first.
+Description: The order id we're checking is unknown, likely the frontend did not create the order first.
 HttpStatus: 0
 
 Value: 2914
 Name: CHECK_PAYMENT_FAILED_COMPUTE_PROPOSAL_HASH
-Description: Failed computing a hash code (likely server out-of-memory). This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Failed computing a hash code (likely server out-of-memory).
 HttpStatus: 500
 
 Value: 2915
 Name: CHECK_PAYMENT_SESSION_SIGNATURE_INVALID
-Description: Signature "session_sig" failed to verify. This response is provided
-+ with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: Signature "session_sig" failed to verify.
 HttpStatus: 400
 
 Value: 2916
 Name: CHECK_PAYMENT_RESPONSE_MALFORMED
-Description: The response we received from the merchant is malformed. This error is
-+ generated client-side.
+Description: The response we received from the merchant is malformed. This error is generated client-side.
 HttpStatus: 0
 
 Value: 3000
 Name: DEPOSIT_CONFIRMATION_SIGNATURE_INVALID
-Description: The signature from the exchange on the deposit confirmation is
-+ invalid.  Returned with a "400 Bad Request" status code.
+Description: The signature from the exchange on the deposit confirmation is invalid.  Returned with a "400 Bad Request" status code.
 HttpStatus: 0
 
 Value: 3001
 Name: DEPOSIT_CONFIRMATION_STORE_DB_ERROR
-Description: The auditor had trouble storing the deposit confirmation in its
-+ database. Returned with an HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The auditor had trouble storing the deposit confirmation in its database.
 HttpStatus: 500
 
 Value: 3002
 Name: LIST_EXCHANGES_DB_ERROR
-Description: The auditor had trouble retrieving the exchange list from its
-+ database. Returned with an HTTP status code of
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The auditor had trouble retrieving the exchange list from its database.
 HttpStatus: 500
 
 Value: 3003
 Name: AUDITOR_EXCHANGE_STORE_DB_ERROR
-Description: The auditor had trouble storing an exchange in its database. Returned
-+ with an HTTP status code of #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The auditor had trouble storing an exchange in its database.
 HttpStatus: 500
 
 Value: 3004
 Name: AUDITOR_EXCHANGES_REPLY_MALFORMED
-Description: The auditor (!) responded with a reply that did not satsify the
-+ protocol. This error is not used in the protocol but created client-
-+ side.
+Description: The auditor (!) responded with a reply that did not satsify the protocol. This error is not used in the protocol but created client- side.
 HttpStatus: 0
 
 Value: 4000
 Name: TEST_ECDH_ERROR
-Description: The exchange failed to compute ECDH.  This response is provided with
-+ HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to compute ECDH.
 HttpStatus: 500
 
 Value: 4001
 Name: TEST_EDDSA_INVALID
-Description: The EdDSA test signature is invalid.  This response is provided with
-+ HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The EdDSA test signature is invalid.
 HttpStatus: 400
 
 Value: 4002
 Name: TEST_EDDSA_ERROR
-Description: The exchange failed to compute the EdDSA test signature.  This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to compute the EdDSA test signature.
 HttpStatus: 500
 
 Value: 4003
 Name: TEST_RSA_GEN_ERROR
-Description: The exchange failed to generate an RSA key.  This response is provided
-+ with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to generate an RSA key.
 HttpStatus: 500
 
 Value: 4004
 Name: TEST_RSA_PUB_ERROR
-Description: The exchange failed to compute the public RSA key.  This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to compute the public RSA key.
 HttpStatus: 500
 
 Value: 4005
 Name: TEST_RSA_SIGN_ERROR
-Description: The exchange failed to compute the RSA signature.  This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The exchange failed to compute the RSA signature.
 HttpStatus: 500
 
 Value: 5000
 Name: SERVER_JSON_INVALID
-Description: The JSON in the server's response was malformed.  This response is
-+ provided with HTTP status code of 0.
+Description: The JSON in the server's response was malformed.  This response is provided with HTTP status code of 0.
 HttpStatus: 0
 
 Value: 5001
 Name: SERVER_SIGNATURE_INVALID
-Description: A signature in the server's response was malformed.  This response is
-+ provided with HTTP status code of 0.
+Description: A signature in the server's response was malformed.  This response is provided with HTTP status code of 0.
 HttpStatus: 0
 
 Value: 5102
 Name: BANK_SAME_ACCOUNT
-Description: Wire transfer attempted with credit and debit party being the same
-+ bank account.
+Description: Wire transfer attempted with credit and debit party being the same bank account.
 HttpStatus: 0
 
 Value: 5103
 Name: BANK_UNALLOWED_DEBIT
-Description: Wire transfer impossible, due to financial limitation of the party
-+ that attempted the payment.
+Description: Wire transfer impossible, due to financial limitation of the party that attempted the payment.
 HttpStatus: 0
 
 Value: 5104
 Name: BANK_CURRENCY_MISMATCH
-Description: Arithmetic operation between two amounts of different currency was
-+ attempted.
+Description: Arithmetic operation between two amounts of different currency was attempted.
 HttpStatus: 0
 
 Value: 5105
 Name: BANK_PARAMETER_MISSING_OR_INVALID
-Description: At least one GET parameter was either missing or invalid for the
-+ requested operation.
+Description: At least one GET parameter was either missing or invalid for the requested operation.
 HttpStatus: 0
 
 Value: 5106
@@ -2501,14 +1888,12 @@ HttpStatus: 0
 
 Value: 5107
 Name: BANK_NEGATIVE_NUMBER_AMOUNT
-Description: Negative number was used (as value and/or fraction) to initiate a
-+ Amount object.
+Description: Negative number was used (as value and/or fraction) to initiate a Amount object.
 HttpStatus: 0
 
 Value: 5108
 Name: BANK_NUMBER_TOO_BIG
-Description: A number too big was used (as value and/or fraction) to initiate a
-+ amount object.
+Description: A number too big was used (as value and/or fraction) to initiate a amount object.
 HttpStatus: 0
 
 Value: 5109
@@ -2518,14 +1903,12 @@ HttpStatus: 0
 
 Value: 5110
 Name: BANK_UNKNOWN_ACCOUNT
-Description: The bank account referenced in the requested operation was not found.
-+ Returned along "400 Not found".
+Description: The bank account referenced in the requested operation was not found. Returned along "400 Not found".
 HttpStatus: 0
 
 Value: 5111
 Name: BANK_TRANSACTION_NOT_FOUND
-Description: The transaction referenced in the requested operation (typically a
-+ reject operation), was not found.
+Description: The transaction referenced in the requested operation (typically a reject operation), was not found.
 HttpStatus: 0
 
 Value: 5112
@@ -2535,156 +1918,117 @@ HttpStatus: 0
 
 Value: 5200
 Name: BANK_REJECT_NO_RIGHTS
-Description: The client does not own the account credited by the transaction which
-+ is to be rejected, so it has no rights do reject it.  To be returned
-+ along HTTP 403 Forbidden.
+Description: The client does not own the account credited by the transaction which is to be rejected, so it has no rights do reject it.  To be returned along HTTP 403 Forbidden.
 HttpStatus: 0
 
 Value: 5300
 Name: BANK_UNMANAGED_EXCEPTION
-Description: This error code is returned when no known exception types captured the
-+ exception, and comes along with a 500 Internal Server Error.
+Description: This error code is returned when no known exception types captured the exception, and comes along with a 500 Internal Server Error.
 HttpStatus: 0
 
 Value: 5400
 Name: BANK_SOFT_EXCEPTION
-Description: This error code is used for all those exceptions that do not really
-+ need a specific error code to return to the client, but need to signal
-+ the middleware that the bank is not responding with 500 Internal
-+ Server Error.  Used for example when a client is trying to register
-+ with a unavailable username.
+Description: This error code is used for all those exceptions that do not really need a specific error code to return to the client, but need to signal the middleware that the bank is not responding with 500 Internal Server Error.  Used for example when a client is trying to register with a unavailable username.
 HttpStatus: 0
 
 Value: 5500
 Name: BANK_TRANSFER_REQUEST_UID_REUSED
-Description: The request UID for a request to transfer funds has already been used,
-+ but with different details for the transfer.
+Description: The request UID for a request to transfer funds has already been used, but with different details for the transfer.
 HttpStatus: 0
 
 Value: 6000
 Name: SYNC_DB_FETCH_ERROR
-Description: The sync service failed to access its database. This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: The sync service failed to access its database.
 HttpStatus: 500
 
 Value: 6001
 Name: SYNC_BACKUP_UNKNOWN
-Description: The sync service failed find the record in its database. This response
-+ is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The sync service failed find the record in its database.
 HttpStatus: 404
 
 Value: 6002
 Name: SYNC_ACCOUNT_UNKNOWN
-Description: The sync service failed find the account in its database. This
-+ response is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
+Description: The sync service failed find the account in its database.
 HttpStatus: 404
 
 Value: 6003
 Name: SYNC_BAD_IF_NONE_MATCH
 Description: The SHA-512 hash provided in the If-None-Match header is malformed.
-+ This response is provided with HTTP status code #MHD_HTTP_BAD_REQUEST.
 HttpStatus: 400
 
 Value: 6004
 Name: SYNC_BAD_IF_MATCH
-Description: The SHA-512 hash provided in the If-Match header is malformed or
-+ missing. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The SHA-512 hash provided in the If-Match header is malformed or missing.
 HttpStatus: 400
 
 Value: 6005
 Name: SYNC_BAD_SYNC_SIGNATURE
-Description: The signature provided in the "Sync-Signature" header is malformed or
-+ missing. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The signature provided in the "Sync-Signature" header is malformed or missing.
 HttpStatus: 400
 
 Value: 6007
 Name: SYNC_INVALID_SIGNATURE
-Description: The signature provided in the "Sync-Signature" header does not match
-+ the account, old or new Etags. This response is provided with HTTP
-+ status code #MHD_HTTP_FORBIDDEN.
+Description: The signature provided in the "Sync-Signature" header does not match the account, old or new Etags.
 HttpStatus: 403
 
 Value: 6008
 Name: SYNC_BAD_CONTENT_LENGTH
-Description: The "Content-length" field for the upload is either not a number, or
-+ too big, or missing. This response is provided with HTTP status code
-+ #MHD_HTTP_BAD_REQUEST.
+Description: The "Content-length" field for the upload is either not a number, or too big, or missing.
 HttpStatus: 400
 
 Value: 6009
 Name: SYNC_EXCESSIVE_CONTENT_LENGTH
-Description: The "Content-length" field for the upload is too big based on the
-+ server's terms of service. This response is provided with HTTP status
-+ code #MHD_HTTP_PAYLOAD_TOO_LARGE.
+Description: The "Content-length" field for the upload is too big based on the server's terms of service.
 HttpStatus: 413
 
 Value: 6010
 Name: SYNC_OUT_OF_MEMORY_ON_CONTENT_LENGTH
-Description: The server is out of memory to handle the upload. Trying again later
-+ may succeed. This response is provided with HTTP status code
-+ #MHD_HTTP_PAYLOAD_TOO_LARGE.
+Description: The server is out of memory to handle the upload. Trying again later may succeed.
 HttpStatus: 413
 
 Value: 6011
 Name: SYNC_INVALID_UPLOAD
-Description: The uploaded data does not match the Etag. This response is provided
-+ with HTTP status code #MHD_HTTP_BAD_REQUEST.
+Description: The uploaded data does not match the Etag.
 HttpStatus: 400
 
 Value: 6012
 Name: SYNC_DATABASE_FETCH_ERROR
-Description: We failed to check for existing upload data in the database. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: We failed to check for existing upload data in the database.
 HttpStatus: 500
 
 Value: 6013
 Name: SYNC_SHUTDOWN
-Description: HTTP server was being shutdown while this operation was pending. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_SERVICE_UNAVAILABLE.
+Description: HTTP server was being shutdown while this operation was pending.
 HttpStatus: 503
 
 Value: 6014
 Name: SYNC_PAYMENT_TIMEOUT
 Description: HTTP server experienced a timeout while awaiting promised payment.
-+ This response is provided with HTTP status code
-+ #MHD_HTTP_REQUEST_TIMEOUT.
 HttpStatus: 408
 
 Value: 6015
 Name: SYNC_PAYMENT_CREATE_DB_ERROR
-Description: Sync could not store order data in its own database. This response is
-+ provided with HTTP status code #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Sync could not store order data in its own database.
 HttpStatus: 500
 
 Value: 6016
 Name: SYNC_PAYMENT_CONFIRM_DB_ERROR
-Description: Sync could not store payment confirmation in its own database. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Sync could not store payment confirmation in its own database.
 HttpStatus: 500
 
 Value: 6017
 Name: SYNC_PAYMENT_CHECK_ORDER_DB_ERROR
-Description: Sync could not fetch information about possible existing orders from
-+ its own database. This response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Sync could not fetch information about possible existing orders from its own database.
 HttpStatus: 500
 
 Value: 6018
 Name: SYNC_PAYMENT_CREATE_BACKEND_ERROR
-Description: Sync could not setup the payment request with its own backend. This
-+ response is provided with HTTP status code
-+ #MHD_HTTP_INTERNAL_SERVER_ERROR.
+Description: Sync could not setup the payment request with its own backend.
 HttpStatus: 500
 
 Value: 6019
 Name: SYNC_PREVIOUS_BACKUP_UNKNOWN
 Description: The sync service failed find the backup to be updated in its database.
-+ This response is provided with HTTP status code #MHD_HTTP_NOT_FOUND.
 HttpStatus: 404
 
 Value: 9999
