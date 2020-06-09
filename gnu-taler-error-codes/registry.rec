@@ -833,12 +833,9 @@ Description: The merchant failed to provide a meaningful response to a /pay requ
 HttpStatus: 0
 
 Value: 2101
-Name: PAY_EXCHANGE_FAILED
-Description: The exchange failed to provide a meaningful response to a /deposit request.
-HttpStatus: 424
-# This code has two associated HTTP status codes, but entering both in the registry
-# causes two conflicting definitions in the C header generated.
-# HttpStatus: 409
+Name: PAY_INSUFFICIENT_FUNDS
+Description: The exchange responded saying that funds were insufficient (for example, due to double-spending).
+HttpStatus: 409
 
 Value: 2102
 Name: PAY_DB_STORE_PAY_ERROR
@@ -950,6 +947,11 @@ Name: PAY_WIRE_FEE_CURRENCY_MISMATCH
 Description: We got different currencies for the wire fee and the maximum wire fee.
 HttpStatus: 500
 
+Value: 2126
+Name: PAY_EXCHANGE_REPLY_MALFORMED
+Description: The exchange had a failure when trying to process the request, returning a malformed response.
+HttpStatus: 424
+
 Value: 2127
 Name: PAY_WRONG_INSTANCE
 Description: A unknown merchant public key was included in the payment.  That happens typically when the wallet sends the payment to the wrong merchant instance.
@@ -989,6 +991,11 @@ Value: 2134
 Name: PAY_ABORT_REFUND_REFUSED_PAYMENT_COMPLETE
 Description: Legacy stuff. Remove me with protocol v1.
 HttpStatus: 0
+
+Value: 2135
+Name: PAY_EXCHANGE_FAILED
+Description: The payment failed at the exchange. 
+HttpStatus: 424
 
 Value: 2150
 Name: ABORT_EXCHANGE_KEYS_FAILURE
@@ -1764,36 +1771,91 @@ Description: We failed to find the contract terms from our merchant database.
 HttpStatus: 404
 
 Value: 2902
-Name: GET_ORDERS_WRONG_CONTRACT
-Description: The contract hash provided by the wallet does not match the order.
-HttpStatus: 403
+Name: GET_ORDERS_EXCHANGE_TIMEOUT
+Description: The merchant had a timeout contacting the exchange, thus not providing wire details in the response.
+HttpStatus: 200
+
+Value: 2903
+Name: GET_ORDERS_EXCHANGE_TRACKING_FAILURE
+Description: The exchange failed to provide a valid answer to the tracking request, thus those details are not in the response.
+HttpStatus: 200
+
+Value: 2904
+Name: GET_ORDERS_DB_STORE_TRACKING_FAILURE
+Description: The merchant backend failed to persist tracking details in its database, thus those details are not in the response.
+HttpStatus: 200
+
+Value: 2905
+Name: GET_ORDERS_AMOUNT_ARITHMETIC_FAILURE
+Description: The merchant backend encountered a failure in computing the deposit total.
+HttpStatus: 200
+
+Value: 2906
+Name: GET_ORDERS_EXCHANGE_LOOKUP_FAILURE
+Description: The merchant backend failed trying to contact the exchange for tracking details, thus those details are not in the response.
+HttpStatus: 200
+
+Value: 2907
+Name: GET_ORDERS_EXCHANGE_REQUEST_FAILURE
+Description: The merchant backend failed to construct the request for tracking to the exchange, thus tracking details are not in the response.
+HttpStatus: 200
+
+Value: 2908
+Name: GET_ORDERS_DB_FETCH_CONTRACT_TERMS_ERROR
+Description: The merchant backend had a database failure trying to find information about the contract of the order.
+HttpStatus: 500
+
+Value: 2909
+Name: GET_ORDERS_ORDER_NOT_FOUND
+Description: The merchant backend could not find an order with the given identifier.
+HttpStatus: 404
+
+Value: 2910
+Name: GET_ORDERS_FAILED_COMPUTE_PROPOSAL_HASH
+Description: The merchant backend could not compute the hash of the proposal.
+HttpStatus: 500
 
 Value: 2911
+Name: GET_ORDERS_DB_FETCH_PAYMENT_STATUS
+Description: The merchant backend could not fetch the payment status from its database.
+HttpStatus: 500
+
+Value: 2912
+Name: GET_ORDERS_DB_FETCH_TRANSACTION_ERROR
+Description: The merchant backend had an error looking up information in its database.
+HttpStatus: 500
+
+Value: 2913
+Name: GET_ORDERS_CONTRACT_CONTENT_INVALID
+Description: The contract obtained from the merchant backend was malformed.
+HttpStatus: 500
+
+Value: 2914
 Name: CHECK_PAYMENT_DB_FETCH_CONTRACT_TERMS_ERROR
 Description: We failed to contract terms from our merchant database.
 HttpStatus: 500
 
-Value: 2912
+Value: 2915
 Name: CHECK_PAYMENT_DB_FETCH_ORDER_ERROR
 Description: We failed to contract terms from our merchant database.
 HttpStatus: 500
 
-Value: 2913
+Value: 2916
 Name: CHECK_PAYMENT_ORDER_ID_UNKNOWN
 Description: The order id we're checking is unknown, likely the frontend did not create the order first.
 HttpStatus: 0
 
-Value: 2914
+Value: 2917
 Name: CHECK_PAYMENT_FAILED_COMPUTE_PROPOSAL_HASH
 Description: Failed computing a hash code (likely server out-of-memory).
 HttpStatus: 500
 
-Value: 2915
+Value: 2918
 Name: CHECK_PAYMENT_SESSION_SIGNATURE_INVALID
 Description: Signature "session_sig" failed to verify.
 HttpStatus: 400
 
-Value: 2916
+Value: 2919
 Name: CHECK_PAYMENT_RESPONSE_MALFORMED
 Description: The response we received from the merchant is malformed. This error is generated client-side.
 HttpStatus: 0
