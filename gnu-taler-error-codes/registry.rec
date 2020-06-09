@@ -1856,6 +1856,11 @@ Description: Signature "session_sig" failed to verify.
 HttpStatus: 400
 
 Value: 2919
+Name: GET_ORDER_WRONG_CONTRACT
+Description: The order we found does not match the provided contract hash.
+HttpStatus: 403
+
+Value: 2920
 Name: CHECK_PAYMENT_RESPONSE_MALFORMED
 Description: The response we received from the merchant is malformed. This error is generated client-side.
 HttpStatus: 0
