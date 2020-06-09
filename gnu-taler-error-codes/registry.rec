@@ -1106,9 +1106,6 @@ Value: 2306
 Name: TRACK_TRANSACTION_COIN_TRACE_ERROR
 Description: We failed to obtain a wire transfer identifier for one of the coins in the transaction.
 HttpStatus: 424
-# This code has two associated HTTP status codes, but entering both in the registry
-# causes two conflicting definitions in the C header generated.
-# HttpStatus: 202
 
 Value: 2307
 Name: TRACK_TRANSACTION_WIRE_TRANSFER_TRACE_ERROR
