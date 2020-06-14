@@ -1867,6 +1867,10 @@ Name: GET_ORDERS_EXCHANGE_LOOKUP_START_FAILURE
 Description: The merchant backend failed trying to contact the exchange for tracking details, thus those details are not in the response.
 HttpStatus: 500
 
+Value: 2922
+Name: MERCHANT_ORDER_GET_REPLY_MALFORMED
+Description: The response we received from the merchant is malformed. This error is generated client-side.
+HttpStatus: 0
 
 Value: 3000
 Name: DEPOSIT_CONFIRMATION_SIGNATURE_INVALID
