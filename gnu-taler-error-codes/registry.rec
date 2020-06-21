@@ -102,6 +102,11 @@ Name: CLIENT_INTERNAL_FAILURE
 Description: The client-side experienced an internal failure. Generated as an error on the client side.
 HttpStatus: 0
 
+Value: 16
+Name: UPLOAD_EXCEEDS_LIMIT
+Description: The body is too large to be permissable for the endpoint.
+HttpStatus: 413
+
 Value: 1001
 Name: DB_SETUP_FAILED
 Description: The exchange failed to even just initialize its connection to the database.
