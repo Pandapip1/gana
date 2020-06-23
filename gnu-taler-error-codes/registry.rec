@@ -885,7 +885,7 @@ HttpStatus: 202
 Value: 2110
 Name: PAY_COIN_SIGNATURE_INVALID
 Description: The signature over the contract of one of the coins was invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 2111
 Name: PAY_EXCHANGE_TIMEOUT
@@ -950,7 +950,7 @@ HttpStatus: 500
 Value: 2125
 Name: PAY_WIRE_FEE_CURRENCY_MISMATCH
 Description: We got different currencies for the wire fee and the maximum wire fee.
-HttpStatus: 500
+HttpStatus: 412
 
 Value: 2126
 Name: PAY_EXCHANGE_REPLY_MALFORMED
