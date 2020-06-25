@@ -1435,7 +1435,7 @@ HttpStatus: 0
 Value: 2601
 Name: REFUND_ORDER_ID_UNKNOWN
 Description: The frontend gave an unknown order id to issue the refund to.
-HttpStatus: 0
+HttpStatus: 404
 
 Value: 2602
 Name: REFUND_INCONSISTENT_AMOUNT
@@ -1450,7 +1450,7 @@ HttpStatus: 0
 Value: 2604
 Name: REFUND_MERCHANT_DB_COMMIT_ERROR
 Description: The backend encountered an error while trying to retrieve the payment data from database.  Likely to be an internal error.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 2605
 Name: PAY_DB_STORE_PAYMENTS_ERROR
@@ -1466,6 +1466,11 @@ Value: 2607
 Name: REFUND_LOOKUP_NO_REFUND
 Description: The merchant backend is not available of any applicable refund(s) for this order.
 HttpStatus: 404
+
+Value: 2608
+Name: REFUND_ORDER_ID_UNPAID
+Description: The frontend gave an unpaid order id to issue the refund to.
+HttpStatus: 409
 
 Value: 2650
 Name: RESERVES_POST_UNSUPPORTED_WIRE_METHOD
