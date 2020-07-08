@@ -168,9 +168,9 @@ Description: The method specified in a payto:// URI is not one we expected.
 HttpStatus: 0
 
 Value: 1013
-Name: PAYTO_MALFORMED
-Description: The payto:// URI is malformed.
-HttpStatus: 0
+Name: COIN_CONFLICTING_DENOMINATION_KEY
+Description: The same coin was already used with a different denomination previously.
+HttpStatus: 409
 
 Value: 1014
 Name: DB_COIN_HISTORY_STORE_ERROR
