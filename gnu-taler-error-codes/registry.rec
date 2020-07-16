@@ -2122,6 +2122,13 @@ Name: SYNC_PREVIOUS_BACKUP_UNKNOWN
 Description: The sync service failed find the backup to be updated in its database.
 HttpStatus: 404
 
+# 7000 - 8000: Reserved for wallet
+
+Value: 7010
+Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
+Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
+HttpStatus: 404
+
 Value: 9999
 Name: END
 Description: End of error code range.
