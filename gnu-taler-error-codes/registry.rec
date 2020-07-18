@@ -1007,6 +1007,21 @@ Name: PAY_EXCHANGE_FAILED
 Description: The payment failed at the exchange. 
 HttpStatus: 424
 
+Value: 2147
+Name: PAID_ORDER_UNKNOWN
+Description: The order is not known.
+HttpStatus: 404
+
+Value: 2148
+Name: PAID_CONTRACT_HASH_MISMATCH
+Description: The contract hash does not match the given order ID.
+HttpStatus: 409
+
+Value: 2149
+Name: PAID_COIN_SIGNATURE_INVALID
+Description: The signature of the merchant is not valid for the given contract hash.
+HttpStatus: 403
+
 Value: 2150
 Name: ABORT_EXCHANGE_KEYS_FAILURE
 Description: The merchant failed to contact the exchange.
