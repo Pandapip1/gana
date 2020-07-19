@@ -109,7 +109,7 @@ HttpStatus: 413
 
 Value: 17
 Name: PAYTO_MALFORMED
-Description: The payto:// URI we got is malformed. 
+Description: The payto:// URI we got is malformed.
 HttpStatus: 0
 
 Value: 1001
@@ -1004,7 +1004,7 @@ HttpStatus: 0
 
 Value: 2135
 Name: PAY_EXCHANGE_FAILED
-Description: The payment failed at the exchange. 
+Description: The payment failed at the exchange.
 HttpStatus: 424
 
 Value: 2147
@@ -1076,6 +1076,21 @@ Value: 2160
 Name: ABORT_EXCHANGE_TIMEOUT
 Description: The merchant experienced a timeout processing the request.
 HttpStatus: 408
+
+Value: 2180
+Name: FORGET_ORDER_NOT_FOUND
+Description: The merchant could not find the order.
+HttpStatus: 404
+
+Value: 2181
+Name: FORGET_PATH_SYNTAX_INCORRECT
+Description: One of the paths to forget is malformed.
+HttpStatus: 400
+
+Value: 2182
+Name: FORGET_PATH_NOT_FORGETTABLE
+Description: One of the paths to forget was not marked as forgettable.
+HttpStatus: 409
 
 Value: 2200
 Name: HISTORY_TIMESTAMP_OVERFLOW
