@@ -2159,6 +2159,11 @@ Name: WALLET_EXCHANGE_PROTOCOL_VERSION_INCOMPATIBLE
 Description: The wallet does not implement a version of the exchange protocol that is compatible with the protocol version of the exchange.
 HttpStatus: 501
 
+Value: 7001
+Name: WALLET_UNEXPECTED_EXCEPTION
+Description: The wallet encountered an unexpected exception.  This is likely a bug in the wallet implementation.
+HttpStatus: 500
+
 Value: 7010
 Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
 Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
