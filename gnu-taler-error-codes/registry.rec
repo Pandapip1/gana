@@ -2179,6 +2179,11 @@ Name: WALLET_HTTP_REQUEST_THROTTLED
 Description: The wallet tried to make a network request, but it was throttled.
 HttpStatus: 0
 
+Value: 7005
+Name: WALLET_UNEXPECTED_REQUEST_ERROR
+Description: The wallet made a request to a service, but received an error response it does not know how to handle.
+HttpStatus: 0
+
 Value: 7010
 Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
 Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
