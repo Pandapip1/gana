@@ -2164,6 +2164,21 @@ Name: WALLET_UNEXPECTED_EXCEPTION
 Description: The wallet encountered an unexpected exception.  This is likely a bug in the wallet implementation.
 HttpStatus: 500
 
+Value: 7002
+Name: WALLET_RECEIVED_MALFORMED_RESPONSE
+Description: The wallet received a response from a server, but the response can't be parsed.
+HttpStatus: 0
+
+Value: 7003
+Name: WALLET_NETWORK_ERROR
+Description: The wallet tried to make a network request, but it received no response.
+HttpStatus: 0
+
+Value: 7004
+Name: WALLET_HTTP_REQUEST_THROTTLED
+Description: The wallet tried to make a network request, but it was throttled.
+HttpStatus: 0
+
 Value: 7010
 Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
 Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
