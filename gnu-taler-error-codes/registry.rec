@@ -2189,7 +2189,7 @@ Name: WALLET_EXCHANGE_DENOMINATIONS_INSUFFICIENT
 Description: The denominations offered by the exchange are insufficient.  Likely the exchange is badly configured or not maintained.
 HttpStatus: 0
 
-Value: 7006
+Value: 7007
 Name: WALLET_EXCHANGE_RESERVE_DOES_NOT_EXIST
 Description: The exchange reports that the reserve does not exist (yet).
 HttpStatus: 0
