@@ -2,7 +2,9 @@ FILES=taler_error_codes.h \
   taler_error_codes.c \
   taler_error_codes.ts \
   taler_error_codes.kt
+
 all: check $(FILES)
+
 check: registry.rec
 	recfix --check registry.rec
 
@@ -15,8 +17,13 @@ clean:
 prep:
 	cd ../http-status-codes; make ; cd -
 
+# Because prep is phony, this rule always triggers. To avoid
+# combined.tmp cascading into triggering the other rules even
+# if nothing changed, we use 'diff' to make sure that 'recsel'
+# actually changed the result.
 combined.tmp: registry.rec prep
-	recsel -t TalerErrorCode -j HttpStatus -p Description,Name,Value,HttpStatus,HttpStatus.Value,HttpStatus.Identifier ../http-status-codes/registry.rec registry.rec > $@
+	recsel -t TalerErrorCode -j HttpStatus -p Description,Name,Value,HttpStatus,HttpStatus.Value,HttpStatus.Identifier ../http-status-codes/registry.rec registry.rec > combined.xtmp
+	if ! diff $@ combined.xtmp; then mv combined.xtmp $@; else rm combined.xtmp; fi
 
 combined-escaped.tmp: combined.tmp
 	sed 's/"/\\"/g' $^ > $@
