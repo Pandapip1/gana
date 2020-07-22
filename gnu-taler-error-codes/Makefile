@@ -1,7 +1,7 @@
-FILES=taler-error-codes.h \
-  taler-error-codes.c \
-  taler-error-codes.ts \
-  taler-error-codes.kt
+FILES=taler_error_codes.h \
+  taler_error_codes.c \
+  taler_error_codes.ts \
+  taler_error_codes.kt
 all: check $(FILES)
 check: registry.rec
 	recfix --check registry.rec
@@ -24,31 +24,31 @@ combined-escaped.tmp: combined.tmp
 length.tmp: combined.tmp
 	recsel -p "Count(Description):ECS_LENGTH" combined.tmp > $@
 
-taler-error-codes.h.tmp: combined.tmp h.template
+taler_error_codes.h.tmp: combined.tmp h.template
 	../format.sh h.template < combined.tmp > $@
 
-taler-error-codes.h: h.header taler-error-codes.h.tmp h.footer
+taler_error_codes.h: h.header taler_error_codes.h.tmp h.footer
 	cat $^ > $@
 
-taler-error-codes.c.tmp: combined-escaped.tmp c.template
+taler_error_codes.c.tmp: combined-escaped.tmp c.template
 	../format.sh c.template < combined-escaped.tmp > $@
 
-taler-error-codes-length.c.tmp: length.tmp c-length.template
+taler_error_codes-length.c.tmp: length.tmp c-length.template
 	../format.sh c-length.template < length.tmp > $@
 
-taler-error-codes.c: c.header taler-error-codes.c.tmp taler-error-codes-length.c.tmp c.footer
+taler_error_codes.c: c.header taler_error_codes.c.tmp taler_error_codes-length.c.tmp c.footer
 	cat $^ > $@
 
-taler-error-codes.ts.tmp: combined.tmp ts.template
+taler_error_codes.ts.tmp: combined.tmp ts.template
 	../format.sh ts.template < combined.tmp > $@
 
-taler-error-codes.ts: ts.header taler-error-codes.ts.tmp ts.footer
+taler_error_codes.ts: ts.header taler_error_codes.ts.tmp ts.footer
 	cat $^ > $@
 
-taler-error-codes.kt.tmp: combined.tmp kt.template
+taler_error_codes.kt.tmp: combined.tmp kt.template
 	../format.sh kt.template < combined.tmp > $@
 
-taler-error-codes.kt: kt.header taler-error-codes.kt.tmp kt.footer
+taler_error_codes.kt: kt.header taler_error_codes.kt.tmp kt.footer
 	cat $^ > $@
 
 
