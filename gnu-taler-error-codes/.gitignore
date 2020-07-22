@@ -1,12 +1,5 @@
-combined.tmp
-combined-escaped.tmp
-length.tmp
-taler_error_codes-length.c.tmp
-taler_error_codes.c
-taler_error_codes.c.tmp
-taler_error_codes.h
-taler_error_codes.h.tmp
-taler_error_codes.kt
-taler_error_codes.kt.tmp
-taler_error_codes.ts
-taler_error_codes.ts.tmp
+*.c
+*.kt
+*.h
+*.tmp
+*.ts
