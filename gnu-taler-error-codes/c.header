@@ -20,7 +20,7 @@
      Note: the LGPL does not apply to all components of GNU Taler,
      but it does apply to this file.
  */
-#include "taler-error-codes.h"
+#include "taler_error_codes.h"
 #include <stddef.h>
 
 
