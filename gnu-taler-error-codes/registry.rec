@@ -74,7 +74,7 @@ HttpStatus: 0
 
 Value: 10
 Name: ENDPOINT_UNKNOWN
-Description: There is no endpoint defined for the URL provided by the client (
+Description: There is no endpoint defined for the URL provided by the client.
 HttpStatus: 404
 
 Value: 11
@@ -84,7 +84,7 @@ HttpStatus: 414
 
 Value: 12
 Name: WRONG_NUMBER_OF_SEGMENTS
-Description: The number of segments included in the URI does not match the number of segments expected by the endpoint. (
+Description: The number of segments included in the URI does not match the number of segments expected by the endpoint.
 HttpStatus: 404
 
 Value: 13

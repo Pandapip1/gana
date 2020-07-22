@@ -1,8 +1,13 @@
 taler-error-codes.h
+taler-error-codes.c
 taler-error-codes.ts
 taler-error-codes.kt
 
 combined.tmp
+combined-escaped.tmp
+length.tmp
 taler-error-codes.h.tmp
+taler-error-codes.c.tmp
+taler-error-codes-length.c.tmp
 taler-error-codes.ts.tmp
 taler-error-codes.kt.tmp
