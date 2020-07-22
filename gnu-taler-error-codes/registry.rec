@@ -104,7 +104,7 @@ HttpStatus: 0
 
 Value: 16
 Name: UPLOAD_EXCEEDS_LIMIT
-Description: The body is too large to be permissable for the endpoint.
+Description: The body is too large to be permissible for the endpoint.
 HttpStatus: 413
 
 Value: 17
@@ -344,7 +344,7 @@ HttpStatus: 0
 
 Value: 1200
 Name: DEPOSIT_INSUFFICIENT_FUNDS
-Description: The respective coin did not have sufficient residual value for the /deposit operation (i.e. due to double spending). The "history" in the respose provides the transaction history of the coin proving this fact.
+Description: The respective coin did not have sufficient residual value for the /deposit operation (i.e. due to double spending). The "history" in the response provides the transaction history of the coin proving this fact.
 HttpStatus: 409
 
 Value: 1201
@@ -639,7 +639,7 @@ HttpStatus: 412
 
 Value: 1508
 Name: REFUND_DENOMINATION_KEY_NOT_FOUND
-Description: The exchange failed to recover information about the denomination key of the refunded coin (even though it recognizes the key).  Hence it could not check the fee strucutre.
+Description: The exchange failed to recover information about the denomination key of the refunded coin (even though it recognizes the key).  Hence it could not check the fee structure.
 HttpStatus: 500
 
 Value: 1509
@@ -1729,12 +1729,12 @@ HttpStatus: 400
 
 Value: 2810
 Name: TIP_PICKUP_WITHDRAW_FAILED
-Description: The merchant failed to initialize the withdraw operaiton.
+Description: The merchant failed to initialize the withdraw operation.
 HttpStatus: 500
 
 Value: 2811
 Name: TIP_PICKUP_WITHDRAW_FAILED_AT_EXCHANGE
-Description: The merchant failed to initialize the withdraw operaiton.
+Description: The merchant failed to initialize the withdraw operation.
 HttpStatus: 424
 
 Value: 2812
