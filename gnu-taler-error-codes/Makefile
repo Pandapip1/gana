@@ -23,7 +23,7 @@ prep:
 # actually changed the result.
 combined.tmp: registry.rec prep
 	recsel -t TalerErrorCode -j HttpStatus -p Description,Name,Value,HttpStatus,HttpStatus.Value,HttpStatus.Identifier ../http-status-codes/registry.rec registry.rec > combined.xtmp
-	if ! diff $@ combined.xtmp; then mv combined.xtmp $@; else rm combined.xtmp; fi
+	if ! diff $@ combined.xtmp > /dev/null; then mv combined.xtmp $@; else rm combined.xtmp; fi
 
 combined-escaped.tmp: combined.tmp
 	sed 's/"/\\"/g' $^ > $@
