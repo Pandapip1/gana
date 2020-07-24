@@ -1387,6 +1387,11 @@ Name: ORDERS_ALREADY_CLAIMED
 Description: We could not claim the order because someone else claimed it first.
 HttpStatus: 409
 
+Value: 2530
+Name: ORDER_PAID_DB_ERROR
+Description: The merchant backend couldn't verify the order payment because of a database failure.
+HttpStatus: 500
+
 Value: 2550
 Name: GET_PRODUCTS_DB_LOOKUP_ERROR
 Description: The merchant backend failed to lookup the products.
