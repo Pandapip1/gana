@@ -399,7 +399,7 @@ HttpStatus: 400
 
 Value: 1211
 Name: DEPOSIT_INVALID_WIRE_FORMAT_CONTRACT_HASH_CONFLICT
-Description: The hash of the given wire address does not match the hash specified in the proposal data.
+Description: The hash of the given wire address does not match the wire hash specified in the proposal data.
 HttpStatus: 400
 
 Value: 1213
