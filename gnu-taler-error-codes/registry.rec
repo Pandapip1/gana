@@ -1922,6 +1922,11 @@ Name: MERCHANT_ORDER_GET_REPLY_MALFORMED
 Description: The response we received from the merchant is malformed. This error is generated client-side.
 HttpStatus: 0
 
+Value: 2923
+Name: MERCHANT_GET_ORDER_INVALID_TOKEN
+Description: The token used to authenticate the client is invalid for this order.
+HttpStatus: 403
+
 Value: 3000
 Name: DEPOSIT_CONFIRMATION_SIGNATURE_INVALID
 Description: The signature from the exchange on the deposit confirmation is invalid.  Returned with a "400 Bad Request" status code.
