@@ -2204,6 +2204,11 @@ Name: WALLET_CORE_API_OPERATION_UNKNOWN
 Description: The wallet does not support the operation requested by a client.
 HttpStatus: 0
 
+Value: 7008
+Name: WALLET_INVALID_TALER_PAY_URI
+Description: The given taler://pay URI is invalid.
+HttpStatus: 0
+
 Value: 7010
 Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
 Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
