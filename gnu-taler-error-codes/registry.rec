@@ -837,6 +837,16 @@ Name: PROPOSAL_INSTANCE_CONFIGURATION_LACKS_WIRE
 Description: The backend lacks a wire transfer method configuration option for the given instance.
 HttpStatus: 0
 
+Value: 2003
+Name: MERCHANT_FAILED_TO_LOAD_TEMPLATE
+Description: The backend could not locate a required template to generate an HTML reply.
+HttpStatus: 406
+
+Value: 2004
+Name: MERCHANT_FAILED_TO_EXPAND_TEMPLATE
+Description: The backend could not expand the template to generate an HTML reply.
+HttpStatus: 500
+
 Value: 2100
 Name: PAY_MERCHANT_INVALID_RESPONSE
 Description: The merchant failed to provide a meaningful response to a /pay request.  This error is created client-side.
