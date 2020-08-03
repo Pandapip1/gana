@@ -60,17 +60,17 @@ HttpStatus: 0
 Value: 7
 Name: JSON_ALLOCATION_FAILURE
 Description: Exchange failed to allocate memory for building JSON reply.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 8
 Name: METHOD_INVALID
 Description: HTTP method invalid for this URL.
-HttpStatus: 0
+HttpStatus: 405
 
 Value: 9
 Name: OPERATION_INVALID
-Description: Operation specified invalid for this URL (resulting in a "NOT FOUND" for the overall response).
-HttpStatus: 0
+Description: Operation specified invalid for this endpoint.
+HttpStatus: 400
 
 Value: 10
 Name: ENDPOINT_UNKNOWN
@@ -111,6 +111,16 @@ Value: 17
 Name: PAYTO_MALFORMED
 Description: The payto:// URI we got is malformed.
 HttpStatus: 0
+
+Value: 18
+Name: OPERATION_UNKNOWN
+Description: Operation specified unknown for this endpoint.
+HttpStatus: 404
+
+Value: 19
+Name: ALLOCATION_FAILURE
+Description: Exchange failed to allocate memory.
+HttpStatus: 500
 
 Value: 1001
 Name: DB_SETUP_FAILED
