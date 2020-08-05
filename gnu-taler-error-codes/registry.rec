@@ -2087,6 +2087,11 @@ Name: BANK_TRANSFER_REQUEST_UID_REUSED
 Description: The request UID for a request to transfer funds has already been used, but with different details for the transfer.
 HttpStatus: 0
 
+Value: 5600
+Name: BANK_WITHDRAWAL_OPERATION_RESERVE_SELECTION_CONFLICT
+Description: The withdrawal operation already has a reserve selected.  The current request conflicts with the existing selection.
+HttpStatus: 409
+
 Value: 6000
 Name: SYNC_DB_FETCH_ERROR
 Description: The sync service failed to access its database.
