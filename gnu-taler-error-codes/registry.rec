@@ -618,9 +618,14 @@ Description: The exchange knows literally nothing about the coin we were asked t
 HttpStatus: 404
 
 Value: 1501
-Name: REFUND_CONFLICT
-Description: We could not process the refund request as the coin's transaction history does not permit the requested refund at this time.  The "history" in the response proves this.
+Name: REFUND_CONFLICT_DEPOSIT_INSUFFICIENT
+Description: We could not process the refund request as the coin's transaction history does not permit the requested refund because then refunds would exceed the deposit amount.  The "history" in the response proves this.
 HttpStatus: 409
+
+Value: 1502
+Name: REFUND_INCONSITENT_AMOUNT
+Description: We could not process the refund request as the same refund transaction ID was already used with a different amount. Retrying with a different refund transaction ID may work. The "history" in the response proves this by providing the conflicting entry.
+HttpStatus: 412
 
 Value: 1503
 Name: REFUND_DEPOSIT_NOT_FOUND
