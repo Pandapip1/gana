@@ -2254,6 +2254,11 @@ Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
 Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
 HttpStatus: 404
 
+Value: 7011
+Name: WALLET_CORE_NOT_AVAILABLE
+Description: The wallet core service is not available.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
