@@ -2244,6 +2244,11 @@ Name: WALLET_INVALID_TALER_PAY_URI
 Description: The given taler://pay URI is invalid.
 HttpStatus: 0
 
+Value: 7009
+Name: WALLET_EXCHANGE_COIN_SIGNATURE_INVALID
+Description: The signature on a coin by the exchange's denomination key is invalid after unblinding it.
+HttpStatus: 0
+
 Value: 7010
 Name: WALLET_WITHDRAW_RESERVE_UNKNOWN_AT_EXCHANGE
 Description: The exchange does not know about the reserve (yet), and thus withdrawal can't progress.
