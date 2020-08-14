@@ -1267,6 +1267,11 @@ Name: POST_TRANSFERS_DB_LOOKUP_ERROR
 Description: We did failed to retrieve information from our database.
 HttpStatus: 500
 
+Value: 2449
+Name: POST_INSTANCES_BAD_CURRENCY
+Description: The merchant backend cannot create an instance with the given default max deposit fee or default max wire fee because the fee currencies are incompatible with the merchant's currency in the config.
+HttpStatus: 400
+
 Value: 2450
 Name: POST_INSTANCES_ALREADY_EXISTS
 Description: The merchant backend cannot create an instance under the given identifier as one already exists. Use PATCH to modify the existing entry.
