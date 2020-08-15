@@ -1963,27 +1963,27 @@ Description: The token used to authenticate the client is invalid for this order
 HttpStatus: 403
 
 Value: 2924
-Name: MERCHANT_PRIVATE_GET_ORDER_STATUS_DB_LOOKUP_ERROR
+Name: MERCHANT_PRIVATE_GET_ORDERS_STATUS_DB_LOOKUP_ERROR
 Description: The merchant backup failed to lookup the order status in the database.
 HttpStatus: 500
 
 Value: 2925
-Name: MERCHANT_PRIVATE_GET_ORDER_CONTRACT_DB_LOOKUP_ERROR
+Name: MERCHANT_PRIVATE_GET_ORDERS_CONTRACT_DB_LOOKUP_ERROR
 Description: The merchant backup failed to lookup the contract terms in the database.
 HttpStatus: 500
 
 Value: 2926
-Name: MERCHANT_PRIVATE_GET_ORDER_PARSE_CONTRACT_ERROR
+Name: MERCHANT_PRIVATE_GET_ORDERS_PARSE_CONTRACT_ERROR
 Description: The merchant backup failed to parse the order contract terms.
 HttpStatus: 500
 
 Value: 2927
-Name: MERCHANT_PRIVATE_GET_ORDER_REFUND_DB_LOOKUP_ERROR
+Name: MERCHANT_PRIVATE_GET_ORDERS_REFUND_DB_LOOKUP_ERROR
 Description: The merchant backup failed to lookup the refunds in the database.
 HttpStatus: 500
 
 Value: 2928
-Name: MERCHANT_PRIVATE_GET_ORDER_BY_FILTER_DB_LOOKUP_ERROR
+Name: MERCHANT_PRIVATE_GET_ORDERS_BY_FILTER_DB_LOOKUP_ERROR
 Description: The merchant backup failed to lookup filtered orders in the database.
 HttpStatus: 500
 
