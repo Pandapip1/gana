@@ -2300,6 +2300,11 @@ Name: WALLET_HTTP_REQUEST_THROTTLED
 Description: The wallet made too many HTTP requests within a given time.  This can indicate a bug in the retry logic.
 HttpStatus: 0
 
+Value: 7014
+Name: WALLET_HTTP_REQUEST_TIMEOUT
+Description: An HTTP request made by the wallet timed out.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
