@@ -2295,6 +2295,11 @@ Name: WALLET_WITHDRAWAL_OPERATION_ABORTED_BY_BANK
 Description: The bank has aborted a withdrawal operation, and thus a withdrawal can't complete.
 HttpStatus: 0
 
+Value: 7013
+Name: WALLET_HTTP_REQUEST_THROTTLED
+Description: The wallet made too many HTTP requests within a given time.  This can indicate a bug in the retry logic.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
