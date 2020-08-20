@@ -2290,6 +2290,11 @@ Name: WALLET_CORE_NOT_AVAILABLE
 Description: The wallet core service is not available.
 HttpStatus: 0
 
+Value: 7012
+Name: WALLET_WITHDRAWAL_OPERATION_ABORTED_BY_BANK
+Description: The bank has aborted a withdrawal operation, and thus a withdrawal can't complete.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
