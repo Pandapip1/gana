@@ -2139,7 +2139,7 @@ Description: The withdrawal operation already has a reserve selected.  The curre
 HttpStatus: 409
 
 Value: 6000
-Name: SYNC_DB_FETCH_ERROR
+Name: SYNC_DB_HARD_FETCH_ERROR
 Description: The sync service failed to access its database.
 HttpStatus: 500
 
@@ -2174,8 +2174,8 @@ Description: The signature provided in the "Sync-Signature" header does not matc
 HttpStatus: 403
 
 Value: 6008
-Name: SYNC_BAD_CONTENT_LENGTH
-Description: The "Content-length" field for the upload is either not a number, or too big, or missing.
+Name: SYNC_MALFORMED_CONTENT_LENGTH
+Description: The "Content-length" field for the upload is either not a number, or too big.
 HttpStatus: 400
 
 Value: 6009
@@ -2224,6 +2224,11 @@ Description: Sync could not fetch information about possible existing orders fro
 HttpStatus: 500
 
 Value: 6018
+Name: SYNC_MISSING_CONTENT_LENGTH
+Description: The "Content-length" field for the upload is missing.
+HttpStatus: 400
+
+Value: 6018
 Name: SYNC_PAYMENT_CREATE_BACKEND_ERROR
 Description: Sync could not setup the payment request with its own backend.
 HttpStatus: 500
@@ -2232,6 +2237,16 @@ Value: 6019
 Name: SYNC_PREVIOUS_BACKUP_UNKNOWN
 Description: The sync service failed find the backup to be updated in its database.
 HttpStatus: 404
+
+Value: 6020
+Name: SYNC_DB_SOFT_FETCH_ERROR
+Description: The sync service had a serialization failure when accessing its database.
+HttpStatus: 500
+
+Value: 6021
+Name: SYNC_DB_INCONSISENT_FETCH_ERROR
+Description: The sync service first found information, and then later not. This could happen if a backup was garbage collected just when it was being accessed. Trying again may give a different answer.
+HttpStatus: 500
 
 # 7000 - 8000: Reserved for wallet
 
