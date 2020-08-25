@@ -697,6 +697,11 @@ Name: REFUND_INVALID_FAILURE_PROOF_BY_EXCHANGE
 Description: The failure proof returned by the exchange is incorrect. Error code generated client-side.
 HttpStatus: 0
 
+Value: 1517
+Name: REFUND_DATABASE_LOOKUP_ERROR
+Description: The exchange failed to lookup information for the refund from its database.
+HttpStatus: 500
+
 Value: 1600
 Name: ADMIN_ADD_INCOMING_WIREFORMAT_UNSUPPORTED
 Description: The wire format specified in the "sender_account_details" is not understood or not supported by this exchange.
