@@ -7,7 +7,7 @@
  * Returns a hint for a given error code.
  *
  * @param ec the error code.
- * @return the hint if it could be found, otherwise NULL.
+ * @return the hint if it could be found, otherwise "<no hint found>"
  */
 const char *
 TALER_ErrorCode_get_hint (enum TALER_ErrorCode ec);
