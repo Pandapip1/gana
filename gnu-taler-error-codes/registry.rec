@@ -2224,11 +2224,6 @@ Description: Sync could not fetch information about possible existing orders fro
 HttpStatus: 500
 
 Value: 6018
-Name: SYNC_MISSING_CONTENT_LENGTH
-Description: The "Content-length" field for the upload is missing.
-HttpStatus: 400
-
-Value: 6018
 Name: SYNC_PAYMENT_CREATE_BACKEND_ERROR
 Description: Sync could not setup the payment request with its own backend.
 HttpStatus: 500
@@ -2247,6 +2242,12 @@ Value: 6021
 Name: SYNC_DB_INCONSISENT_FETCH_ERROR
 Description: The sync service first found information, and then later not. This could happen if a backup was garbage collected just when it was being accessed. Trying again may give a different answer.
 HttpStatus: 500
+
+Value: 6022
+Name: SYNC_MISSING_CONTENT_LENGTH
+Description: The "Content-length" field for the upload is missing.
+HttpStatus: 400
+
 
 # 7000 - 8000: Reserved for wallet
 
