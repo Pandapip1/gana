@@ -1132,6 +1132,16 @@ Name: FORGET_PATH_NOT_FORGETTABLE
 Description: One of the paths to forget was not marked as forgettable.
 HttpStatus: 409
 
+Value: 2183
+Name: FORGET_ORDER_DB_START_ERROR
+Description: The merchant backend cannot forget part of an order because it failed to start the database transaction.
+HttpStatus: 500
+
+Value: 2184
+Name: FORGET_ORDER_DB_COMMIT_ERROR
+Description: The merchant backend cannot forget part of an order because it failed to commit the database transaction.
+HttpStatus: 500
+
 Value: 2200
 Name: HISTORY_TIMESTAMP_OVERFLOW
 Description: Integer overflow with specified timestamp argument detected.
