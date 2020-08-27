@@ -1432,6 +1432,11 @@ Name: ORDERS_ALREADY_CLAIMED
 Description: We could not claim the order because someone else claimed it first.
 HttpStatus: 409
 
+Value: 2549
+Name: GET_PRODUCTS_NOT_FOUND
+Description: The merchant backend couldn't find a product with the specified id.
+HttpStatus: 404
+
 Value: 2550
 Name: GET_PRODUCTS_DB_LOOKUP_ERROR
 Description: The merchant backend failed to lookup the products.
