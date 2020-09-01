@@ -2341,6 +2341,11 @@ Name: WALLET_ORDER_ALREADY_CLAIMED
 Description: The order has already been claimed by another wallet.
 HttpStatus: 0
 
+Value: 7015
+Name: WALLET_WITHDRAWAL_GROUP_INCOMPLETE
+Description: A group of withdrawal operations (typically for the same reserve at the same exchange) has errors and will be tried again later.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
