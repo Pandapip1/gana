@@ -2346,6 +2346,11 @@ Name: WALLET_WITHDRAWAL_GROUP_INCOMPLETE
 Description: A group of withdrawal operations (typically for the same reserve at the same exchange) has errors and will be tried again later.
 HttpStatus: 0
 
+Value: 7016
+Name: WALLET_TIPPING_COIN_SIGNATURE_INVALID
+Description: The signature on a coin by the exchange's denomination key (obtained through the merchant via tipping) is invalid after unblinding it.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
