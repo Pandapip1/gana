@@ -2351,6 +2351,11 @@ Name: WALLET_TIPPING_COIN_SIGNATURE_INVALID
 Description: The signature on a coin by the exchange's denomination key (obtained through the merchant via tipping) is invalid after unblinding it.
 HttpStatus: 0
 
+Value: 7017
+Name: WALLET_BANK_INTEGRATION_PROTOCOL_VERSION_INCOMPATIBLE
+Description: The wallet does not implement a version of the bank integration API that is compatible with the version offered by the bank.
+HttpStatus: 0
+
 Value: 9999
 Name: END
 Description: End of error code range.
