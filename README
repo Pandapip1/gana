@@ -2,6 +2,15 @@
             ========================================
 
 
+This Git repository contains various registries we maintain, for
+GNUnet other projects that need names and numbers for use in network
+protocols.  If you need to open a new registry, please feel free
+to contact us at gana@gnunet.org.
+
+
+History
+=======
+
 Barry Leiba wrote on April 4th 2020 that "Neither IANA nor
 participants in the IETF will have any necessary expertise to evaluate
 registration requests in the sort of registry described, and no one
@@ -14,11 +23,6 @@ than by IANA."
 So here we are. As IETF/IANA "lack the necessary expertise to operate
 a registry" for names and numbers used in network protocols, the
 GNUnet project is happy to step up.
-
-This Git repository contains various registries we maintain, for
-GNUnet other projects that need names and numbers for use in network
-protocols.  If you need to open a new registry, please feel free
-to contact us at gana@gnunet.org.
 
 
 License
