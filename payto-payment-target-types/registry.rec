@@ -14,16 +14,22 @@
 %sort: Name Contact Reference
 
 Name: ach
+Reference: RFC 8905
 
 Name: bic
+Reference: RFC 8905
 
 Name: iban
+Reference: RFC 8905
 
 Name: upi
+Reference: RFC 8905
 
 Name: bitcoin
+Reference: RFC 8905
 
 Name: ilp
+Reference: RFC 8905
 
 Name: void
-Reference: N/A
+Reference: RFC 8905
