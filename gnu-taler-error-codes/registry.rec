@@ -1567,6 +1567,11 @@ Name: REFUND_ORDER_ID_UNPAID
 Description: The frontend gave an unpaid order id to issue the refund to.
 HttpStatus: 409
 
+Value: 2609
+Name: MERCHANT_REFUND_NOT_ALLOWED_BY_CONTRACT
+Description: The refund delay was set to 0 and thus no refunds are allowed for this order.
+HttpStatus: 403
+
 Value: 2650
 Name: RESERVES_POST_UNSUPPORTED_WIRE_METHOD
 Description: The requested wire method is not supported by the exchange.
