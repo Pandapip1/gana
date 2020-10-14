@@ -122,6 +122,11 @@ Name: ALLOCATION_FAILURE
 Description: Exchange failed to allocate memory.
 HttpStatus: 500
 
+Value: 20
+Name: REQUEST_PARAMETER_MALFORMED
+Description: A paramter in the request was malformed.
+HttpStatus: 400
+
 Value: 1001
 Name: DB_SETUP_FAILED
 Description: The exchange failed to even just initialize its connection to the database.
@@ -164,7 +169,7 @@ HttpStatus: 400
 
 Value: 1009
 Name: PARAMETER_MALFORMED
-Description: A parameter in the request to the exchange was malformed.
+Description: A parameter in the request to the exchange was malformed (@deprecated: use REQUEST_PARAMETER_MALFORMED instead)
 HttpStatus: 400
 
 Value: 1010
@@ -2367,6 +2372,7 @@ Value: 8000
 Name: ANASTASIS_FOO_ERROR
 Description: my comment
 HttpStatus: 500
+
 
 Value: 9999
 Name: END
