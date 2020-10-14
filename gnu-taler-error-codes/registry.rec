@@ -169,7 +169,7 @@ HttpStatus: 400
 
 Value: 1009
 Name: PARAMETER_MALFORMED
-Description: A parameter in the request to the exchange was malformed (@deprecated: use REQUEST_PARAMETER_MALFORMED instead)
+Description: A parameter in the request to the exchange was malformed (deprecated: use REQUEST_PARAMETER_MALFORMED instead)
 HttpStatus: 400
 
 Value: 1010
