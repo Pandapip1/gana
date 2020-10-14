@@ -2269,7 +2269,7 @@ Description: The "Content-length" field for the upload is missing.
 HttpStatus: 400
 
 
-# 7000 - 8000: Reserved for wallet
+# 7000 - 7999: Reserved for wallet
 
 Value: 7000
 Name: WALLET_EXCHANGE_PROTOCOL_VERSION_INCOMPATIBLE
@@ -2360,6 +2360,13 @@ Value: 7017
 Name: WALLET_BANK_INTEGRATION_PROTOCOL_VERSION_INCOMPATIBLE
 Description: The wallet does not implement a version of the bank integration API that is compatible with the version offered by the bank.
 HttpStatus: 0
+
+# 8000 - 8999: Reserved for Anastasis
+
+Value: 8000
+Name: ANASTASIS_FOO_ERROR
+Description: my comment
+HttpStatus: 500
 
 Value: 9999
 Name: END
