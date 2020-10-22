@@ -124,7 +124,7 @@ HttpStatus: 500
 
 Value: 20
 Name: REQUEST_PARAMETER_MALFORMED
-Description: A paramter in the request was malformed.
+Description: A parameter in the request was malformed.
 HttpStatus: 400
 
 Value: 1001
