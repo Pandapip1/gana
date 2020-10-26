@@ -45,12 +45,12 @@ HttpStatus: 0
 Value: 4
 Name: EXCHANGE_BAD_CONFIGURATION
 Description: Exchange is badly configured and thus cannot operate.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 5
 Name: INTERNAL_INVARIANT_FAILURE
 Description: Internal assertion error.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 6
 Name: TIMEOUT
@@ -195,42 +195,42 @@ HttpStatus: 409
 Value: 1014
 Name: DB_COIN_HISTORY_STORE_ERROR
 Description: We failed to update the database of known coins.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 1050
 Name: COINS_INVALID_COIN_PUB
 Description: The public key of given to a /coins/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1051
 Name: RESERVES_INVALID_RESERVE_PUB
 Description: The reserve key of given to a /reserves/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1052
 Name: TRANSFERS_INVALID_WTID
 Description: The public key of given to a /transfers/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1053
 Name: DEPOSITS_INVALID_H_WIRE
 Description: The wire hash of given to a /deposits/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1054
 Name: DEPOSITS_INVALID_MERCHANT_PUB
 Description: The merchant key of given to a /deposits/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1055
 Name: DEPOSITS_INVALID_H_CONTRACT_TERMS
 Description: The hash of the contract terms given to a /deposits/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1056
 Name: DEPOSITS_INVALID_COIN_PUB
 Description: The coin public key of given to a /deposits/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1057
 Name: DEPOSITS_INVALID_BODY_BY_EXCHANGE
@@ -300,7 +300,7 @@ HttpStatus: 404
 Value: 1111
 Name: WITHDRAW_RESERVE_SIGNATURE_INVALID
 Description: The signature of the reserve is not valid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1112
 Name: WITHDRAW_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
@@ -349,8 +349,8 @@ HttpStatus: 500
 
 Value: 1151
 Name: RESERVE_STATUS_UNKNOWN
-Description: The reserve status was requested using a unknown key, to be returned with 404 Not Found.
-HttpStatus: 0
+Description: The reserve status was requested using a unknown key.
+HttpStatus: 404.
 
 Value: 1152
 Name: RESERVE_STATUS_REPLY_MALFORMED
@@ -385,12 +385,12 @@ HttpStatus: 404
 Value: 1205
 Name: DEPOSIT_COIN_SIGNATURE_INVALID
 Description: The signature made by the coin over the deposit permission is not valid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1206
 Name: DEPOSIT_DENOMINATION_SIGNATURE_INVALID
 Description: The signature of the denomination key over the coin is not valid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1207
 Name: DEPOSIT_NEGATIVE_VALUE_AFTER_FEE
@@ -445,7 +445,7 @@ HttpStatus: 0
 Value: 1222
 Name: DEPOSIT_CURRENCY_MISMATCH
 Description: The currency specified for the deposit is different from the currency of the coin.
-HttpStatus: 412
+HttpStatus: 400
 
 Value: 1300
 Name: MELT_INSUFFICIENT_FUNDS
@@ -480,12 +480,12 @@ HttpStatus: 400
 Value: 1306
 Name: MELT_DENOMINATION_SIGNATURE_INVALID
 Description: The denomination key signature on the melted coin is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1307
 Name: MELT_COIN_SIGNATURE_INVALID
 Description: The signature made with the coin to be melted is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1308
 Name: MELT_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
@@ -495,7 +495,7 @@ HttpStatus: 500
 Value: 1309
 Name: MELT_COIN_EXPIRED_NO_ZOMBIE
 Description: The denomination of the given coin has past its expiration date and it is also not a valid zombie (that is, was not refreshed with the fresh coin being subjected to recoup).
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1310
 Name: MELT_INVALID_SIGNATURE_BY_EXCHANGE
@@ -505,7 +505,7 @@ HttpStatus: 0
 Value: 1311
 Name: MELT_CURRENCY_MISMATCH
 Description: The currency specified for the melt amount is different from the currency of the coin.
-HttpStatus: 412
+HttpStatus: 400
 
 Value: 1351
 Name: REFRESH_RECOUP_DENOMINATION_KEY_NOT_FOUND
@@ -540,7 +540,7 @@ HttpStatus: 500
 Value: 1372
 Name: REVEAL_SESSION_UNKNOWN
 Description: The exchange is unaware of the refresh session specified in the request.
-HttpStatus: 400
+HttpStatus: 404
 
 Value: 1373
 Name: REVEAL_DB_FETCH_SESSION_ERROR
@@ -590,7 +590,7 @@ HttpStatus: 400
 Value: 1382
 Name: REVEAL_LINK_SIGNATURE_INVALID
 Description: The signature made with the coin over the link data is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1383
 Name: REVEAL_KEYS_MISSING
@@ -600,7 +600,7 @@ HttpStatus: 500
 Value: 1384
 Name: REVEAL_INVALID_RCH
 Description: The refresh session hash given to a /refreshes/ handler was malformed.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 1385
 Name: REVEAL_REPLY_MALFORMED
@@ -685,7 +685,7 @@ HttpStatus: 400
 Value: 1513
 Name: REFUND_MERCHANT_SIGNATURE_INVALID
 Description: The signature of the merchant is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1514
 Name: REFUND_MERCHANT_SIGNING_FAILED
@@ -775,7 +775,7 @@ HttpStatus: 500
 Value: 1804
 Name: DEPOSITS_GET_MERCHANT_SIGNATURE_INVALID
 Description: The signature of the merchant is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1850
 Name: RECOUP_DENOMINATION_KEY_UNKNOWN
@@ -790,7 +790,7 @@ HttpStatus: 403
 Value: 1852
 Name: RECOUP_DENOMINATION_SIGNATURE_INVALID
 Description: The signature of the denomination key over the coin is not valid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1853
 Name: RECOUP_DB_FETCH_FAILED
@@ -864,8 +864,8 @@ HttpStatus: 404
 
 Value: 2002
 Name: PROPOSAL_INSTANCE_CONFIGURATION_LACKS_WIRE
-Description: The backend lacks a wire transfer method configuration option for the given instance.
-HttpStatus: 0
+Description: The backend lacks a wire transfer method configuration option for the given instance. Thus, this instance is unavailable (not findable for creating new orders).
+HttpStatus: 404
 
 Value: 2003
 Name: MERCHANT_FAILED_TO_LOAD_TEMPLATE
@@ -920,12 +920,12 @@ HttpStatus: 400
 Value: 2108
 Name: PAY_PAYMENT_INSUFFICIENT_DUE_TO_FEES
 Description: After considering deposit and wire fees, the payment is insufficient to satisfy the required amount for the contract.  The client should revisit the logic used to calculate fees it must cover.
-HttpStatus: 202
+HttpStatus: 406
 
 Value: 2109
 Name: PAY_PAYMENT_INSUFFICIENT
 Description: Even if we do not consider deposit and wire fees, the payment is insufficient to satisfy the required amount for the contract.
-HttpStatus: 202
+HttpStatus: 406
 
 Value: 2110
 Name: PAY_COIN_SIGNATURE_INVALID
@@ -979,8 +979,8 @@ HttpStatus: 410
 
 Value: 2122
 Name: PAY_MERCHANT_FIELD_MISSING
-Description: The "merchant" field is missing in the proposal data.
-HttpStatus: 400
+Description: The "merchant" field is missing in the proposal data. This is an internal error as the proposal is from the merchant's own database at this point.
+HttpStatus: 500
 
 Value: 2123
 Name: PAY_FAILED_COMPUTE_PROPOSAL_HASH
@@ -1287,6 +1287,11 @@ Name: POST_TRANSFERS_DB_LOOKUP_ERROR
 Description: We did failed to retrieve information from our database.
 HttpStatus: 500
 
+Value: 2448
+Name: PATCH_INSTANCES_BAD_CURRENCY
+Description: The merchant backend cannot modify an instance with the given default max deposit fee or default max wire fee because the fee currencies are incompatible with the merchant's currency in the config.
+HttpStatus: 409
+
 Value: 2449
 Name: POST_INSTANCES_BAD_CURRENCY
 Description: The merchant backend cannot create an instance with the given default max deposit fee or default max wire fee because the fee currencies are incompatible with the merchant's currency in the config.
@@ -1505,7 +1510,7 @@ HttpStatus: 409
 Value: 2560
 Name: PRODUCTS_LOCK_INSUFFICIENT_STOCKS
 Description: The lock request is for more products than we have left (unlocked) in stock.
-HttpStatus: 409
+HttpStatus: 410
 
 Value: 2561
 Name: PRODUCTS_LOCK_UNKNOWN_PRODUCT
@@ -1555,7 +1560,7 @@ HttpStatus: 500
 Value: 2605
 Name: PAY_DB_STORE_PAYMENTS_ERROR
 Description: Payments are stored in a single db transaction; this error indicates that one db operation within that transaction failed.  This might involve storing of coins or other related db operations, like starting/committing the db transaction or marking a contract as paid.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 2606
 Name: PAY_REFUND_SIGNATURE_FAILED
@@ -1760,12 +1765,12 @@ HttpStatus: 0
 Value: 2802
 Name: TIP_PICKUP_DB_ERROR_SOFT
 Description: We encountered a DB error, repeating the request may work.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 2803
 Name: TIP_PICKUP_DB_ERROR_HARD
 Description: We encountered a DB error, repeating the request will not help. This is an internal server error.
-HttpStatus: 0
+HttpStatus: 500
 
 Value: 2804
 Name: TIP_PICKUP_AMOUNT_CHANGED
@@ -1962,11 +1967,6 @@ Name: CHECK_PAYMENT_FAILED_COMPUTE_PROPOSAL_HASH
 Description: Failed computing a hash code (likely server out-of-memory).
 HttpStatus: 500
 
-Value: 2918
-Name: CHECK_PAYMENT_SESSION_SIGNATURE_INVALID
-Description: Signature "session_sig" failed to verify.
-HttpStatus: 400
-
 Value: 2919
 Name: GET_ORDER_WRONG_CONTRACT
 Description: The order we found does not match the provided contract hash.
@@ -2020,8 +2020,8 @@ HttpStatus: 500
 
 Value: 3000
 Name: DEPOSIT_CONFIRMATION_SIGNATURE_INVALID
-Description: The signature from the exchange on the deposit confirmation is invalid.  Returned with a "400 Bad Request" status code.
-HttpStatus: 0
+Description: The signature from the exchange on the deposit confirmation is invalid.  
+HttpStatus: 403
 
 Value: 3001
 Name: DEPOSIT_CONFIRMATION_STORE_DB_ERROR
@@ -2156,7 +2156,7 @@ HttpStatus: 0
 Value: 5500
 Name: BANK_TRANSFER_REQUEST_UID_REUSED
 Description: The request UID for a request to transfer funds has already been used, but with different details for the transfer.
-HttpStatus: 0
+HttpStatus: 409
 
 Value: 5600
 Name: BANK_WITHDRAWAL_OPERATION_RESERVE_SELECTION_CONFLICT
@@ -2200,7 +2200,7 @@ HttpStatus: 403
 
 Value: 6008
 Name: SYNC_MALFORMED_CONTENT_LENGTH
-Description: The "Content-length" field for the upload is either not a number, or too big.
+Description: The "Content-length" field for the upload is not a number.
 HttpStatus: 400
 
 Value: 6009
