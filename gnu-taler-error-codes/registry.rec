@@ -350,7 +350,7 @@ HttpStatus: 500
 Value: 1151
 Name: RESERVE_STATUS_UNKNOWN
 Description: The reserve status was requested using a unknown key.
-HttpStatus: 404.
+HttpStatus: 404
 
 Value: 1152
 Name: RESERVE_STATUS_REPLY_MALFORMED
