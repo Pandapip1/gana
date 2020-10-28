@@ -21,10 +21,10 @@
      but it does apply to this file.
 """
 
-from enum import Enum,unique
+from enum import IntEnum,unique
 
 """
    Error codes used by GNU Taler.
 """
 @unique 
-class ErrorCode(Enum):
+class ErrorCode(IntEnum):
