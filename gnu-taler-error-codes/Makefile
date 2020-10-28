@@ -1,6 +1,7 @@
 FILES=taler_error_codes.h \
   taler_error_codes.c \
   taler_error_codes.ts \
+  taler_error_codes.py \
   taler_error_codes.kt
 
 all: check $(FILES)
@@ -56,6 +57,12 @@ taler_error_codes.kt.tmp: combined.tmp kt.template
 	../format.sh kt.template < combined.tmp > $@
 
 taler_error_codes.kt: kt.header taler_error_codes.kt.tmp kt.footer
+	cat $^ > $@
+
+taler_error_codes.py.tmp: combined.tmp py.template
+	../format.sh py.template < combined.tmp > $@
+
+taler_error_codes.py: py.header taler_error_codes.py.tmp 
 	cat $^ > $@
 
 

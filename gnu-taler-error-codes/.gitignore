@@ -3,3 +3,4 @@
 *.h
 *.tmp
 *.ts
+taler_error_codes.py
