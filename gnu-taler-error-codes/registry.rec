@@ -2366,6 +2366,11 @@ Name: WALLET_BANK_INTEGRATION_PROTOCOL_VERSION_INCOMPATIBLE
 Description: The wallet does not implement a version of the bank integration API that is compatible with the version offered by the bank.
 HttpStatus: 0
 
+Value: 7018
+Name: WALLET_CONTRACT_TERMS_BASE_URL_MISMATCH
+Description: The wallet processed a taler://pay URI, but the merchant base URL in the downloaded contract terms does not match the merchant base URL derived from the URI.
+HttpStatus: 0
+
 # 8000 - 8999: Reserved for Anastasis
 
 Value: 8000
