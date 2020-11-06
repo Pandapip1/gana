@@ -2369,9 +2369,9 @@ HttpStatus: 0
 # 8000 - 8999: Reserved for Anastasis
 
 Value: 8000
-Name: ANASTASIS_FOO_ERROR
-Description: my comment
-HttpStatus: 500
+Name: ANASTASIS_REDUCER_ACTION_INVALID
+Description: The given action is invalid for the current state of the reducer.
+HttpStatus: 0
 
 
 Value: 9999
