@@ -323,7 +323,7 @@ HttpStatus: 410
 
 Value: 1159
 Name: EXCHANGE_WITHDRAW_UNBLIND_FAILURE
-Description: The client failed to unblind the blind signature. This error is not used in the protocol but created client-side.
+Description: The client failed to unblind the blind signature.
 HttpStatus: 0
 
 Value: 1200
@@ -358,7 +358,7 @@ HttpStatus: 400
 
 Value: 1221
 Name: EXCHANGE_DEPOSIT_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature provided by the exchange is not valid. Error created client-side.
+Description: The signature provided by the exchange is not valid.
 HttpStatus: 0
 
 Value: 1250
@@ -398,7 +398,7 @@ HttpStatus: 400
 
 Value: 1306
 Name: EXCHANGE_MELT_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature returned by the exchange in a melt request was malformed. Error created client-side.
+Description: The signature returned by the exchange in a melt request was malformed.
 HttpStatus: 0
 
 
@@ -525,7 +525,7 @@ HttpStatus: 500
 
 Value: 1508
 Name: EXCHANGE_REFUND_INVALID_SIGNATURE_BY_EXCHANGE
-Description: The signature returned by the exchange in a refund request was malformed. Error created client-side.
+Description: The signature returned by the exchange in a refund request was malformed.
 HttpStatus: 0
 
 Value: 1509
@@ -569,6 +569,13 @@ Name: EXCHANGE_KEYS_TIMETRAVEL_FORBIDDEN
 Description: This exchange does not allow clients to request /keys for times other than the current (exchange) time.
 HttpStatus: 403
 
+Value: 1650
+Name: EXCHANGE_WIRE_SIGNATURE_INVALID
+Description: A signature in the server's response was malformed.
+HttpStatus: 0
+
+
+
 
 # 2000 - 2999: Reserved for merchant
 # 2000 - 2099: Reserved for MERCHANT_GENERIC
@@ -580,7 +587,7 @@ HttpStatus: 404
 
 Value: 2001
 Name: MERCHANT_GENERIC_HOLE_IN_WIRE_FEE_STRUCTURE
-Description: The start and end-times in the wire fee structure leave a hole. This is not allowed. Generated as an error on the client-side.
+Description: The start and end-times in the wire fee structure leave a hole. This is not allowed.
 HttpStatus: 0
 
 Value: 2002
@@ -827,7 +834,7 @@ HttpStatus: 409
 
 Value: 2302
 Name: MERCHANT_POST_ORDERS_ID_CLAIM_CLIENT_INTERNAL_FAILURE
-Description: The client-side experienced an internal failure. Generated as an error on the client side.
+Description: The client-side experienced an internal failure.
 HttpStatus: 0
 
 # 2350-2399: post orders ID refund endpoint
@@ -1057,11 +1064,6 @@ HttpStatus: 403
 
 # 5000 - 5999: Reserved for bank
 # 5000 - 5099: Reserved for BANK_GENERIC
-
-Value: 5100
-Name: BANK_EXCHANGE_WIRE_SIGNATURE_INVALID
-Description: A signature in the server's response was malformed.  This response is provided with HTTP status code of 0.
-HttpStatus: 0
 
 Value: 5101
 Name: BANK_SAME_ACCOUNT
