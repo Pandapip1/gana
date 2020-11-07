@@ -645,6 +645,16 @@ Name: MERCHANT_GENERIC_EXCHANGE_CONNECT_FAILURE
 Description: The merchant failed to talk to the exchange.
 HttpStatus: 500
 
+Value: 2013
+Name: MERCHANT_GENERIC_EXCHANGE_REPLY_MALFORMED
+Description: The exchange returned a maformed response.
+HttpStatus: 502
+
+Value: 2014
+Name: MERCHANT_GENERIC_EXCHANGE_UNEXPECTED_STATUS
+Description: The exchange returned an unexpected response status.
+HttpStatus: 502
+
 
 
 # 2100-2499: public API
@@ -852,6 +862,7 @@ Name: MERCHANT_TIP_PICKUP_EXCHANGE_ERROR
 Description: The exchange returned a failure code for the withdraw operation.
 HttpStatus: 502
 
+
 Value: 2404
 Name: MERCHANT_TIP_PICKUP_SUMMATION_FAILED
 Description: The merchant failed to add up the amounts to compute the pick up value.
@@ -936,11 +947,6 @@ Value: 2551
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_REQUEST_ERROR
 Description: We internally failed to execute the /track/transfer request.
 HttpStatus: 500
-
-Value: 2552
-Name: MERCHANT_PRIVATE_POST_TRANSFERS_EXCHANGE_ERROR
-Description: The exchange returned an error from /track/transfer.
-HttpStatus: 502
 
 Value: 2553
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_CONFLICTING_REPORTS
