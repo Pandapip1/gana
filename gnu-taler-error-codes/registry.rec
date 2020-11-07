@@ -630,6 +630,17 @@ Name: MERCHANT_GENERIC_CONTRACT_HASH_DOES_NOT_MATCH_ORDER
 Description: The order we found does not match the provided contract hash.
 HttpStatus: 403
 
+Value: 2010
+Name: MERCHANT_GENERIC_EXCHANGE_KEYS_FAILURE
+Description: The exchange failed to provide a valid response to the merchant's /keys request.
+HttpStatus: 502
+
+Value: 2011
+Name: MERCHANT_GENERIC_EXCHANGE_TIMEOUT
+Description: The exchange failed to respond to the merchant on time.
+HttpStatus: 504
+
+
 
 # 2100-2499: public API
 # 2100-2149: get orders endpoint
@@ -639,11 +650,6 @@ Name: MERCHANT_GET_ORDERS_EXCHANGE_TRACKING_FAILURE
 Description: The exchange failed to provide a valid answer to the tracking request, thus those details are not in the response.
 HttpStatus: 200
 
-
-Value: 2102
-Name: MERCHANT_GET_ORDERS_ID_EXCHANGE_LOOKUP_FAILURE
-Description: The merchant backend failed trying to contact the exchange for tracking details, thus those details are not in the response.
-HttpStatus: 502
 
 Value: 2103
 Name: MERCHANT_GET_ORDERS_ID_EXCHANGE_REQUEST_FAILURE
@@ -712,10 +718,6 @@ Name: MERCHANT_POST_ORDERS_ID_PAY_REFUND_DEADLINE_PAST_WIRE_TRANSFER_DEADLINE
 Description: The refund deadline in the contract is after the transfer deadline.
 HttpStatus: 500
 
-Value: 2160
-Name: MERCHANT_POST_ORDERS_ID_PAY_EXCHANGE_KEYS_FAILURE
-Description: The exchange failed to provide a valid response to the merchant's /keys request.
-HttpStatus: 502
 
 Value: 2161
 Name: MERCHANT_POST_ORDERS_ID_PAY_OFFER_EXPIRED
@@ -731,11 +733,6 @@ Value: 2163
 Name: MERCHANT_POST_ORDERS_ID_PAY_WIRE_HASH_UNKNOWN
 Description: Failed to locate merchant's account information matching the wire hash given in the proposal.
 HttpStatus: 500
-
-Value: 2164
-Name: MERCHANT_POST_ORDERS_ID_PAY_EXCHANGE_HAS_NO_KEYS
-Description: The exchange failed to give us a response when we asked for /keys.
-HttpStatus: 502
 
 Value: 2165
 Name: MERCHANT_POST_ORDERS_ID_PAY_DENOMINATION_DEPOSIT_EXPIRED
@@ -781,10 +778,6 @@ HttpStatus: 403
 
 # 2250-2299: post orders ID abort endpoint
 
-Value: 2250
-Name: MERCHANT_POST_ORDERS_ID_ABORT_EXCHANGE_KEYS_FAILURE
-Description: The merchant failed to contact the exchange.
-HttpStatus: 502
 
 Value: 2251
 Name: MERCHANT_POST_ORDERS_ID_ABORT_EXCHANGE_REFUND_FAILED
@@ -847,15 +840,7 @@ Name: MERCHANT_TIP_PICKUP_UNBLIND_FAILURE
 Description: The client failed to unblind the signature returned by the merchant.
 HttpStatus: 0
 
-Value: 2401
-Name: MERCHANT_TIP_PICKUP_CONTACT_EXCHANGE_ERROR
-Description: The merchant failed to contact the exchange.
-HttpStatus: 502
 
-Value: 2402
-Name: MERCHANT_TIP_PICKUP_EXCHANGE_KEYS_ERROR
-Description: The merchant failed to obtain keys from the exchange.
-HttpStatus: 502
 
 Value: 2403
 Name: MERCHANT_TIP_PICKUP_EXCHANGE_ERROR
@@ -941,10 +926,6 @@ HttpStatus: 403
 
 # 2550-2599: transfer operations
 
-Value: 2550
-Name: MERCHANT_PRIVATE_POST_TRANSFERS_EXCHANGE_KEYS_FAILURE
-Description: We failed to obtain an acceptable /keys response from the exchange for the /track/transfer request.
-HttpStatus: 502
 
 Value: 2551
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_REQUEST_ERROR
