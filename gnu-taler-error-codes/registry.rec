@@ -615,26 +615,21 @@ Description: The proposal is not known to the backend.
 HttpStatus: 404
 
 Value: 2006
-Name: MERCHANT_GENERIC_INSTANCE_UNKNOWN
-Description: The merchant backend cannot delete the data because it already does not exist.
-HttpStatus: 404
-
-Value: 2007
 Name: MERCHANT_GENERIC_PRODUCT_UNKNOWN
 Description: The order provided to the backend could not be completed, because a product to be completed via inventory data is not actually in our inventory.
 HttpStatus: 404
 
-Value: 2008
+Value: 2007
 Name: MERCHANT_GENERIC_TIP_ID_UNKNOWN
 Description: The tip ID is unknown.  This could happen if the tip has expired.
 HttpStatus: 404
 
-Value: 2009
+Value: 2008
 Name: MERCHANT_GENERIC_DB_CONTRACT_CONTENT_INVALID
 Description: The contract obtained from the merchant backend was malformed.
 HttpStatus: 500
 
-Value: 2010
+Value: 2009
 Name: MERCHANT_GENERIC_CONTRACT_HASH_DOES_NOT_MATCH_ORDER
 Description: The order we found does not match the provided contract hash.
 HttpStatus: 403
@@ -1057,11 +1052,6 @@ Value: 2753
 Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_RESERVE_NOT_FOUND
 Description: The backend failed to find a reserve needed to authorize the tip.
 HttpStatus: 503
-
-Value: 2754
-Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_RESERVE_EXPIRED
-Description: The selected exchange expired.
-HttpStatus: 410
 
 
 
