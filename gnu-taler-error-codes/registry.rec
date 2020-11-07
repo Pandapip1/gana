@@ -138,12 +138,12 @@ Description: The service failed to fetch information from its database.
 HttpStatus: 500
 
 Value: 54
-Name: GENERIC_DB_COMMIT_ERROR
+Name: GENERIC_DB_COMMIT_FAILED
 Description: The service encountered an error event to commit the database transaction (hard, unrecoverable error).
 HttpStatus: 500
 
 Value: 55
-Name: GENERIC_DB_SOFT_ERROR
+Name: GENERIC_DB_SOFT_FAILURE
 Description: The service encountered an error event to commit the database transaction, even after repeatedly retrying it there was always a conflicting transaction. (This indicates a repeated serialization error; should only happen if some client maliciously tries to create conflicting concurrent transactions.)
 HttpStatus: 500
 
