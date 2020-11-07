@@ -233,7 +233,7 @@ Description: The exchange failed to perform the operation as it could not find t
 HttpStatus: 500
 
 Value: 1008
-Name: EXCHANGE_GENERIC_DENOMIATION_VALIDITY_IN_FUTURE
+Name: EXCHANGE_GENERIC_DENOMINATION_VALIDITY_IN_FUTURE
 Description: Validity period of the denomination lies in the future.
 HttpStatus: 412
 
