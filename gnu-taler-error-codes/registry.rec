@@ -237,6 +237,12 @@ Name: EXCHANGE_GENERIC_DENOMINATION_VALIDITY_IN_FUTURE
 Description: Validity period of the denomination lies in the future.
 HttpStatus: 412
 
+Value: 1009
+Name: EXCHANGE_GENERIC_DENOMINATION_EXPIRED
+Description: Denomination key of the coin is past its expiration time for the requested operation.
+HttpStatus: 410
+
+
 
 
 
@@ -350,11 +356,6 @@ Name: EXCHANGE_DEPOSIT_INVALID_WIRE_FORMAT_CONTRACT_HASH_CONFLICT
 Description: The hash of the given wire address does not match the wire hash specified in the proposal data.
 HttpStatus: 400
 
-Value: 1220
-Name: EXCHANGE_GENERIC_DEPOSIT_DENOMINATION_EXPIRED
-Description: Denomination key of the coin is past the deposit deadline.
-HttpStatus: 410
-
 Value: 1221
 Name: EXCHANGE_DEPOSIT_INVALID_SIGNATURE_BY_EXCHANGE
 Description: The signature provided by the exchange is not valid. Error created client-side.
@@ -400,16 +401,6 @@ Name: EXCHANGE_MELT_INVALID_SIGNATURE_BY_EXCHANGE
 Description: The signature returned by the exchange in a melt request was malformed. Error created client-side.
 HttpStatus: 0
 
-
-Value: 1351
-Name: EXCHANGE_REFRESHES_RECOUP_DENOMINATION_EXPIRED
-Description: Denomination key of the coin is past the deposit deadline.
-HttpStatus: 410
-
-Value: 1352
-Name: EXCHANGE_REFRESHES_REVEAL_ZOMBIE_DENOMINATION_EXPIRED
-Description: Denomination key of the coin is past the deposit deadline.
-HttpStatus: 410
 
 Value: 1353
 Name: EXCHANGE_REFRESHES_REVEAL_COMMITMENT_VIOLATION
