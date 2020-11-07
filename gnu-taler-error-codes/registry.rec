@@ -533,6 +533,11 @@ Name: EXCHANGE_REFUND_INVALID_FAILURE_PROOF_BY_EXCHANGE
 Description: The failure proof returned by the exchange is incorrect.
 HttpStatus: 0
 
+Value: 1510
+Name: EXCHANGE_REFUND_INCONSISTENT_AMOUNT
+Description: Conflicting refund granted before with different amount but same refund transaction ID.
+HttpStatus: 424
+
 Value: 1550
 Name: EXCHANGE_RECOUP_SIGNATURE_INVALID
 Description: The given coin signature is invalid for the request.
