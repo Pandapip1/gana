@@ -656,7 +656,7 @@ HttpStatus: 200
 Value: 2102
 Name: MERCHANT_GET_ORDERS_ID_EXCHANGE_LOOKUP_FAILURE
 Description: The merchant backend failed trying to contact the exchange for tracking details, thus those details are not in the response.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2103
 Name: MERCHANT_GET_ORDERS_ID_EXCHANGE_REQUEST_FAILURE
@@ -728,7 +728,7 @@ HttpStatus: 500
 Value: 2160
 Name: MERCHANT_POST_ORDERS_ID_PAY_EXCHANGE_KEYS_FAILURE
 Description: The exchange failed to provide a valid response to the merchant's /keys request.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2161
 Name: MERCHANT_POST_ORDERS_ID_PAY_OFFER_EXPIRED
@@ -748,7 +748,7 @@ HttpStatus: 500
 Value: 2164
 Name: MERCHANT_POST_ORDERS_ID_PAY_EXCHANGE_HAS_NO_KEYS
 Description: The exchange failed to give us a response when we asked for /keys.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2165
 Name: MERCHANT_POST_ORDERS_ID_PAY_DENOMINATION_DEPOSIT_EXPIRED
@@ -778,7 +778,7 @@ HttpStatus: 0
 Value: 2170
 Name: MERCHANT_POST_ORDERS_ID_PAY_EXCHANGE_FAILED
 Description: The payment failed at the exchange.
-HttpStatus: 424
+HttpStatus: 502
 
 # 2200-2249: post orders ID paid endpoint
 
@@ -787,7 +787,7 @@ Name: MERCHANT_POST_ORDERS_ID_PAID_CONTRACT_HASH_MISMATCH
 Description: The contract hash does not match the given order ID.
 HttpStatus: 409
 
-Value: 2200
+Value: 2201
 Name: MERCHANT_POST_ORDERS_ID_PAID_COIN_SIGNATURE_INVALID
 Description: The signature of the merchant is not valid for the given contract hash.
 HttpStatus: 403
@@ -797,7 +797,7 @@ HttpStatus: 403
 Value: 2250
 Name: MERCHANT_POST_ORDERS_ID_ABORT_EXCHANGE_KEYS_FAILURE
 Description: The merchant failed to contact the exchange.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2251
 Name: MERCHANT_POST_ORDERS_ID_ABORT_EXCHANGE_REFUND_FAILED
@@ -863,17 +863,17 @@ HttpStatus: 0
 Value: 2401
 Name: MERCHANT_TIP_PICKUP_CONTACT_EXCHANGE_ERROR
 Description: The merchant failed to contact the exchange.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2402
 Name: MERCHANT_TIP_PICKUP_EXCHANGE_KEYS_ERROR
 Description: The merchant failed to obtain keys from the exchange.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2403
 Name: MERCHANT_TIP_PICKUP_EXCHANGE_ERROR
 Description: The exchange returned a failure code for the withdraw operation.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2404
 Name: MERCHANT_TIP_PICKUP_SUMMATION_FAILED
@@ -957,7 +957,7 @@ HttpStatus: 403
 Value: 2550
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_EXCHANGE_KEYS_FAILURE
 Description: We failed to obtain an acceptable /keys response from the exchange for the /track/transfer request.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2551
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_REQUEST_ERROR
@@ -967,17 +967,17 @@ HttpStatus: 500
 Value: 2552
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_EXCHANGE_ERROR
 Description: The exchange returned an error from /track/transfer.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2553
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_CONFLICTING_REPORTS
 Description: The exchange gave conflicting information about a coin which has been wire transferred.
-HttpStatus: 424
+HttpStatus: 409
 
 Value: 2554
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_BAD_WIRE_FEE
 Description: The exchange charged a different wire fee than what it originally advertised, and it is higher.
-HttpStatus: 424
+HttpStatus: 502
 
 Value: 2555
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_ACCOUNT_NOT_FOUND
@@ -1004,61 +1004,61 @@ Name: MERCHANT_PRIVATE_PATCH_PRODUCTS_TOTAL_LOST_REDUCED
 Description: The update would have reduced the total amount of product lost, which is not allowed.
 HttpStatus: 409
 
-Value: 2561
+Value: 2661
 Name: MERCHANT_PRIVATE_PATCH_PRODUCTS_TOTAL_LOST_EXCEEDS_STOCKS
 Description: The update would have mean that more stocks were lost than what remains from total inventory after sales, which is not allowed.
 HttpStatus: 409
 
-Value: 2562
+Value: 2662
 Name: MERCHANT_PRIVATE_PATCH_PRODUCTS_TOTAL_STOCKED_REDUCED
 Description: The update would have reduced the total amount of product in stock, which is not allowed.
 HttpStatus: 409
 
-Value: 2570
+Value: 2670
 Name: MERCHANT_PRIVATE_POST_PRODUCTS_LOCK_INSUFFICIENT_STOCKS
 Description: The lock request is for more products than we have left (unlocked) in stock.
 HttpStatus: 410
 
-Value: 2580
+Value: 2680
 Name: MERCHANT_PRIVATE_DELETE_PRODUCTS_CONFLICTING_LOCK
 Description: The deletion request is for a product that is locked.
 HttpStatus: 409
 
-# 2600-2549: reserve operations
+# 2700-2749: reserve operations
 
-Value: 2600
+Value: 2700
 Name: MERCHANT_PRIVATE_POST_RESERVES_UNSUPPORTED_WIRE_METHOD
 Description: The requested wire method is not supported by the exchange.
 HttpStatus: 409
 
-Value: 2610
+Value: 2710
 Name: MERCHANT_PRIVATE_DELETE_RESERVES_NO_SUCH_RESERVE
 Description: The reserve could not be deleted because it is unknown.
 HttpStatus: 404
 
-# 2650-2699: tip authorization
+# 2750-2799: tip authorization
 
-Value: 2650
+Value: 2750
 Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_RESERVE_EXPIRED
 Description: The reserve that was used to fund the tips has expired.
 HttpStatus: 410
 
-Value: 2651
+Value: 2751
 Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_RESERVE_UNKNOWN
 Description: The reserve that was used to fund the tips was not found in the DB.
 HttpStatus: 503
 
-Value: 2652
+Value: 2752
 Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_INSUFFICIENT_FUNDS
 Description: The backend knows the instance that was supposed to support the tip, and it was configured for tipping. However, the funds remaining are insufficient to cover the tip, and the merchant should top up the reserve.
 HttpStatus: 0
 
-Value: 2653
+Value: 2753
 Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_RESERVE_NOT_FOUND
 Description: The backend failed to find a reserve needed to authorize the tip.
 HttpStatus: 503
 
-Value: 2654
+Value: 2754
 Name: MERCHANT_PRIVATE_POST_TIP_AUTHORIZE_RESERVE_EXPIRED
 Description: The selected exchange expired.
 HttpStatus: 410
