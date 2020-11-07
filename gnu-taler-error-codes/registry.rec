@@ -640,6 +640,11 @@ Name: MERCHANT_GENERIC_EXCHANGE_TIMEOUT
 Description: The exchange failed to respond to the merchant on time.
 HttpStatus: 504
 
+Value: 2012
+Name: MERCHANT_GENERIC_EXCHANGE_CONNECT_FAILURE
+Description: The merchant failed to talk to the exchange.
+HttpStatus: 500
+
 
 
 # 2100-2499: public API
