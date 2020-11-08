@@ -1237,7 +1237,7 @@ Description: The denominations offered by the exchange are insufficient.  Likely
 HttpStatus: 0
 
 Value: 7007
-Name: WALLET_CORE_API_EXCHANGE_GENERIC_OPERATION_UNKNOWN
+Name: WALLET_CORE_API_OPERATION_UNKNOWN
 Description: The wallet does not support the operation requested by a client.
 HttpStatus: 0
 
