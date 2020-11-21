@@ -575,6 +575,26 @@ Description: A signature in the server's response was malformed.
 HttpStatus: 0
 
 
+Value: 1700
+Name: EXCHANGE_DENOMINATION_HELPER_UNAVAILABLE
+Description: The exchange failed to talk to the process responsible for its private denomination keys.
+HttpStatus: 500
+
+Value: 1701
+Name: EXCHANGE_DENOMINATION_HELPER_BUG
+Description: The response from the denomination key helper process was malformed.
+HttpStatus: 500
+
+Value: 1750
+Name: EXCHANGE_SIGNKEY_HELPER_UNAVAILABLE
+Description: The exchange failed to talk to the process responsible for its private signing keys.
+HttpStatus: 500
+
+Value: 1751
+Name: EXCHANGE_SIGNKEY_HELPER_BUG
+Description: The response from the online signing key helper process was malformed.
+HttpStatus: 500
+
 
 
 # 2000 - 2999: Reserved for merchant
