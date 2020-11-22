@@ -585,6 +585,11 @@ Name: EXCHANGE_DENOMINATION_HELPER_BUG
 Description: The response from the denomination key helper process was malformed.
 HttpStatus: 500
 
+Value: 1702
+Name: EXCHANGE_DENOMINATION_HELPER_TOO_EARLY
+Description: The helper refuses to sign with the key, because it is too early: the validity period has not yet started.
+HttpStatus: 400
+
 Value: 1750
 Name: EXCHANGE_SIGNKEY_HELPER_UNAVAILABLE
 Description: The exchange failed to talk to the process responsible for its private signing keys.
@@ -594,6 +599,11 @@ Value: 1751
 Name: EXCHANGE_SIGNKEY_HELPER_BUG
 Description: The response from the online signing key helper process was malformed.
 HttpStatus: 500
+
+Value: 1752
+Name: EXCHANGE_SIGNKEY_HELPER_TOO_EARLY
+Description: The helper refuses to sign with the key, because it is too early: the validity period has not yet started.
+HttpStatus: 400
 
 
 
