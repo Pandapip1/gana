@@ -675,8 +675,13 @@ Description: The signature conflicts with a previous signature affirming differe
 HttpStatus: 409
 
 Value: 1814
-Name: EXCHANGE_MANAGEMENT_KEYS_DENOMINATION_KEYS_ADD_SIGNATURE_INVALID
+Name: EXCHANGE_MANAGEMENT_KEYS_DENOMKEY_ADD_SIGNATURE_INVALID
 Description: The signature affirming the denomination key is invalid.
+HttpStatus: 403
+
+Value: 1815
+Name: EXCHANGE_MANAGEMENT_KEYS_SIGNKEY_ADD_SIGNATURE_INVALID
+Description: The signature affirming the signing key is invalid.
 HttpStatus: 403
 
 
