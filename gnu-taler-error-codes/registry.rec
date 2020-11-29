@@ -635,7 +635,7 @@ Description: The signature to revoke the online signing key does not validate.
 HttpStatus: 403
 
 Value: 1806
-Name: EXCHANGE_WIRE_MORE_RECENT_PRESENT
+Name: EXCHANGE_MANAGEMENT_WIRE_MORE_RECENT_PRESENT
 Description: The exchange has a more recently signed conflicting instruction and is thus refusing the current change (replay detected).
 HttpStatus: 409
 
@@ -673,6 +673,11 @@ Value: 1813
 Name: EXCHANGE_MANAGEMENT_WIRE_FEE_MISMATCH
 Description: The signature conflicts with a previous signature affirming different fees.
 HttpStatus: 409
+
+Value: 1814
+Name: EXCHANGE_MANAGEMENT_KEYS_DENOMINATION_KEYS_ADD_SIGNATURE_INVALID
+Description: The signature affirming the denomination key is invalid.
+HttpStatus: 403
 
 
 Value: 1900
