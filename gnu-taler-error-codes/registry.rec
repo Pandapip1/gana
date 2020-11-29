@@ -244,8 +244,6 @@ HttpStatus: 410
 
 
 
-
-
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
@@ -604,6 +602,94 @@ Value: 1752
 Name: EXCHANGE_SIGNKEY_HELPER_TOO_EARLY
 Description: The helper refuses to sign with the key, because it is too early: the validity period has not yet started.
 HttpStatus: 400
+
+
+Value: 1800
+Name: EXCHANGE_MANAGEMENT_AUDITOR_NOT_FOUND
+Description: The auditor that was supposed to be disabled is unknown to this exchange.
+HttpStatus: 404
+
+Value: 1801
+Name: EXCHANGE_MANAGEMENT_AUDITOR_MORE_RECENT_PRESENT
+Description: The exchange has a more recently signed conflicting instruction and is thus refusing the current change (replay detected).
+HttpStatus: 409
+
+Value: 1802
+Name: EXCHANGE_MANAGEMENT_AUDITOR_ADD_SIGNATURE_INVALID
+Description: The signature to add or enable the auditor does not validate.
+HttpStatus: 403
+
+Value: 1803
+Name: EXCHANGE_MANAGEMENT_AUDITOR_DEL_SIGNATURE_INVALID
+Description: The signature to disable the auditor does not validate.
+HttpStatus: 403
+
+Value: 1804
+Name: EXCHANGE_MANAGEMENT_DENOMINATION_REVOKE_SIGNATURE_INVALID
+Description: The signature to revoke the denomination does not validate.
+HttpStatus: 403
+
+Value: 1805
+Name: EXCHANGE_MANAGEMENT_SIGNKEY_REVOKE_SIGNATURE_INVALID
+Description: The signature to revoke the online signing key does not validate.
+HttpStatus: 403
+
+Value: 1806
+Name: EXCHANGE_WIRE_MORE_RECENT_PRESENT
+Description: The exchange has a more recently signed conflicting instruction and is thus refusing the current change (replay detected).
+HttpStatus: 409
+
+Value: 1807
+Name: EXCHANGE_MANAGEMENT_KEYS_SIGNKEY_UNKNOWN
+Description: The signingkey specified is unknown to the exchange.
+HttpStatus: 404
+
+Value: 1808
+Name: EXCHANGE_MANAGEMENT_WIRE_DETAILS_SIGNATURE_INVALID
+Description: The signature to publish wire account does not validate.
+HttpStatus: 403
+
+Value: 1809
+Name: EXCHANGE_MANAGEMENT_WIRE_ADD_SIGNATURE_INVALID
+Description: The signature to add the wire account does not validate.
+HttpStatus: 403
+
+Value: 1810
+Name: EXCHANGE_MANAGEMENT_WIRE_DEL_SIGNATURE_INVALID
+Description: The signature to disable the wire account does not validate.
+HttpStatus: 403
+
+Value: 1810
+Name: EXCHANGE_MANAGEMENT_WIRE_NOT_FOUND
+Description: The wire account to be disabled is unknown to the exchange.
+HttpStatus: 404
+
+Value: 1811
+Name: EXCHANGE_MANAGEMENT_WIRE_FEE_SIGNATURE_INVALID
+Description: The signature to affirm wire fees does not validate.
+HttpStatus: 403
+
+Value: 1812
+Name: EXCHANGE_MANAGEMENT_WIRE_FEE_MISMATCH
+Description: The signature conflicts with a previous signature affirming different fees.
+HttpStatus: 409
+
+
+Value: 1900
+Name: EXCHANGE_AUDITORS_AUDITOR_SIGNATURE_INVALID
+Description: The auditor signature over the denomination meta data is invalid.
+HttpStatus: 403
+
+Value: 1901
+Name: EXCHANGE_AUDITORS_AUDITOR_UNKNOWN
+Description: The auditor that was specified is unknown to this exchange.
+HttpStatus: 412
+
+Value: 1902
+Name: EXCHANGE_AUDITORS_AUDITOR_INACTIVE
+Description: The auditor that was specified is no longer used by this exchange.
+HttpStatus: 410
+
 
 
 
