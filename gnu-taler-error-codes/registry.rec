@@ -659,17 +659,17 @@ Name: EXCHANGE_MANAGEMENT_WIRE_DEL_SIGNATURE_INVALID
 Description: The signature to disable the wire account does not validate.
 HttpStatus: 403
 
-Value: 1810
+Value: 1811
 Name: EXCHANGE_MANAGEMENT_WIRE_NOT_FOUND
 Description: The wire account to be disabled is unknown to the exchange.
 HttpStatus: 404
 
-Value: 1811
+Value: 1812
 Name: EXCHANGE_MANAGEMENT_WIRE_FEE_SIGNATURE_INVALID
 Description: The signature to affirm wire fees does not validate.
 HttpStatus: 403
 
-Value: 1812
+Value: 1813
 Name: EXCHANGE_MANAGEMENT_WIRE_FEE_MISMATCH
 Description: The signature conflicts with a previous signature affirming different fees.
 HttpStatus: 409
