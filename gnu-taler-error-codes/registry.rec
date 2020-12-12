@@ -561,6 +561,11 @@ Name: EXCHANGE_RECOUP_COIN_BALANCE_NEGATIVE
 Description: The coin's remaining balance is zero.  The request is denied.
 HttpStatus: 500
 
+Value: 1555
+Name: EXCHANGE_RECOUP_NOT_ELIGIBLE
+Description: The coin's denomination has not been revoked yet.
+HttpStatus: 400
+
 
 Value: 1600
 Name: EXCHANGE_KEYS_TIMETRAVEL_FORBIDDEN
