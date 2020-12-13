@@ -242,7 +242,10 @@ Name: EXCHANGE_GENERIC_DENOMINATION_EXPIRED
 Description: Denomination key of the coin is past its expiration time for the requested operation.
 HttpStatus: 410
 
-
+Value: 1010
+Name: EXCHANGE_GENERIC_DENOMINATION_REVOKED
+Description: Denomination key of the coin has been revoked.
+HttpStatus: 410
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
@@ -308,11 +311,6 @@ Value: 1155
 Name: EXCHANGE_WITHDRAW_HISTORY_ERROR_INSUFFICIENT_FUNDS
 Description: When computing the reserve history, we ended up with a negative overall balance, which should be impossible.
 HttpStatus: 500
-
-Value: 1157
-Name: EXCHANGE_WITHDRAW_VALIDITY_IN_PAST
-Description: Withdraw period of the coin to be withdrawn is in the past.
-HttpStatus: 410
 
 Value: 1158
 Name: EXCHANGE_WITHDRAW_DENOMINATION_KEY_LOST
