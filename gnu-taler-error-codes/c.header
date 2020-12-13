@@ -46,7 +46,7 @@ struct ErrorCodeAndHint
   /**
    * The HTTP status code.
    */
-  unsigned int http_status;
+  unsigned int http_code;
 };
 
 

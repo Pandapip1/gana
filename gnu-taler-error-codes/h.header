@@ -36,6 +36,8 @@ extern "C" {
 #endif
 #endif
 
+#include <limits.h>
+
 
 /**
  * Taler error codes.
