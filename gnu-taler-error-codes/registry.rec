@@ -564,7 +564,7 @@ HttpStatus: 500
 Value: 1555
 Name: EXCHANGE_RECOUP_NOT_ELIGIBLE
 Description: The coin's denomination has not been revoked yet.
-HttpStatus: 400
+HttpStatus: 404
 
 
 Value: 1600
