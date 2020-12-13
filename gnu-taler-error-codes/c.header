@@ -23,6 +23,10 @@
 #include "taler_error_codes.h"
 #include <stddef.h>
 
+/**
+ * MHD does not define our value for 0 (client-side generated code).
+ */
+#define MHD_HTTP_UNINITIALIZED 0
 
 /**
  * A pair containing an error code and its hint.
@@ -38,6 +42,11 @@ struct ErrorCodeAndHint
    * The hint.
    */
   const char *hint;
+
+  /**
+   * The HTTP status code.
+   */
+  unsigned int http_status;
 };
 
 

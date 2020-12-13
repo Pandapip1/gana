@@ -13,6 +13,16 @@ const char *
 TALER_ErrorCode_get_hint (enum TALER_ErrorCode ec);
 
 
+/**
+ * Return HTTP status for a given error code.
+ *
+ * @param ec the error code.
+ * @return the HTTP status code for the given @a ec, UINT_MAX if not found
+ */
+const unsigned int
+TALER_ErrorCode_get_http_status (enum TALER_ErrorCode ec);
+
+
 #if 0 /* keep Emacsens' auto-indent happy */
 {
 #endif
