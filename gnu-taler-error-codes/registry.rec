@@ -1182,6 +1182,11 @@ Name: AUDITOR_DEPOSIT_CONFIRMATION_SIGNATURE_INVALID
 Description: The signature from the exchange on the deposit confirmation is invalid.
 HttpStatus: 403
 
+Value: 3101
+Name: AUDITOR_EXCHANGE_SIGNING_KEY_REVOKED
+Description: The exchange key used for the signature on the deposit confirmation was revoked.
+HttpStatus: 410
+
 
 # 5000 - 5999: Reserved for bank
 # 5000 - 5099: Reserved for BANK_GENERIC
