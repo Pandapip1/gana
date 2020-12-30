@@ -17,3 +17,5 @@
 %mandatory: Identifier
 %allowed: Reference
 %sort: Number
+
+# Do not delete this comment; the above blank line is necessary syntax.
