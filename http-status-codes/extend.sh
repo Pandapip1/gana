@@ -6,6 +6,12 @@ TARGET="$1"
 shift
 cat "$@" > ${TARGET}
 
+# There is a problem w/ some versions of recutils that signals
+# error on rename from /tmp/FOO in recset(1).  Work around that
+# by using current working directory as TMPDIR.
+TMPDIR=`pwd`
+export TMPDIR
+
 for n in `seq 100 599`
 do
     VAL=`recsel -e "Value = $n" -P Description iana.tmp || true`
