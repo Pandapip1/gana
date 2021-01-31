@@ -784,6 +784,11 @@ Name: MERCHANT_GENERIC_EXCHANGE_UNEXPECTED_STATUS
 Description: The exchange returned an unexpected response status.
 HttpStatus: 502
 
+Value: 2015
+Name: MERCHANT_GENERIC_UNAUTHORIZED
+Description: The merchant refused the request due to lack of authorization.
+HttpStatus: 401
+
 
 
 # 2100-2499: public API
