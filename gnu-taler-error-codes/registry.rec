@@ -1435,9 +1435,128 @@ HttpStatus: 0
 # 8000 - 8999: Reserved for Anastasis
 
 Value: 8000
+Name: ANASTASIS_GENERIC_BACKEND_TIMEOUT
+Description: We encountered a timeout with our payment backend.
+HttpStatus: 504
+
+Value: 8100
 Name: ANASTASIS_REDUCER_ACTION_INVALID
 Description: The given action is invalid for the current state of the reducer.
 HttpStatus: 0
+
+Value: 8101
+Name: ANASTASIS_POLICY_BAD_IF_NONE_MATCH
+Description: The given if-none-match header is malformed.
+HttpStatus: 400
+
+Value: 8102
+Name: ANASTASIS_POLICY_MISSING_CONTENT_LENGTH
+Description: The "Content-length" field for the upload is missing.
+HttpStatus: 400
+
+Value: 8103
+Name: ANASTASIS_POLICY_MALFORMED_CONTENT_LENGTH
+Description: The "Content-length" field for the upload is malformed.
+HttpStatus: 400
+
+Value: 8104
+Name: ANASTASIS_POLICY_OUT_OF_MEMORY_ON_CONTENT_LENGTH
+Description: The server is out of memory to handle the upload. Trying again later may succeed.
+HttpStatus: 413
+
+Value: 8105
+Name: ANASTASIS_POLICY_BAD_SIGNATURE
+Description: The signature provided in the "Anastasis-Policy-Signature" header is malformed or missing.
+HttpStatus: 400
+
+Value: 8106
+Name: ANASTASIS_POLICY_BAD_IF_MATCH
+Description: The given if-match header is malformed.
+HttpStatus: 400
+
+Value: 8107
+Name: ANASTASIS_POLICY_INVALID_UPLOAD
+Description: The uploaded data does not match the Etag.
+HttpStatus: 400
+
+Value: 8108
+Name: ANASTASIS_TRUTH_UNKNOWN
+Description: The truth public key is unknown to the provider.
+HttpStatus: 404
+
+Value: 8109
+Name: ANASTASIS_TRUTH_AUTHORIZATION_METHOD_NO_LONGER_SUPPORTED
+Description: The authorization method used by the truth is no longer supported by the provider.
+HttpStatus: 500
+
+Value: 8110
+Name: ANASTASIS_TRUTH_CHALLENGE_RESPONSE_REQUIRED
+Description: The client needs to respond to the challenge.
+HttpStatus: 403
+
+Value: 8111
+Name: ANASTASIS_TRUTH_CHALLENGE_FAILED
+Description: The client's response to the challenge was invalid.
+HttpStatus: 403
+
+Value: 8112
+Name: ANASTASIS_TRUTH_CHALLENGE_UNKNOWN
+Description: The service is unaware of having issued a challenge.
+HttpStatus: 410
+
+Value: 8113
+Name: ANASTASIS_TRUTH_CHALLENGE_ACTIVE
+Description: A challenge is already active, the service is thus not issuing a new one.
+HttpStatus: 208
+
+Value: 8114
+Name: ANASTASIS_TRUTH_AUTHORIZATION_START_FAILED
+Description: The backend failed to initiate the authorization process.
+HttpStatus: 500
+
+Value: 8115
+Name: ANASTASIS_TRUTH_KEY_SHARE_GONE
+Description: The authorization succeeded, but the key share is no longer available.
+HttpStatus: 404
+
+Value: 8116
+Name: ANASTASIS_TRUTH_ORDER_DISAPPEARED
+Description: The backend forgot the order we asked the client to pay for
+HttpStatus: 502
+
+Value: 8117
+Name: ANASTASIS_TRUTH_BACKEND_EXCHANGE_BAD
+Description: The backend itself reported a bad exchange interaction.
+HttpStatus: 502
+
+Value: 8118
+Name: ANASTASIS_TRUTH_UNEXPECTED_PAYMENT_STATUS
+Description: The backend reported a payment status we did not expect.
+HttpStatus: 500
+
+Value: 8119
+Name: ANASTASIS_TRUTH_PAYMENT_CREATE_BACKEND_ERROR
+Description: The backend failed to setup the order for payment.
+HttpStatus: 502
+
+
+
+Value: 8200
+Name: ANASTASIS_SMS_PHONE_INVALID
+Description: The provided phone number is not an acceptable number.
+HttpStatus: 417
+
+Value: 8201
+Name: ANASTASIS_SMS_HELPER_EXEC_FAILED
+Description: Failed to run the SMS transmission helper process.
+HttpStatus: 500
+
+Value: 8202
+Name: ANASTASIS_SMS_HELPER_EXEC_FAILED
+Description: Failed to run the SMS transmission helper process.
+HttpStatus: 500
+
+
 
 
 # 9000 - 9998: Unallocated.
