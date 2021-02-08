@@ -1552,8 +1552,8 @@ Description: Failed to run the SMS transmission helper process.
 HttpStatus: 500
 
 Value: 8202
-Name: ANASTASIS_SMS_HELPER_EXEC_FAILED
-Description: Failed to run the SMS transmission helper process.
+Name: ANASTASIS_SMS_HELPER_COMMAND_FAILED
+Description: Helper terminated with a non-successful result.
 HttpStatus: 500
 
 
