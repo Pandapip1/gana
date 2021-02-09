@@ -1439,6 +1439,11 @@ Name: ANASTASIS_GENERIC_BACKEND_TIMEOUT
 Description: We encountered a timeout with our payment backend.
 HttpStatus: 504
 
+Value: 8001
+Name: ANASTASIS_GENERIC_INVALID_PAYMENT_REQUEST
+Description: The backend requested payment, but the request is malformed.
+HttpStatus: 0
+
 Value: 8100
 Name: ANASTASIS_REDUCER_ACTION_INVALID
 Description: The given action is invalid for the current state of the reducer.
