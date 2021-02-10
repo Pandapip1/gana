@@ -1549,6 +1549,11 @@ Name: ANASTASIS_TRUTH_UPLOAD_UUID_EXISTS
 Description: The backend failed to store the truth because the UUID is already in use.
 HttpStatus: 409
 
+Value: 8151
+Name: ANASTASIS_TRUTH_UPLOAD_METHOD_NOT_SUPPORTED
+Description: The backend failed to store the truth because the authorization method is not supported.
+HttpStatus: 400
+
 
 
 Value: 8200
