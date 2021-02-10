@@ -1465,7 +1465,7 @@ Description: The backend failed to setup an order with the payment processor.
 HttpStatus: 502
 
 Value: 8006
-Name: ANASTASIS_GENERIC_PAYMENT_CHECK_UNAUTHORZED
+Name: ANASTASIS_GENERIC_PAYMENT_CHECK_UNAUTHORIZED
 Description: The backend was not authorized to check for payment with the payment processor.
 HttpStatus: 500
 
