@@ -1444,45 +1444,38 @@ Name: ANASTASIS_GENERIC_INVALID_PAYMENT_REQUEST
 Description: The backend requested payment, but the request is malformed.
 HttpStatus: 0
 
-Value: 8100
-Name: ANASTASIS_REDUCER_ACTION_INVALID
-Description: The given action is invalid for the current state of the reducer.
-HttpStatus: 0
+Value: 8002
+Name: ANASTASIS_GENERIC_BACKEND_ERROR
+Description: The backend got an unexpected reply from the payment processor.
+HttpStatus: 502
 
-Value: 8101
-Name: ANASTASIS_POLICY_BAD_IF_NONE_MATCH
-Description: The given if-none-match header is malformed.
-HttpStatus: 400
-
-Value: 8102
-Name: ANASTASIS_POLICY_MISSING_CONTENT_LENGTH
+Value: 8003
+Name: ANASTASIS_GENERIC_MISSING_CONTENT_LENGTH
 Description: The "Content-length" field for the upload is missing.
 HttpStatus: 400
 
-Value: 8103
-Name: ANASTASIS_POLICY_MALFORMED_CONTENT_LENGTH
+Value: 8004
+Name: ANASTASIS_GENERIC_MALFORMED_CONTENT_LENGTH
 Description: The "Content-length" field for the upload is malformed.
 HttpStatus: 400
 
-Value: 8104
-Name: ANASTASIS_POLICY_OUT_OF_MEMORY_ON_CONTENT_LENGTH
-Description: The server is out of memory to handle the upload. Trying again later may succeed.
-HttpStatus: 413
+Value: 8005
+Name: ANASTASIS_GENERIC_ORDER_CREATE_BACKEND_ERROR
+Description: The backend failed to setup an order with the payment processor.
+HttpStatus: 502
 
-Value: 8105
-Name: ANASTASIS_POLICY_BAD_SIGNATURE
-Description: The signature provided in the "Anastasis-Policy-Signature" header is malformed or missing.
-HttpStatus: 400
+Value: 8006
+Name: ANASTASIS_GENERIC_PAYMENT_CHECK_UNAUTHORZED
+Description: The backend was not authorized to check for payment with the payment processor.
+HttpStatus: 500
 
-Value: 8106
-Name: ANASTASIS_POLICY_BAD_IF_MATCH
-Description: The given if-match header is malformed.
-HttpStatus: 400
+Value: 8007
+Name: ANASTASIS_GENERIC_PAYMENT_CHECK_START_FAILED
+Description: The backend could not check payment status with the payment processor.
+HttpStatus: 500
 
-Value: 8107
-Name: ANASTASIS_POLICY_INVALID_UPLOAD
-Description: The uploaded data does not match the Etag.
-HttpStatus: 400
+
+
 
 Value: 8108
 Name: ANASTASIS_TRUTH_UNKNOWN
@@ -1544,6 +1537,8 @@ Name: ANASTASIS_TRUTH_PAYMENT_CREATE_BACKEND_ERROR
 Description: The backend failed to setup the order for payment.
 HttpStatus: 502
 
+
+
 Value: 8150
 Name: ANASTASIS_TRUTH_UPLOAD_UUID_EXISTS
 Description: The backend failed to store the truth because the UUID is already in use.
@@ -1570,6 +1565,40 @@ Value: 8202
 Name: ANASTASIS_SMS_HELPER_COMMAND_FAILED
 Description: Helper terminated with a non-successful result.
 HttpStatus: 500
+
+
+
+Value: 8301
+Name: ANASTASIS_POLICY_BAD_IF_NONE_MATCH
+Description: The given if-none-match header is malformed.
+HttpStatus: 400
+
+Value: 8304
+Name: ANASTASIS_POLICY_OUT_OF_MEMORY_ON_CONTENT_LENGTH
+Description: The server is out of memory to handle the upload. Trying again later may succeed.
+HttpStatus: 413
+
+Value: 8305
+Name: ANASTASIS_POLICY_BAD_SIGNATURE
+Description: The signature provided in the "Anastasis-Policy-Signature" header is malformed or missing.
+HttpStatus: 400
+
+Value: 8306
+Name: ANASTASIS_POLICY_BAD_IF_MATCH
+Description: The given if-match header is malformed.
+HttpStatus: 400
+
+Value: 8307
+Name: ANASTASIS_POLICY_INVALID_UPLOAD
+Description: The uploaded data does not match the Etag.
+HttpStatus: 400
+
+
+
+Value: 8400
+Name: ANASTASIS_REDUCER_ACTION_INVALID
+Description: The given action is invalid for the current state of the reducer.
+HttpStatus: 0
 
 
 
