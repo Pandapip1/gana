@@ -1544,6 +1544,11 @@ Name: ANASTASIS_TRUTH_PAYMENT_CREATE_BACKEND_ERROR
 Description: The backend failed to setup the order for payment.
 HttpStatus: 502
 
+Value: 8150
+Name: ANASTASIS_TRUTH_UPLOAD_UUID_EXISTS
+Description: The backend failed to store the truth because the UUID is already in use.
+HttpStatus: 409
+
 
 
 Value: 8200
