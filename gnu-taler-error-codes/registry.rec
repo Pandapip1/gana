@@ -1537,7 +1537,7 @@ Name: ANASTASIS_TRUTH_PAYMENT_CREATE_BACKEND_ERROR
 Description: The backend failed to setup the order for payment.
 HttpStatus: 502
 
-Value: 8119
+Value: 8120
 Name: ANASTASIS_TRUTH_DECRYPTION_FAILED
 Description: The decryption of the truth object failed with the provided key.
 HttpStatus: 417
