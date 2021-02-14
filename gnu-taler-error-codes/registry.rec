@@ -1572,6 +1572,22 @@ Description: Helper terminated with a non-successful result.
 HttpStatus: 500
 
 
+Value: 8210
+Name: ANASTASIS_EMAIL_INVALID
+Description: The provided email address is not an acceptable address.
+HttpStatus: 417
+
+Value: 8211
+Name: ANASTASIS_EMAIL_HELPER_EXEC_FAILED
+Description: Failed to run the E-mail transmission helper process.
+HttpStatus: 500
+
+Value: 8212
+Name: ANASTASIS_EMAIL_HELPER_COMMAND_FAILED
+Description: Helper terminated with a non-successful result.
+HttpStatus: 500
+
+
 
 Value: 8301
 Name: ANASTASIS_POLICY_BAD_IF_NONE_MATCH
