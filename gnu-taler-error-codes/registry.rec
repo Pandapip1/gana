@@ -1626,6 +1626,26 @@ Name: ANASTASIS_REDUCER_STATE_INVALID
 Description: The given state of the reducer is invalid.
 HttpStatus: 0
 
+Value: 8402
+Name: ANASTASIS_REDUCER_INPUT_INVALID
+Description: The given input to the reducer is invalid.
+HttpStatus: 0
+
+Value: 8403
+Name: ANASTASIS_REDUCER_AUTHENTICATION_METHOD_NOT_SUPPORTED
+Description: The selected authentication method does ot work for the Anastasis provider.
+HttpStatus: 0
+
+Value: 8404
+Name: ANASTASIS_REDUCER_INPUT_INVALID_FOR_STATE
+Description: The given input and action do not work for the current state.
+HttpStatus: 0
+
+Value: 8405
+Name: ANASTASIS_REDUCER_BACKEND_FAILURE
+Description: We experienced an unexpected failure interacting with the backend.
+HttpStatus: 0
+
 
 
 
