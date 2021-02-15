@@ -1664,8 +1664,10 @@ HttpStatus: 0
 Value: 8409
 Name: ANASTASIS_REDUCER_INPUT_VALIDATION_FAILED
 Description: An input did not match the custom validation logic.
-HttpStatus: 0
 
+
+
+# 9000 - 9998: Unallocated.
 
 
 
