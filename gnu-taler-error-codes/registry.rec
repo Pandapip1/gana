@@ -1621,6 +1621,11 @@ Name: ANASTASIS_REDUCER_ACTION_INVALID
 Description: The given action is invalid for the current state of the reducer.
 HttpStatus: 0
 
+Value: 8401
+Name: ANASTASIS_REDUCER_STATE_INVALID
+Description: The given state of the reducer is invalid.
+HttpStatus: 0
+
 
 
 
