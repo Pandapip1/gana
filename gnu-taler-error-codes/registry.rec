@@ -1646,11 +1646,30 @@ Name: ANASTASIS_REDUCER_BACKEND_FAILURE
 Description: We experienced an unexpected failure interacting with the backend.
 HttpStatus: 0
 
+Value: 8406
+Name: ANASTASIS_REDUCER_RESOURCE_MALFORMED
+Description: The contents of a resource file did not match our expectations.
+HttpStatus: 0
+
+Value: 8407
+Name: ANASTASIS_REDUCER_RESOURCE_MISSING
+Description: A required resource file is missing.
+HttpStatus: 0
+
+Value: 8408
+Name: ANASTASIS_REDUCER_INPUT_REGEX_FAILED
+Description: An input did not match the regular expression.
+HttpStatus: 0
+
+Value: 8409
+Name: ANASTASIS_REDUCER_INPUT_VALIDATION_FAILED
+Description: An input did not match the custom validation logic.
+HttpStatus: 0
+
 
 
 
 # 9000 - 9998: Unallocated.
-
 
 Value: 9999
 Name: END
