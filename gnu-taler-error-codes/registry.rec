@@ -1666,6 +1666,21 @@ Name: ANASTASIS_REDUCER_INPUT_VALIDATION_FAILED
 Description: An input did not match the custom validation logic.
 HttpStatus: 0
 
+Value: 8410
+Name: ANASTASIS_REDUCER_POLICY_LOOKUP_FAILED
+Description: Our attempts to download the recovery document failed with all providers.
+HttpStatus: 0
+
+Value: 8411
+Name: ANASTASIS_REDUCER_BACKUP_PROVIDER_FAILED
+Description: A backup provider reported a fatal failure.
+HttpStatus: 0
+
+Value: 8412
+Name: ANASTASIS_REDUCER_PROVIDER_CONFIG_FAILED
+Description: A backup provider failed to respond to the configuration request.
+HttpStatus: 0
+
 
 
 # 9000 - 9998: Unallocated.
