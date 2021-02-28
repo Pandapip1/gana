@@ -4,7 +4,7 @@
 #
 
 %rec: RecordType
-%key: Number 
+%key: Number
 %type: Number int
 %mandatory: Number
 %typedef: Name_t regexp /^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-]*$/
@@ -68,12 +68,12 @@ Contact: schanzen@gnunet.org
 
 Number: 65548
 Name: DELEGATE
-Comment: for policies
+Comment: For ABD policies
 Contact: schanzen@gnunet.org
 
 Number: 65549
 Name: ATTRIBUTE
-Comment: for reverse lookups
+Comment: For ABD reverse lookups
 Contact: schanzen@gnunet.org
 
 Number: 65550
@@ -81,28 +81,32 @@ Name: RECLAIM_ATTRIBUTE_REF
 Comment: for reclaim records
 Contact: schanzen@gnunet.org
 
-Number: 65551
-Name: RECLAIM_MASTER
-Comment: for RECLAIM master
-Contact: schanzen@gnunet.org
+#Number: 65551
+#Name:
+#Comment:
+#Contact:
 
 Number: 65552
-Name: RECLAIM_TICKET
-Comment: for reclaimOIDC clients
+Name: RECLAIM_OIDC_CLIENT
+Comment: For reclaim OIDC client names.
 Contact: schanzen@gnunet.org
 
 Number: 65553
-Name: RECLAIM_OIDC_CLIENT
-Comment: for reclaim OIDC redirect URIs
+Name: RECLAIM_OIDC_REDIRECT
+Comment: Used reclaimID OIDC client redirect URIs.
 Contact: schanzen@gnunet.org
 
+
 Number: 65554
-Name: RECLAIM_ATTESTATION
-Comment: for reclaim attestation
+Name: RECLAIM_CREDENTIAL
+Comment: Record type for an attribute attestation (e.g. JWT).
 Contact: schanzen@gnunet.org
 
 Number: 65555
-Name: RECLAIM_ATTESTATION_REF
-Comment: for attestation reference in a ticket
+Name: RECLAIM_PRESENTATION
+Comment: Record type for a presentation of a credential.
 Contact: schanzen@gnunet.org
 
+Number: 65556
+Name: EDKEY
+Comment: Record type for EDKEY zone delegations.
