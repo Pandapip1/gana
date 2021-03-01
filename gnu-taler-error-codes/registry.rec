@@ -1109,6 +1109,7 @@ Name: MERCHANT_PRIVATE_POST_INSTANCES_BAD_AUTH
 Description: The merchant backend cannot create an instance because the authentication configuration field is malformed.
 HttpStatus: 400
 
+Value: 2602
 Name: MERCHANT_PRIVATE_POST_INSTANCE_AUTH_BAD_AUTH
 Description: The merchant backend cannot update an instance's authentication settings because the provided authentication settings are malformed.
 HttpStatus: 400
