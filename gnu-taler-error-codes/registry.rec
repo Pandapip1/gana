@@ -58,6 +58,11 @@ Name: GENERIC_REPLY_MALFORMED
 Description: The service responded with a reply that was in JSON but did not satsify the protocol. Note that invalid cryptographic signatures should have signature-specific error codes.
 HttpStatus: 0
 
+Value: 14
+Name: GENERIC_CONFIGURATION_INVALID
+Description: There is an error in the client-side configuration, for example the base URL specified is malformed.
+HttpStatus: 0
+
 # Fundamental client-side protocol problems (20-29)
 # (fundamental: cannot be helped, client is very broken)
 
