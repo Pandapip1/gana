@@ -1109,6 +1109,16 @@ Name: MERCHANT_PRIVATE_POST_INSTANCES_ALREADY_EXISTS
 Description: The merchant backend cannot create an instance under the given identifier as one already exists. Use PATCH to modify the existing entry.
 HttpStatus: 409
 
+Value: 2601
+Name: MERCHANT_PRIVATE_POST_INSTANCES_BAD_AUTH
+Description: The merchant backend cannot create an instance because the authentication configuration field is malformed.
+HttpStatus: 400
+
+Value: 2602
+Name: MERCHANT_PRIVATE_POST_INSTANCE_AUTH_BAD_AUTH
+Description: The merchant backend cannot update an instance's authentication settings because the provided authentication settings are malformed.
+HttpStatus: 400
+
 
 # 2650-2699: product operations
 
