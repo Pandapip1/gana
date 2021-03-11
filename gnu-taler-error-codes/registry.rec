@@ -1609,12 +1609,12 @@ Description: The provided postal address is not an acceptable address.
 HttpStatus: 417
 
 Value: 8221
-Name: ANASTASIS_EMAIL_HELPER_EXEC_FAILED
+Name: ANASTASIS_POST_HELPER_EXEC_FAILED
 Description: Failed to run the mail transmission helper process.
 HttpStatus: 500
 
 Value: 8222
-Name: ANASTASIS_EMAIL_HELPER_COMMAND_FAILED
+Name: ANASTASIS_POST_HELPER_COMMAND_FAILED
 Description: Helper terminated with a non-successful result.
 HttpStatus: 500
 
