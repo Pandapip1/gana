@@ -1490,8 +1490,6 @@ Description: The backend could not check payment status with the payment process
 HttpStatus: 500
 
 
-
-
 Value: 8108
 Name: ANASTASIS_TRUTH_UNKNOWN
 Description: The truth public key is unknown to the provider.
@@ -1557,6 +1555,10 @@ Name: ANASTASIS_TRUTH_DECRYPTION_FAILED
 Description: The decryption of the truth object failed with the provided key.
 HttpStatus: 417
 
+Value: 8121
+Name: ANASTASIS_TRUTH_RATE_LIMITED
+Description: The request rate is too high. The server is refusing requests to guard against brute-force attacks.
+HttpStatus: 429
 
 
 Value: 8150
