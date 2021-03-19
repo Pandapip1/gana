@@ -1714,6 +1714,16 @@ Name: ANASTASIS_REDUCER_PROVIDER_CONFIG_FAILED
 Description: A backup provider failed to respond to the configuration request.
 HttpStatus: 0
 
+Value: 8413
+Name: ANASTASIS_REDUCER_POLICY_MALFORMED
+Description: The policy we downloaded is malformed. Must have been a client error while creating the backup.
+HttpStatus: 0
+
+Value: 8414
+Name: ANASTASIS_REDUCER_NETWORK_FAILRED
+Description: We failed to obtain the policy, likely due to a network issue.
+HttpStatus: 0
+
 
 
 # 9000 - 9998: Unallocated.
