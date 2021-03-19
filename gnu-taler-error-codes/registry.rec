@@ -1720,7 +1720,7 @@ Description: The policy we downloaded is malformed. Must have been a client erro
 HttpStatus: 0
 
 Value: 8414
-Name: ANASTASIS_REDUCER_NETWORK_FAILRED
+Name: ANASTASIS_REDUCER_NETWORK_FAILED
 Description: We failed to obtain the policy, likely due to a network issue.
 HttpStatus: 0
 
