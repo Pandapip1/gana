@@ -1647,6 +1647,11 @@ Name: ANASTASIS_POLICY_INVALID_UPLOAD
 Description: The uploaded data does not match the Etag.
 HttpStatus: 400
 
+Value: 8350
+Name: ANASTASIS_POLICY_NOT_FOUND
+Description: The provider is unaware of the requested policy.
+HttpStatus: 404
+
 
 
 Value: 8400
