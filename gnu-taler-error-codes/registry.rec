@@ -1119,6 +1119,16 @@ Name: MERCHANT_PRIVATE_POST_INSTANCE_AUTH_BAD_AUTH
 Description: The merchant backend cannot update an instance's authentication settings because the provided authentication settings are malformed.
 HttpStatus: 400
 
+Value: 2603
+Name: MERCHANT_PRIVATE_POST_INSTANCES_PURGE_REQUIRED
+Description: The merchant backend cannot create an instance under the given identifier, the previous one was deleted but must be purged first.
+HttpStatus: 409
+
+Value: 2625
+Name: MERCHANT_PRIVATE_PATCH_INSTANCES_PURGE_REQUIRED
+Description: The merchant backend cannot update an instance under the given identifier, the previous one was deleted but must be purged first.
+HttpStatus: 409
+
 
 # 2650-2699: product operations
 
