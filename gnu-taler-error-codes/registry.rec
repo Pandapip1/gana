@@ -794,6 +794,10 @@ Name: MERCHANT_GENERIC_UNAUTHORIZED
 Description: The merchant refused the request due to lack of authorization.
 HttpStatus: 401
 
+Value: 2016
+Name: MERCHANT_GENERIC_INSTANCE_DELETED
+Description: The merchant instance specified in the request was deleted.
+HttpStatus: 404
 
 
 # 2100-2499: public API
