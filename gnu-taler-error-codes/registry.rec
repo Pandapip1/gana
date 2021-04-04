@@ -1743,7 +1743,10 @@ Name: ANASTASIS_REDUCER_NETWORK_FAILED
 Description: We failed to obtain the policy, likely due to a network issue.
 HttpStatus: 0
 
-
+Value: 8415
+Name: ANASTASIS_REDUCER_SECRET_MALFORMED
+Description: The recovered secret did not match the required syntax.
+HttpStatus: 0
 
 # 9000 - 9998: Unallocated.
 
