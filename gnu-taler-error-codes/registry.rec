@@ -1725,12 +1725,12 @@ HttpStatus: 0
 
 Value: 8411
 Name: ANASTASIS_REDUCER_BACKUP_PROVIDER_FAILED
-Description: A backup provider reported a fatal failure.
+Description: Anastasis provider reported a fatal failure.
 HttpStatus: 0
 
 Value: 8412
 Name: ANASTASIS_REDUCER_PROVIDER_CONFIG_FAILED
-Description: A backup provider failed to respond to the configuration request.
+Description: Anastasis provider failed to respond to the configuration request.
 HttpStatus: 0
 
 Value: 8413
