@@ -23,6 +23,7 @@
 #include "taler_error_codes.h"
 #include <stddef.h>
 #include <microhttpd.h>
+#include <gettext.h>
 
 /**
  * MHD does not define our value for 0 (client-side generated code).
