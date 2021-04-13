@@ -1466,6 +1466,11 @@ Name: WALLET_CONTRACT_TERMS_SIGNATURE_INVALID
 Description: The merchant's signature on the contract terms is invalid.
 HttpStatus: 0
 
+Value: 7020
+Name: WALLET_CONTRACT_TERMS_MALFORMED
+Description: The contract terms given by the merchant are malformed.
+HttpStatus: 0
+
 # 8000 - 8999: Reserved for Anastasis
 
 Value: 8000
