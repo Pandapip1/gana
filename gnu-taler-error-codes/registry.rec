@@ -1172,6 +1172,11 @@ Name: MERCHANT_PRIVATE_PATCH_PRODUCTS_TOTAL_STOCKED_REDUCED
 Description: The update would have reduced the total amount of product in stock, which is not allowed.
 HttpStatus: 409
 
+Value: 2663
+Name: MERCHANT_PRIVATE_PATCH_PRODUCTS_TOTAL_SOLD_REDUCED
+Description: The update would have reduced the total amount of product sold, which is not allowed.
+HttpStatus: 409
+
 Value: 2670
 Name: MERCHANT_PRIVATE_POST_PRODUCTS_LOCK_INSUFFICIENT_STOCKS
 Description: The lock request is for more products than we have left (unlocked) in stock.
