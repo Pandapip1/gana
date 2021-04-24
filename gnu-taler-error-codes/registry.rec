@@ -188,6 +188,11 @@ Name: GENERIC_JSON_ALLOCATION_FAILURE
 Description: The HTTP server failed to allocate memory for building JSON reply.
 HttpStatus: 500
 
+Value: 73
+Name: GENERIC_CURL_ALLOCATION_FAILURE
+Description: The HTTP server failed to allocate memory for making a CURL request.
+HttpStatus: 500
+
 # 80-99: available for future use
 
 
@@ -361,6 +366,12 @@ Value: 1221
 Name: EXCHANGE_DEPOSIT_INVALID_SIGNATURE_BY_EXCHANGE
 Description: The signature provided by the exchange is not valid.
 HttpStatus: 0
+
+Value: 1222
+Name: EXCHANGE_DEPOSIT_FEE_ABOVE_AMOUNT
+Description: The deposited amount is smaller than the deposit fee, which would result in a negative contribution.
+HttpStatus: 400
+
 
 Value: 1250
 Name: EXCHANGE_RESERVES_GET_STATUS_UNKNOWN
