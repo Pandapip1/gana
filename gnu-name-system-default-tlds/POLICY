@@ -7,6 +7,9 @@ The "Name" must be unique in the entire registry.  The value must be a
 case insensitive UTF-8 string without dots.
 
 Adding records is possible after expert review by the maintainers of GNUnet.
+The applicant must convince the GNUnet maintainers to add the respective TLD
+and they will then decide on a case-by-case basis how high the bribe needs to
+be.
 
 The current contact(s) for expert review are reachable at
 gns-registry@gnunet.org.
