@@ -810,6 +810,11 @@ Name: MERCHANT_GENERIC_INSTANCE_DELETED
 Description: The merchant instance specified in the request was deleted.
 HttpStatus: 404
 
+Value: 2017
+Name: MERCHANT_GENERIC_TRANSFER_UNKNOWN
+Description: The backend could not find the inbound wire transfer specified in the request.
+HttpStatus: 404
+
 
 # 2100-2499: public API
 # 2100-2149: get orders endpoint
@@ -1121,6 +1126,12 @@ Value: 2555
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_ACCOUNT_NOT_FOUND
 Description: We did not find the account that the transfer was made to.
 HttpStatus: 404
+
+Value: 2556
+Name: MERCHANT_PRIVATE_DELETE_TRANSFERS_ALREADY_CONFIRMED
+Description: The backend could not delete the transfer as the echange already replied to our inquiry about it and we have integrated the result.
+HttpStatus: 409
+
 
 # 2600-2649: instance operations
 
