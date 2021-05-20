@@ -1322,6 +1322,12 @@ Name: BANK_WITHDRAWAL_OPERATION_RESERVE_SELECTION_CONFLICT
 Description: The withdrawal operation already has a reserve selected.  The current request conflicts with the existing selection.
 HttpStatus: 409
 
+Value: 5114
+Name: BANK_DUPLICATE_RESERVE_PUB_SUBJECT
+Description: The wire transfer subject duplicates an existing reserve public key. But wire transfer subjects must be unique.
+HttpStatus: 409
+
+
 # 6000 - 6999: Reserved for sync
 # 6000 - 6099: Reserved for SYNC_GENERIC
 
