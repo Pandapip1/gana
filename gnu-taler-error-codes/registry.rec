@@ -1141,6 +1141,11 @@ Name: MERCHANT_PRIVATE_DELETE_TRANSFERS_ALREADY_CONFIRMED
 Description: The backend could not delete the transfer as the echange already replied to our inquiry about it and we have integrated the result.
 HttpStatus: 409
 
+Value: 2557
+Name: MERCHANT_PRIVATE_POST_TRANSFERS_CONFLICTING_SUBMISSION
+Description: The backend was previously informed about a wire transfer with the same ID but a different amount. Multiple wire transfers with the same ID are not allowed. If the new amount is correct, the old transfer should first be deleted.
+HttpStatus: 409
+
 
 # 2600-2649: instance operations
 
