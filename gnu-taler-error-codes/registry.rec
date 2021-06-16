@@ -1106,10 +1106,15 @@ HttpStatus: 403
 
 # 2550-2599: transfer operations
 
+Value: 2550
+Name: MERCHANT_PRIVATE_POST_TRANSFERS_EXCHANGE_UNKNOWN
+Description: The exchange says it does not know this transfer.
+HttpStatus: 502
+
 Value: 2551
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_REQUEST_ERROR
 Description: We internally failed to execute the /track/transfer request.
-HttpStatus: 500
+HttpStatus: 502
 
 Value: 2552
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_CONFLICTING_TRANSFERS
