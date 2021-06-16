@@ -1106,11 +1106,15 @@ HttpStatus: 403
 
 # 2550-2599: transfer operations
 
-
 Value: 2551
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_REQUEST_ERROR
 Description: We internally failed to execute the /track/transfer request.
 HttpStatus: 500
+
+Value: 2552
+Name: MERCHANT_PRIVATE_POST_TRANSFERS_CONFLICTING_TRANSFERS
+Description: The amount transferred differs between what was submitted and what the exchange claimed.
+HttpStatus: 409
 
 Value: 2553
 Name: MERCHANT_PRIVATE_POST_TRANSFERS_CONFLICTING_REPORTS
