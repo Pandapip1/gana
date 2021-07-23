@@ -81,6 +81,11 @@ Name: GENERIC_JSON_INVALID
 Description: The JSON in the client's request was malformed (generic parse error).
 HttpStatus: 400
 
+Value: 23
+Name: GENERIC_HTTP_HEADERS_MALFORMED
+Description: Some of the HTTP headers provided by the client caused the server to not be able to handle the request.
+HttpStatus: 400
+
 Value: 24
 Name: GENERIC_PAYTO_URI_MALFORMED
 Description: The payto:// URI provided by the client is malformed.
