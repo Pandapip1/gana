@@ -1,0 +1,27 @@
+# -*- mode: rec -*-
+#
+# Registry for Taler database event trigger types
+#
+%rec: TalerDatabaseEventTriggerTypes
+%key: Value
+%typedef: ValueRange_t range 0 65535
+%type: Value ValueRange_t
+%mandatory: Value
+%typedef: Description_t regexp |^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\)\.,;!"':#\/ -]*$|
+%type: Description Description_t
+%mandatory: Description
+%typedef: Name_t regexp /^[ABCDEFGHIJKLMNOPQRSTUVWXYZ_][ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789]*$/
+%type: Name Name_t
+%unique: Name
+%mandatory: Name
+%sort: Value
+
+# 0 - 999: Reserved for GNUnet
+
+# 1000-1099: For Taler Exchange
+
+# 1100-1199: For Taler Merchant
+
+Value: 1100
+Name: MERCHANT_INSTANCE_SETTINGS
+Description: Some instance setting was changed (new instance, deleted instance, change options)

@@ -947,7 +947,7 @@ HttpStatus: 502
 Value: 2200
 Name: MERCHANT_POST_ORDERS_ID_PAID_CONTRACT_HASH_MISMATCH
 Description: The contract hash does not match the given order ID.
-HttpStatus: 409
+HttpStatus: 400
 
 Value: 2201
 Name: MERCHANT_POST_ORDERS_ID_PAID_COIN_SIGNATURE_INVALID
