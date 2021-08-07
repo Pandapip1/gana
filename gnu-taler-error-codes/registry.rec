@@ -1831,7 +1831,28 @@ Description: The provider returned in invalid configuration.
 HttpStatus: 0
 
 
-# 9000 - 9998: Unallocated.
+# 9000 - 9998: LibEuFin.
+
+Value: 9000
+Name: LIBEUFIN_NEXUS_GENERIC_ERROR
+Description: A generic error happened in the LibEuFin nexus.  See the enclose details JSON for more information.
+HttpStatus: 0
+
+Value: 9001
+Name: LIBEUFIN_NEXUS_UNCAUGHT_EXCEPTION
+Description: An uncaught exception happened in the LibEuFin nexus service.
+HttpStatus: 500
+
+Value: 9500
+Name: LIBEUFIN_SANDBOX_GENERIC_ERROR
+Description: A generic error happened in the LibEuFin sandbox.  See the enclose details JSON for more information.
+HttpStatus: 0
+
+Value: 9501
+Name: LIBEUFIN_SANDBOX_UNCAUGHT_EXCEPTION
+Description: An uncaught exception happened in the LibEuFin sandbox service.
+HttpStatus: 500
+
 
 Value: 9999
 Name: END
