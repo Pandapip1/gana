@@ -596,6 +596,21 @@ Name: EXCHANGE_WIRE_SIGNATURE_INVALID
 Description: A signature in the server's response was malformed.
 HttpStatus: 0
 
+Value: 1651
+Name: EXCHANGE_WIRE_NO_ACCOUNTS_CONFIGURED
+Description: No bank accounts are enabled for the exchange. The administrator should `enable-account` using the taler-exchange-offline tool.
+HttpStatus: 500
+
+Value: 1652
+Name: EXCHANGE_WIRE_INVALID_PAYTO_CONFIGURED
+Description: The payto:// URI stored in the exchange database for its bank account is malformed.
+HttpStatus: 500
+
+Value: 1653
+Name: EXCHANGE_WIRE_FEES_NOT_CONFIGURED
+Description: No wire fees are configured for an enabled wire method of the exchange. The administrator must set the `wire-fee` using the taler-exchange-offline tool.
+HttpStatus: 500
+
 
 Value: 1700
 Name: EXCHANGE_DENOMINATION_HELPER_UNAVAILABLE
