@@ -1656,6 +1656,11 @@ Name: ANASTASIS_TRUTH_RATE_LIMITED
 Description: The request rate is too high. The server is refusing requests to guard against brute-force attacks.
 HttpStatus: 429
 
+Value: 8122
+Name: ANASTASIS_TRUTH_AUTH_TIMEOUT
+Description: The authentication process did not yet complete. The user should try again later.
+HttpStatus: 408
+
 
 Value: 8150
 Name: ANASTASIS_TRUTH_UPLOAD_UUID_EXISTS
