@@ -857,7 +857,12 @@ HttpStatus: 500
 
 Value: 2105
 Name: MERCHANT_GET_ORDERS_ID_INVALID_TOKEN
-Description: The token used to authenticate the client is invalid for this order.
+Description: The claim token used to authenticate the client is invalid for this order.
+HttpStatus: 403
+
+Value: 2106
+Name: MERCHANT_GET_ORDERS_ID_INVALID_CONTRACT_HASH
+Description: The contract terms hash used to authenticate the client is invalid for this order.
 HttpStatus: 403
 
 # 2150-2199: post orders ID pay endpoint
