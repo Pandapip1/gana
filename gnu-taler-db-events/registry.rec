@@ -28,6 +28,10 @@ Value: 1001
 Name: EXCHANGE_KEYS_UPDATED
 Description: Event triggered when new online signing keys are activated via the management API.
 
+Value: 1002
+Name: EXCHANGE_WIRE_UPDATED
+Description: Event triggered when the wire response was changed via the management API.
+
 # 1100-1199: For Taler Merchant
 
 Value: 1100
