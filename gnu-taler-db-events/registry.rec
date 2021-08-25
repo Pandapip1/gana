@@ -54,6 +54,10 @@ Value: 1104
 Name: MERCHANT_REFUND_OBTAINED
 Description: Event triggered when a refund is obtained by a wallet.
 
+Value: 1105
+Name: MERCHANT_ORDERS_CHANGE
+Description: Event triggered when the set of orders or their state changes.
+
 
 # 2000-2099: For Anastasis
 
