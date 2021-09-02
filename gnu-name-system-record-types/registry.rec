@@ -110,3 +110,8 @@ Contact: schanzen@gnunet.org
 Number: 65556
 Name: EDKEY
 Comment: Record type for EDKEY zone delegations.
+
+Number: 65557
+Name: ERIS_READ_CAPABILITY
+Comment: Encoding for Robust Immutable Storage (ERIS) binary read capability
+Reference: http://purl.org/eris
