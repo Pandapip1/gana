@@ -1733,6 +1733,17 @@ Description: The provided IBAN address is not an acceptable IBAN.
 HttpStatus: 417
 
 
+Value: 8240
+Name: ANASTASIS_TOTP_KEY_MISSING
+Description: The backend did not find a TOTP key in the data provided.
+HttpStatus: 417
+
+Value: 8241
+Name: ANASTASIS_TOTP_KEY_INVALID
+Description: The key provided does not satisfy the format restrictions for an Anastasis TOTP key.
+HttpStatus: 417
+
+
 Value: 8301
 Name: ANASTASIS_POLICY_BAD_IF_NONE_MATCH
 Description: The given if-none-match header is malformed.
