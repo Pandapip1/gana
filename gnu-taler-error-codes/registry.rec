@@ -1691,7 +1691,7 @@ HttpStatus: 500
 
 Value: 8202
 Name: ANASTASIS_SMS_HELPER_COMMAND_FAILED
-Description: Helper terminated with a non-successful result.
+Description: Provider failed to send SMS. Helper terminated with a non-successful result.
 HttpStatus: 500
 
 
@@ -1707,7 +1707,7 @@ HttpStatus: 500
 
 Value: 8212
 Name: ANASTASIS_EMAIL_HELPER_COMMAND_FAILED
-Description: Helper terminated with a non-successful result.
+Description: Provider failed to send E-mail. Helper terminated with a non-successful result.
 HttpStatus: 500
 
 
@@ -1723,7 +1723,7 @@ HttpStatus: 500
 
 Value: 8222
 Name: ANASTASIS_POST_HELPER_COMMAND_FAILED
-Description: Helper terminated with a non-successful result.
+Description: Provider failed to send mail. Helper terminated with a non-successful result.
 HttpStatus: 500
 
 
