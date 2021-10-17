@@ -739,6 +739,10 @@ Name: EXCHANGE_AUDITORS_AUDITOR_INACTIVE
 Description: The auditor that was specified is no longer used by this exchange.
 HttpStatus: 410
 
+Value: 1925
+Name: EXCHANGE_KYC_WALLET_SIGNATURE_INVALID
+Description: The signature affirming the wallet's KYC request was invalid.
+HttpStatus: 403
 
 
 
