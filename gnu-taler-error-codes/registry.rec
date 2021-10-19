@@ -744,6 +744,22 @@ Name: EXCHANGE_KYC_WALLET_SIGNATURE_INVALID
 Description: The signature affirming the wallet's KYC request was invalid.
 HttpStatus: 403
 
+Value: 1926
+Name: EXCHANGE_KYC_PROOF_BACKEND_INVALID_RESPONSE
+Description: The exchange received an unexpected malformed response from its KYC backend.
+HttpStatus: 502
+
+Value: 1927
+Name: EXCHANGE_KYC_PROOF_BACKEND_ERROR
+Description: The backend signaled an unexpected failure.
+HttpStatus: 502
+
+Value: 1928
+Name: EXCHANGE_KYC_PROOF_BACKEND_AUTHORIZATION_FAILED
+Description: The backend signaled an authorization failure.
+HttpStatus: 403
+
+
 
 
 # 2000 - 2999: Reserved for merchant
