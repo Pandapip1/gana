@@ -1,0 +1,33 @@
+# -*- mode: rec -*-
+#
+# Registry for GNU Taler extensions, as per Design document 6
+#
+%rec: TalerExtensions
+%key: Identifier
+%typedef: Identifier_t regexp /^[ABCDEFGHIJKLMNOPQRSTUVWXYZ_][ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789:\.]*$/
+%type: Identifier Identifier_t
+%unique: Identifier
+%mandatory: Identifier
+%typedef: Description_t regexp |^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\)\.,;!"':#\/ -]*$|
+%type: Description Description_t
+%mandatory: Description
+%mandatory: Critical
+%type: Critical bool
+%allowed: Contact
+%allowed: References
+%sort: Identifier Description Contact References
+
+
+Identifier: AGE_RESTRICTIONS
+Description: Restrictions to limit spending of coins on products that are legally sold only to customers below a given age.
+Critical: true
+Contact: taler+oec@kesim.org
+References: Design document 24
+
+Identifier: P2P_PAYMENTS
+Description: Support for payments directly between wallets.
+Critical: false
+Contact: team@taler.net
+References: Design document 13
+
+
