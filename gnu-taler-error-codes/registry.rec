@@ -759,6 +759,11 @@ Name: EXCHANGE_KYC_PROOF_BACKEND_AUTHORIZATION_FAILED
 Description: The backend signaled an authorization failure.
 HttpStatus: 403
 
+Value: 1930
+Name: EXCHANGE_KYC_CHECK_AUTHORIZATION_FAILED
+Description: The payto-URI hash did not match. Hence the request was denied.
+HttpStatus: 401
+
 
 
 
