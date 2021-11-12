@@ -262,6 +262,11 @@ Name: EXCHANGE_GENERIC_DENOMINATION_REVOKED
 Description: Denomination key of the coin has been revoked.
 HttpStatus: 410
 
+Value: 1011
+Name: EXCHANGE_GENERIC_SECMOD_TIMEOUT
+Description: An operation where the exchange interacted with a security module timed out.
+HttpStatus: 500
+
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
