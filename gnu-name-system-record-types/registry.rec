@@ -115,3 +115,8 @@ Number: 65557
 Name: ERIS_READ_CAPABILITY
 Comment: Encoding for Robust Immutable Storage (ERIS) binary read capability
 References: http://purl.org/eris
+
+Number: 65558
+Name: MESSENGER_ROOM_ENTRY
+Comment: Record type to share an entry of a messenger room
+Contact: thejackimonster@gmail.com
