@@ -114,4 +114,4 @@ Comment: Record type for EDKEY zone delegations.
 Number: 65557
 Name: ERIS_READ_CAPABILITY
 Comment: Encoding for Robust Immutable Storage (ERIS) binary read capability
-Reference: http://purl.org/eris
+References: http://purl.org/eris
