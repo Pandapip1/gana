@@ -32,6 +32,10 @@ Value: 1002
 Name: EXCHANGE_WIRE_UPDATED
 Description: Event triggered when the wire response was changed via the management API.
 
+Value: 1003
+NAme: EXCHANGE_KYC_COMPLETED
+Description: Event triggered when a user completed a KYC process.
+
 # 1100-1199: For Taler Merchant
 
 Value: 1100
