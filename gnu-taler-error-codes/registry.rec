@@ -245,7 +245,7 @@ HttpStatus: 403
 Value: 1007
 Name: EXCHANGE_GENERIC_KEYS_MISSING
 Description: The exchange failed to perform the operation as it could not find the private keys. This is a problem with the exchange setup, not with the client's request.
-HttpStatus: 500
+HttpStatus: 503
 
 Value: 1008
 Name: EXCHANGE_GENERIC_DENOMINATION_VALIDITY_IN_FUTURE
