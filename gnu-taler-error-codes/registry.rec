@@ -267,6 +267,24 @@ Name: EXCHANGE_GENERIC_SECMOD_TIMEOUT
 Description: An operation where the exchange interacted with a security module timed out.
 HttpStatus: 500
 
+Value: 1012
+Name: EXCHANGE_GENERIC_INSUFFICIENT_FUNDS
+Description: The respective coin did not have sufficient residual value for the operation.  The "history" in this response provdes the "residual_value" of the coin, which may be less than its "original_value".
+HttpStatus: 409
+
+Value: 1013
+Name: EXCHANGE_GENERIC_COIN_HISTORY_COMPUTATION_FAILED
+Description: The exchange had an internal error reconstructing the transaction history of the coin that was being processed.
+HttpStatus: 500
+
+Value: 1014
+Name: EXCHANGE_GENERIC_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
+Description: The exchange failed to obtain the transaction history of the given coin from the database while generating an insufficient funds errors.
+HttpStatus: 500
+
+
+
+
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
@@ -342,11 +360,6 @@ Name: EXCHANGE_WITHDRAW_UNBLIND_FAILURE
 Description: The client failed to unblind the blind signature.
 HttpStatus: 0
 
-Value: 1200
-Name: EXCHANGE_DEPOSIT_INSUFFICIENT_FUNDS
-Description: The respective coin did not have sufficient residual value for the /deposit operation (i.e. due to double spending). The "history" in the response provides the transaction history of the coin proving this fact.
-HttpStatus: 409
-
 Value: 1205
 Name: EXCHANGE_DEPOSIT_COIN_SIGNATURE_INVALID
 Description: The signature made by the coin over the deposit permission is not valid.
@@ -388,16 +401,6 @@ Name: EXCHANGE_RESERVES_GET_STATUS_UNKNOWN
 Description: The reserve status was requested using a unknown key.
 HttpStatus: 404
 
-Value: 1300
-Name: EXCHANGE_MELT_INSUFFICIENT_FUNDS
-Description: The respective coin did not have sufficient residual value for the /refresh/melt operation.  The "history" in this response provdes the "residual_value" of the coin, which may be less than its "original_value".
-HttpStatus: 409
-
-Value: 1301
-Name: EXCHANGE_MELT_COIN_HISTORY_COMPUTATION_FAILED
-Description: The exchange had an internal error reconstructing the transaction history of the coin that was being melted.
-HttpStatus: 500
-
 Value: 1302
 Name: EXCHANGE_MELT_FEES_EXCEED_CONTRIBUTION
 Description: The exchange encountered melt fees exceeding the melted coin's contribution.
@@ -407,11 +410,6 @@ Value: 1303
 Name: EXCHANGE_MELT_COIN_SIGNATURE_INVALID
 Description: The signature made with the coin to be melted is invalid.
 HttpStatus: 403
-
-Value: 1304
-Name: EXCHANGE_MELT_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
-Description: The exchange failed to obtain the transaction history of the given coin from the database while generating an insufficient funds errors.
-HttpStatus: 500
 
 Value: 1305
 Name: EXCHANGE_MELT_COIN_EXPIRED_NO_ZOMBIE
