@@ -282,6 +282,10 @@ Name: EXCHANGE_GENERIC_HISTORY_DB_ERROR_INSUFFICIENT_FUNDS
 Description: The exchange failed to obtain the transaction history of the given coin from the database while generating an insufficient funds errors.
 HttpStatus: 500
 
+Value: 1015
+Name: EXCHANGE_GENERIC_COIN_CONFLICTING_AGE_HASH
+Description: The same coin was already used with a different age hash previously.
+HttpStatus: 409
 
 
 
@@ -364,6 +368,11 @@ Value: 1205
 Name: EXCHANGE_DEPOSIT_COIN_SIGNATURE_INVALID
 Description: The signature made by the coin over the deposit permission is not valid.
 HttpStatus: 403
+
+Value: 1206
+Name: EXCHANGE_DEPOSIT_CONFLICTING_CONTRACT
+Description: The same coin was already deposited for the same merchant and contract with other details.
+HttpStatus: 409
 
 Value: 1207
 Name: EXCHANGE_DEPOSIT_NEGATIVE_VALUE_AFTER_FEE
