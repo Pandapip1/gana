@@ -577,23 +577,33 @@ Name: EXCHANGE_RECOUP_WITHDRAW_NOT_FOUND
 Description: The exchange could not find the corresponding withdraw operation. The request is denied.
 HttpStatus: 404
 
-Value: 1552
-Name: EXCHANGE_RECOUP_COIN_BALANCE_ZERO
-Description: The coin's remaining balance is zero.  The request is denied.
-HttpStatus: 403
-
 Value: 1553
 Name: EXCHANGE_RECOUP_BLINDING_FAILED
 Description: The exchange failed to reproduce the coin's blinding.
 HttpStatus: 500
 
-Value: 1554
-Name: EXCHANGE_RECOUP_COIN_BALANCE_NEGATIVE
-Description: The coin's remaining balance is zero.  The request is denied.
-HttpStatus: 500
-
 Value: 1555
 Name: EXCHANGE_RECOUP_NOT_ELIGIBLE
+Description: The coin's denomination has not been revoked yet.
+HttpStatus: 404
+
+Value: 1575
+Name: EXCHANGE_RECOUP_REFRESH_SIGNATURE_INVALID
+Description: The given coin signature is invalid for the request.
+HttpStatus: 403
+
+Value: 1576
+Name: EXCHANGE_RECOUP_REFRESH_MELT_NOT_FOUND
+Description: The exchange could not find the corresponding melt operation. The request is denied.
+HttpStatus: 404
+
+Value: 1578
+Name: EXCHANGE_RECOUP_REFRESH_BLINDING_FAILED
+Description: The exchange failed to reproduce the coin's blinding.
+HttpStatus: 500
+
+Value: 1580
+Name: EXCHANGE_RECOUP_REFRESH_NOT_ELIGIBLE
 Description: The coin's denomination has not been revoked yet.
 HttpStatus: 404
 
