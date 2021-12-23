@@ -21,7 +21,7 @@
 Identifier: AGE_RESTRICTIONS
 Description: Restrictions to limit spending of coins on products that are legally sold only to customers below a given age.
 Critical: true
-Contact: taler+oec@kesim.org
+Contact: oec-taler@kesim.org
 References: Design document 24
 
 Identifier: P2P_PAYMENTS
