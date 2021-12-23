@@ -36,6 +36,10 @@ Value: 1003
 Name: EXCHANGE_KYC_COMPLETED
 Description: Event triggered when a user completed a KYC process.
 
+Value: 1004
+Name: EXCHANGE_EXTENSIONS_UPDATED
+Description: Event triggered when the configuration of an extension is updated.
+
 # 1100-1199: For Taler Merchant
 
 Value: 1100
