@@ -577,10 +577,22 @@ Name: EXCHANGE_RECOUP_WITHDRAW_NOT_FOUND
 Description: The exchange could not find the corresponding withdraw operation. The request is denied.
 HttpStatus: 404
 
+Value: 1552
+Name: EXCHANGE_RECOUP_COIN_BALANCE_ZERO
+Description: The coin's remaining balance is zero.  The request is denied.
+HttpStatus: 403
+Note: dead in latest cde
+
 Value: 1553
 Name: EXCHANGE_RECOUP_BLINDING_FAILED
 Description: The exchange failed to reproduce the coin's blinding.
 HttpStatus: 500
+
+Value: 1554
+Name: EXCHANGE_RECOUP_COIN_BALANCE_NEGATIVE
+Description: The coin's remaining balance is zero.  The request is denied.
+HttpStatus: 500
+Note: dead in latest cde
 
 Value: 1555
 Name: EXCHANGE_RECOUP_NOT_ELIGIBLE
