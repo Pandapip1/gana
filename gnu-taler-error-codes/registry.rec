@@ -1649,6 +1649,11 @@ Name: ANASTASIS_GENERIC_PAYMENT_CHECK_START_FAILED
 Description: The backend could not check payment status with the payment processor.
 HttpStatus: 500
 
+Value: 8008
+Name: ANASTASIS_GENERIC_PROVIDER_UNREACHABLE
+Description: The Anastasis provider could not be reached.
+HttpStatus: 0
+
 
 Value: 8108
 Name: ANASTASIS_TRUTH_UNKNOWN
