@@ -1654,6 +1654,11 @@ Name: ANASTASIS_GENERIC_PROVIDER_UNREACHABLE
 Description: The Anastasis provider could not be reached.
 HttpStatus: 0
 
+Value: 8009
+Name: ANASTASIS_PAYMENT_GENERIC_TIMEOUT
+Description: HTTP server experienced a timeout while awaiting promised payment.
+HttpStatus: 408
+
 
 Value: 8108
 Name: ANASTASIS_TRUTH_UNKNOWN
