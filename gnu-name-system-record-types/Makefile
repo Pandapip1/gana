@@ -5,7 +5,6 @@ check:
 	recfix --check registry.rec
 
 distclean:
-
 	rm -f *.tmp
 clean:
 	rm -f $(FILES) *.tmp

@@ -1,6 +1,6 @@
-FILES=registry.rec gnunet_signatures.h
+FILES=gnunet_signatures.h
 all: check $(FILES)
-check: registry.rec
+check:
 	recfix --check registry.rec
 distclean:
 	rm -f *.tmp
