@@ -51,6 +51,16 @@ Name: DNS_RECORD
 Comment: Signature on a GNUNET_DNS_Advertisement.
 Subsystem: GNUnet-DNS+Exit
 
+Number: 12
+Name: CHAT_MESSAGE
+Comment: Signature of a chat message.
+Subsystem: GNUnet-MESSENGER
+
+Number: 13
+Name: CHAT_RECEIPT
+Comment: Signature of confirmation receipt for a chat message.
+Subsystem: GNUnet-MESSENGER
+
 Number: 14
 Name: NSE_SEND
 Comment: Signature of a network size estimate message.
