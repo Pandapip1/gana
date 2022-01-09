@@ -46,6 +46,11 @@ Name: PEER_PLACEMENT
 Comment: Signature by which a peer affirms that it is providing a certain bit of content for use in LOCation URIs.
 Subsystem: GNUnet-FS
 
+Number: 6
+Name: DHT_HOP
+Comment: Signature by which a peer affirms that it forwarded a message in the DHT.
+Subsystem: GNUnet-DHT
+
 Number: 11
 Name: DNS_RECORD
 Comment: Signature on a GNUNET_DNS_Advertisement.
