@@ -287,7 +287,10 @@ Name: EXCHANGE_GENERIC_COIN_CONFLICTING_AGE_HASH
 Description: The same coin was already used with a different age hash previously.
 HttpStatus: 409
 
-
+Value: 1016
+Name: EXCHANGE_GENERIC_INVALID_DENOMINATION_CIPHER_FOR_OPERATION
+Description: The requested operation is not valid for the cipher used by the selected denomination.
+HttpStatus: 400
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
