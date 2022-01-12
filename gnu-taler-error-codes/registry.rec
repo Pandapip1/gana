@@ -292,6 +292,11 @@ Name: EXCHANGE_GENERIC_INVALID_DENOMINATION_CIPHER_FOR_OPERATION
 Description: The requested operation is not valid for the cipher used by the selected denomination.
 HttpStatus: 400
 
+Value: 1017
+Name: EXCHANGE_GENERIC_CIPHER_MISMATCH
+Description: The provided arguments for the operation use inconsistent ciphers.
+HttpStatus: 400
+
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
