@@ -495,12 +495,12 @@ Description: Operation specified invalid for this endpoint.
 HttpStatus: 400
 
 Value: 1364
-NAME: EXCHANGE_REFRESHES_REVEAL_AGE_RESTRICTION_NOT_SUPPORTED
+Name: EXCHANGE_REFRESHES_REVEAL_AGE_RESTRICTION_NOT_SUPPORTED
 Description: The client provided age commitment data, but age restriction is not supported on this server.
 HttpStatus: 400
 
 Value: 1365
-NAME: EXCHANGE_REFRESHES_REVEAL_AGE_RESTRICTION_COMMITMENT_INVALID
+Name: EXCHANGE_REFRESHES_REVEAL_AGE_RESTRICTION_COMMITMENT_INVALID
 Description: The client provided invalid age commitment data: missing, not an array, or  array of invalid size.
 HttpStatus: 400
 
