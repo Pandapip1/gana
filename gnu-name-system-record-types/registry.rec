@@ -120,3 +120,8 @@ Number: 65558
 Name: MESSENGER_ROOM_ENTRY
 Comment: Record type to share an entry of a messenger room
 Contact: thejackimonster@gmail.com
+
+Number: 65559
+Name: TOMBSTONE
+Comment: Record type to indicate a previously delete record (PRIVATE only)
+Contact: gnunet-developers@gnunet.org
