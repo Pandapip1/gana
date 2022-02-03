@@ -81,10 +81,10 @@ Name: RECLAIM_ATTRIBUTE_REF
 Comment: for reclaim records
 Contact: schanzen@gnunet.org
 
-#Number: 65551
-#Name:
-#Comment:
-#Contact:
+Number: 65551
+Name: REDIRECT
+Comment: Resolver redirects
+Contact: LSD0001
 
 Number: 65552
 Name: RECLAIM_OIDC_CLIENT
