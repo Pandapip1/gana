@@ -269,7 +269,7 @@ HttpStatus: 500
 
 Value: 1012
 Name: EXCHANGE_GENERIC_INSUFFICIENT_FUNDS
-Description: The respective coin did not have sufficient residual value for the operation.  The "history" in this response provdes the "residual_value" of the coin, which may be less than its "original_value".
+Description: The respective coin did not have sufficient residual value for the operation.  The "history" in this response provides the "residual_value" of the coin, which may be less than its "original_value".
 HttpStatus: 409
 
 Value: 1013
@@ -296,6 +296,13 @@ Value: 1017
 Name: EXCHANGE_GENERIC_CIPHER_MISMATCH
 Description: The provided arguments for the operation use inconsistent ciphers.
 HttpStatus: 400
+
+Value: 1018
+Name: EXCHANGE_GENERIC_NEW_DENOMS_ARRAY_SIZE_EXCESSIVE
+Description: The number of denominations specified in the request exceeds the limit of the exchange.
+HttpStatus: 400
+
+
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
@@ -457,11 +464,6 @@ HttpStatus: 404
 Value: 1356
 Name: EXCHANGE_REFRESHES_REVEAL_CNC_TRANSFER_ARRAY_SIZE_INVALID
 Description: The size of the cut-and-choose dimension of the private transfer keys request does not match #TALER_CNC_KAPPA - 1.
-HttpStatus: 400
-
-Value: 1357
-Name: EXCHANGE_REFRESHES_REVEAL_NEW_DENOMS_ARRAY_SIZE_EXCESSIVE
-Description: The number of coins to be created in refresh exceeds the limits of the exchange. private transfer keys request does not match #TALER_CNC_KAPPA - 1.
 HttpStatus: 400
 
 Value: 1358
