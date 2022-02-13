@@ -35,6 +35,10 @@ Name: INVALID
 Description: A non-integer error code was returned in the JSON response.
 HttpStatus: 0
 
+Value: 2
+Name: GENERIC_CLIENT_INTERNAL_ERROR
+Description: An internal failure happened on the client side.
+HttpStatus: 0
 
 # Fundamental problems detected client-side (10-19)
 
