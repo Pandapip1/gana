@@ -51,6 +51,11 @@ Name: DHT_HOP
 Comment: Signature by which a peer affirms that it forwarded a message in the DHT.
 Subsystem: GNUnet-DHT
 
+Number: 7
+Name: HELLO
+Content: Signature by which a peer affirms its address.
+Subsystem: GNUnet-HELLO
+
 Number: 11
 Name: DNS_RECORD
 Comment: Signature on a GNUNET_DNS_Advertisement.
