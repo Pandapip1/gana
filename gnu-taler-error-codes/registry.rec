@@ -1185,6 +1185,10 @@ Name: MERCHANT_PRIVATE_POST_ORDERS_DELIVERY_DATE_IN_PAST
 Description: The request is invalid: a delivery date was given, but it is in the past.
 HttpStatus: 400
 
+Value: 2506
+Name: MERCHANT_PRIVATE_POST_ORDERS_WIRE_DEADLINE_IS_NEVER
+Description: The request is invalid: the wire deadline for the order would be "never".
+HttpStatus: 400
 
 Value: 2510
 Name: MERCHANT_PRIVATE_PATCH_ORDERS_ID_FORGET_PATH_SYNTAX_INCORRECT
