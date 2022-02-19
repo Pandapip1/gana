@@ -403,6 +403,11 @@ Name: EXCHANGE_DEPOSIT_REFUND_DEADLINE_AFTER_WIRE_DEADLINE
 Description: The stated refund deadline is after the wire deadline.
 HttpStatus: 400
 
+Value: 1209
+Name: EXCHANGE_DEPOSIT_DEADLINE_IS_NEVER
+Description: The stated wire deadline is "never", which makes no sense.
+HttpStatus: 400
+
 Value: 1210
 Name: EXCHANGE_DEPOSIT_INVALID_WIRE_FORMAT_JSON
 Description: The exchange failed to canonicalize and hash the given wire format. For example, the merchant failed to provide the "salt" or a valid payto:// URI in the wire details.  Note that while the exchange will do some basic sanity checking on the wire details, it cannot warrant that the banking system will ultimately be able to route to the specified address, even if this check passed.
