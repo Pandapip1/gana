@@ -404,7 +404,7 @@ Description: The stated refund deadline is after the wire deadline.
 HttpStatus: 400
 
 Value: 1209
-Name: EXCHANGE_DEPOSIT_DEADLINE_IS_NEVER
+Name: EXCHANGE_DEPOSIT_WIRE_DEADLINE_IS_NEVER
 Description: The stated wire deadline is "never", which makes no sense.
 HttpStatus: 400
 
