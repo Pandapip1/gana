@@ -1716,8 +1716,8 @@ HttpStatus: 403
 
 Value: 8112
 Name: ANASTASIS_TRUTH_CHALLENGE_UNKNOWN
-Description: The service is unaware of having issued a challenge.
-HttpStatus: 410
+Description: The backend is not aware of having issued the provided challenge code. Either this is the wrong code, or it has expired.
+HttpStatus: 404
 
 Value: 8113
 Name: ANASTASIS_TRUTH_CHALLENGE_ACTIVE
@@ -1757,7 +1757,7 @@ HttpStatus: 502
 Value: 8120
 Name: ANASTASIS_TRUTH_DECRYPTION_FAILED
 Description: The decryption of the truth object failed with the provided key.
-HttpStatus: 417
+HttpStatus: 400
 
 Value: 8121
 Name: ANASTASIS_TRUTH_RATE_LIMITED
@@ -1767,8 +1767,12 @@ HttpStatus: 429
 Value: 8122
 Name: ANASTASIS_TRUTH_AUTH_TIMEOUT
 Description: The authentication process did not yet complete. The user should try again later.
-HttpStatus: 408
+HttpStatus: 403
 
+Value: 8123
+Name: ANASTASIS_TRUTH_CHALLENGE_WRONG_METHOD
+Description: A request to issue a challenge is not valid for this authentication method.
+HttpStatus: 400
 
 Value: 8150
 Name: ANASTASIS_TRUTH_UPLOAD_UUID_EXISTS
