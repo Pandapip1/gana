@@ -1706,12 +1706,12 @@ HttpStatus: 408
 
 Value: 8108
 Name: ANASTASIS_TRUTH_UNKNOWN
-Description: The truth public key is unknown to the provider.
+Description: The key share is unknown to the provider.
 HttpStatus: 404
 
 Value: 8109
 Name: ANASTASIS_TRUTH_AUTHORIZATION_METHOD_NO_LONGER_SUPPORTED
-Description: The authorization method used by the truth is no longer supported by the provider.
+Description: The authorization method used for the key share is no longer supported by the provider.
 HttpStatus: 500
 
 Value: 8110
@@ -1766,7 +1766,7 @@ HttpStatus: 502
 
 Value: 8120
 Name: ANASTASIS_TRUTH_DECRYPTION_FAILED
-Description: The decryption of the truth object failed with the provided key.
+Description: The decryption of the key share failed with the provided key.
 HttpStatus: 400
 
 Value: 8121
@@ -1786,12 +1786,12 @@ HttpStatus: 400
 
 Value: 8150
 Name: ANASTASIS_TRUTH_UPLOAD_UUID_EXISTS
-Description: The backend failed to store the truth because the UUID is already in use.
+Description: The backend failed to store the key share because the UUID is already in use.
 HttpStatus: 409
 
 Value: 8151
 Name: ANASTASIS_TRUTH_UPLOAD_METHOD_NOT_SUPPORTED
-Description: The backend failed to store the truth because the authorization method is not supported.
+Description: The backend failed to store the key share because the authorization method is not supported.
 HttpStatus: 400
 
 
