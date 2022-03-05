@@ -787,6 +787,16 @@ Name: EXCHANGE_MANAGEMENT_KEYS_SIGNKEY_ADD_SIGNATURE_INVALID
 Description: The signature affirming the signing key is invalid.
 HttpStatus: 403
 
+Value: 1816
+Name: EXCHANGE_MANAGEMENT_GLOBAL_FEE_MISMATCH
+Description: The signature conflicts with a previous signature affirming different fees.
+HttpStatus: 409
+
+Value: 1817
+Name: EXCHANGE_MANAGEMENT_GLOBAL_FEE_SIGNATURE_INVALID
+Description: The signature affirming the fee structure is invalid.
+HttpStatus: 403
+
 
 Value: 1900
 Name: EXCHANGE_AUDITORS_AUDITOR_SIGNATURE_INVALID
