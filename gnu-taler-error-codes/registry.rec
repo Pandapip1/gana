@@ -1062,17 +1062,17 @@ Description: The payment failed at the exchange.
 HttpStatus: 502
 
 Value: 2171
-Name: TALER_EC_MERCHANT_POST_ORDERS_ID_PAY_AGE_COMMITMENT_MISSING
+Name: MERCHANT_POST_ORDERS_ID_PAY_AGE_COMMITMENT_MISSING
 Description: The payment required a minimum age but one of the coins (of a denomination with support for age restriction) did not provide any age_commitment.
 HttpStatus: 400
 
 Value: 2172
-Name: TALER_EC_MERCHANT_POST_ORDERS_ID_PAY_AGE_COMMITMENT_SIZE_MISMATCH
+Name: MERCHANT_POST_ORDERS_ID_PAY_AGE_COMMITMENT_SIZE_MISMATCH
 Description: The payment required a minimum age but one of the coins provided an age_commitment that contained a wrong number of public keys compared to the number of age groups defined in the denomination of the coin.
 HttpStatus: 400
 
 Value: 2173
-Name: TALER_EC_MERCHANT_POST_ORDERS_ID_PAY_AGE_VERIFICATION_FAILED
+Name: MERCHANT_POST_ORDERS_ID_PAY_AGE_VERIFICATION_FAILED
 Description: The payment required a minimum age but one of the coins provided a minimum_age_sig that couldn't be verified with the given age_commitment for that particular minimum age.
 HttpStatus: 400
 
