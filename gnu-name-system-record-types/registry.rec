@@ -125,3 +125,8 @@ Number: 65559
 Name: TOMBSTONE
 Comment: Record type to indicate a previously delete record (PRIVATE only)
 Contact: gnunet-developers@gnunet.org
+
+Number: 65560
+Name: MESSENGER_ROOM_DETAILS
+Comment: Record type to store details about a messenger room
+Contact: thejackimonster@gmail.com
