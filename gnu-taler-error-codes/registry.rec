@@ -430,9 +430,20 @@ HttpStatus: 400
 
 
 Value: 1250
-Name: EXCHANGE_RESERVES_GET_STATUS_UNKNOWN
-Description: The reserve status was requested using a unknown key.
+Name: EXCHANGE_RESERVES_STATUS_UNKNOWN
+Description: The reserve balance, status or history was requested for a reserve which is not known to the exchange.
 HttpStatus: 404
+
+Value: 1251
+Name: EXCHANGE_RESERVES_STATUS_BAD_SIGNATURE
+Description: The reserve status was requested with a bad signature.
+HttpStatus: 403
+
+Value: 1252
+Name: EXCHANGE_RESERVES_HISTORY_BAD_SIGNATURE
+Description: The reserve history was requested with a bad signature.
+HttpStatus: 403
+
 
 Value: 1302
 Name: EXCHANGE_MELT_FEES_EXCEED_CONTRIBUTION
