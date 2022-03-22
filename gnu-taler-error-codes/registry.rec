@@ -67,6 +67,11 @@ Name: GENERIC_CONFIGURATION_INVALID
 Description: There is an error in the client-side configuration, for example the base URL specified is malformed.
 HttpStatus: 0
 
+Value: 15
+Name: GENERIC_UNEXPECTED_REQUEST_ERROR
+Description: The client made a request to a service, but received an error response it does not know how to handle.
+HttpStatus: 0
+
 # Fundamental client-side protocol problems (20-29)
 # (fundamental: cannot be helped, client is very broken)
 
@@ -1684,6 +1689,11 @@ HttpStatus: 0
 Value: 7020
 Name: WALLET_CONTRACT_TERMS_MALFORMED
 Description: The contract terms given by the merchant are malformed.
+HttpStatus: 0
+
+Value: 7021
+Name: WALLET_PENDING_OPERATION_FAILED
+Description: A pending operation failed, and thus the request can't be completed.
 HttpStatus: 0
 
 # 8000 - 8999: Reserved for Anastasis
