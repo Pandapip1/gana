@@ -14,6 +14,6 @@ tlds.conf.tmp: registry.rec tlds.template
 	../format.sh tlds.template < registry.rec > $@
 
 tlds.conf: tlds.header tlds.conf.tmp
-	cat $^ > $@
+	cat tlds.header tlds.conf.tmp > $@
 
 .PHONY: check clean distclean

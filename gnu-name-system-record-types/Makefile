@@ -13,6 +13,6 @@ gnu_name_system_record_types.h.tmp: registry.rec h.template
 	../format.sh h.template < registry.rec > $@
 
 gnu_name_system_record_types.h: h.header gnu_name_system_record_types.h.tmp h.footer
-	cat $^ > $@
+	cat h.header gnu_name_system_record_types.h.tmp h.footer > $@
 
 .PHONY: check clean distclean
