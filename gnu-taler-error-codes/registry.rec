@@ -184,6 +184,11 @@ Name: GENERIC_FAILED_COMPUTE_JSON_HASH
 Description: The service could not compute a cryptographic hash over some JSON value.
 HttpStatus: 500
 
+Value: 62
+Name: GENERIC_FAILED_COMPUTE_AMOUNT
+Description: The service could not compute an amount.
+HttpStatus: 500
+
 
 # Server-side resource problems (70-79)
 
@@ -320,6 +325,12 @@ Value: 1020
 Name: EXCHANGE_GENERIC_CLOCK_SKEW
 Description: The time at the server is too far off from the time specified in the request. Most likely the client system time is wrong.
 HttpStatus: 400
+
+Value: 1021
+Name: EXCHANGE_GENERIC_AMOUNT_EXCEEDS_DENOMINATION_VALUE
+Description: The specified amount for the coin is higher than the value of the denomination of the coin.
+HttpStatus: 400
+
 
 
 Value: 1100
@@ -821,6 +832,36 @@ Value: 1817
 Name: EXCHANGE_MANAGEMENT_GLOBAL_FEE_SIGNATURE_INVALID
 Description: The signature affirming the fee structure is invalid.
 HttpStatus: 403
+
+Value: 1850
+Name: EXCHANGE_PURSE_CREATE_CONFLICTING_META_DATA
+Description: The purse was previously created with different meta data.
+HttpStatus: 409
+
+Value: 1851
+Name: EXCHANGE_PURSE_CREATE_CONFLICTING_CONTRACT_STORED
+Description: The purse was previously created with a different contract.
+HttpStatus: 409
+
+Value: 1852
+Name: EXCHANGE_PURSE_CREATE_COIN_SIGNATURE_INVALID
+Description: A coin signature for a deposit into the purse is invalid.
+HttpStatus: 400
+
+Value: 1853
+Name: EXCHANGE_PURSE_CREATE_EXPIRATION_BEFORE_NOW
+Description: The purse expiration time is in the past.
+HttpStatus: 400
+
+Value: 1854
+Name: EXCHANGE_PURSE_CREATE_EXPIRATION_IS_NEVER
+Description: The purse expiration time is "never".
+HttpStatus: 400
+
+Value: 1855
+Name: EXCHANGE_PURSE_CREATE_SIGNATURE_INVALID
+Description: The purse signature over the purse meta data is invalid.
+HttpStatus: 400
 
 
 Value: 1900
