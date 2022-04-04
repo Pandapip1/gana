@@ -863,6 +863,11 @@ Name: EXCHANGE_PURSE_CREATE_SIGNATURE_INVALID
 Description: The purse signature over the purse meta data is invalid.
 HttpStatus: 400
 
+Value: 1856
+Name: EXCHANGE_PURSE_ECONTRACT_SIGNATURE_INVALID
+Description: The signature over the encrypted contract is invalid.
+HttpStatus: 400
+
 
 Value: 1900
 Name: EXCHANGE_AUDITORS_AUDITOR_SIGNATURE_INVALID
