@@ -868,6 +868,11 @@ Name: EXCHANGE_PURSE_ECONTRACT_SIGNATURE_INVALID
 Description: The signature over the encrypted contract is invalid.
 HttpStatus: 400
 
+Value: 1857
+Name: EXCHANGE_PURSE_CREATE_EXCHANGE_SIGNATURE_INVALID
+Description: The signature from the exchange over the confirmation is invalid.
+HttpStatus: 0
+
 
 Value: 1900
 Name: EXCHANGE_AUDITORS_AUDITOR_SIGNATURE_INVALID
