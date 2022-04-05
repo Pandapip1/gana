@@ -331,6 +331,11 @@ Name: EXCHANGE_GENERIC_AMOUNT_EXCEEDS_DENOMINATION_VALUE
 Description: The specified amount for the coin is higher than the value of the denomination of the coin.
 HttpStatus: 400
 
+Value: 1022
+Name: EXCHANGE_GENERIC_GLOBAL_FEES_MISSING
+Description: The exchange was not properly configured with global fees.
+HttpStatus: 500
+
 
 
 Value: 1100
@@ -877,6 +882,16 @@ Value: 1858
 Name: EXCHANGE_PURSE_DEPOSIT_CONFLICTING_META_DATA
 Description: The coin was previously deposited with different meta data.
 HttpStatus: 409
+
+Value: 1859
+Name: EXCHANGE_PURSE_ECONTRACT_CONFLICTING_META_DATA
+Description: The encrypted contract was previously uploaded with different meta data.
+HttpStatus: 409
+
+Value: 1860
+Name: EXCHANGE_CREATE_PURSE_NEGATIVE_VALUE_AFTER_FEE
+Description: The deposited amount is less than the purse fee.
+HttpStatus: 400
 
 
 Value: 1900
