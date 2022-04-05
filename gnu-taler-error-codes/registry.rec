@@ -873,6 +873,11 @@ Name: EXCHANGE_PURSE_CREATE_EXCHANGE_SIGNATURE_INVALID
 Description: The signature from the exchange over the confirmation is invalid.
 HttpStatus: 0
 
+Value: 1858
+Name: EXCHANGE_PURSE_DEPOSIT_CONFLICTING_META_DATA
+Description: The coin was previously deposited with different meta data.
+HttpStatus: 409
+
 
 Value: 1900
 Name: EXCHANGE_AUDITORS_AUDITOR_SIGNATURE_INVALID
