@@ -16,7 +16,6 @@
 %unique: Name
 %mandatory: Name
 # A status of 0 means not an HTTP status (i.e. created client-side)
-%typedef: HttpStatus_t range 0 599
 %type: HttpStatus rec HttpStatusCode
 %mandatory: HttpStatus
 %sort: Value
@@ -891,6 +890,21 @@ HttpStatus: 409
 Value: 1860
 Name: EXCHANGE_CREATE_PURSE_NEGATIVE_VALUE_AFTER_FEE
 Description: The deposited amount is less than the purse fee.
+HttpStatus: 400
+
+Value: 1875
+Name: EXCHANGE_MERGE_PURSE_NOT_FOUND
+Description: The purse to be merged is not known.
+HttpStatus: 404
+
+Value: 1876
+Name: EXCHANGE_PURSE_MERGE_INVALID_MERGE_SIGNATURE
+Description: The signature using the merge key is invalid.
+HttpStatus: 400
+
+Value: 1877
+Name: EXCHANGE_PURSE_MERGE_INVALID_RESERVE_SIGNATURE
+Description: The signature using the reserve key is invalid.
 HttpStatus: 400
 
 
