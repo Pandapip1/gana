@@ -963,6 +963,33 @@ Name: EXCHANGE_KYC_CHECK_AUTHORIZATION_FAILED
 Description: The payto-URI hash did not match. Hence the request was denied.
 HttpStatus: 401
 
+Value: 1950
+Name: EXCHANGE_CONTRACTS_UNKNOWN
+Description: The exchange does not know a contract under the given contract public key.
+HttpStatus: 404
+
+Value: 1951
+Name: EXCHANGE_CONTRACTS_INVALID_CONTRACT_PUB
+Description: The URL does not encode a valid exchange public key in its path.
+HttpStatus: 400
+
+Value: 1952
+Name: EXCHANGE_CONTRACTS_DECRYPTION_FAILED
+Description: The returned encrypted contract did not decrypt.
+HttpStatus: 0
+
+Value: 1953
+Name: EXCHANGE_CONTRACTS_SIGNATURE_INVALID
+Description: The signature on the encrypted contract did not validate.
+HttpStatus: 0
+
+Value: 1954
+Name: EXCHANGE_CONTRACTS_DECODING_FAILED
+Description: The decrypted contract was malformed.
+HttpStatus: 0
+
+
+
 
 
 
