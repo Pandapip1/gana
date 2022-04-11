@@ -907,6 +907,10 @@ Name: EXCHANGE_PURSE_MERGE_INVALID_RESERVE_SIGNATURE
 Description: The signature using the reserve key is invalid.
 HttpStatus: 400
 
+Value: 1878
+Name: EXCHANGE_PURSE_MERGE_WAD_FEE_EXCEEDS_PURSE_VALUE
+Description: The amount in the purse is lower than the wad fee.
+HttpStatus: 400
 
 Value: 1900
 Name: EXCHANGE_AUDITORS_AUDITOR_SIGNATURE_INVALID
