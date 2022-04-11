@@ -335,6 +335,11 @@ Name: EXCHANGE_GENERIC_GLOBAL_FEES_MISSING
 Description: The exchange was not properly configured with global fees.
 HttpStatus: 500
 
+Value: 1023
+Name: EXCHANGE_GENERIC_WIRE_FEES_MISSING
+Description: The exchange was not properly configured with wire fees.
+HttpStatus: 500
+
 
 
 Value: 1100
