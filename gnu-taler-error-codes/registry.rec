@@ -914,7 +914,7 @@ HttpStatus: 400
 
 Value: 1878
 Name: EXCHANGE_PURSE_NOT_FULL
-Description: The targeted purse is not yet full and thus cannot be merged. Retrying the request later may succeed. FIXME-Dold: better status code?
+Description: The targeted purse is not yet full and thus cannot be merged. Retrying the request later may succeed. FIXME-Dold: better status code
 HttpStatus: 409
 
 Value: 1879
@@ -929,7 +929,7 @@ HttpStatus: 400
 
 Value: 1881
 Name: EXCHANGE_PURSE_MERGE_WAD_FEE_EXCEEDS_PURSE_VALUE
-Description: The amount in the purse is lower than the wad fee. So the request was accepted, but no transfer is expected to take place. FIXME-DOLD: good HTTP status?
+Description: The amount in the purse is lower than the wad fee. So the request was accepted, but no transfer is expected to take place. FIXME-DOLD: good HTTP status
 HttpStatus: 202
 
 
