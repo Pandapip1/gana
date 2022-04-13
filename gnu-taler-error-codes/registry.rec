@@ -2023,7 +2023,7 @@ Description: The provided IBAN address is not an acceptable IBAN.
 HttpStatus: 409
 
 Value: 8231
-Name: ANASTASIS_IBAN_FORBIDDEN
+Name: ANASTASIS_IBAN_MISSING_TRANSFER
 Description: The provider has not yet received the IBAN wire transfer authorizing the disclosure of the key share.
 HttpStatus: 403
 
