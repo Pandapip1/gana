@@ -1952,11 +1952,6 @@ Name: ANASTASIS_TRUTH_RATE_LIMITED
 Description: The request rate is too high. The server is refusing requests to guard against brute-force attacks.
 HttpStatus: 429
 
-Value: 8122
-Name: ANASTASIS_TRUTH_AUTH_TIMEOUT
-Description: The authentication process did not yet complete. The user should try again later.
-HttpStatus: 403
-
 Value: 8123
 Name: ANASTASIS_TRUTH_CHALLENGE_WRONG_METHOD
 Description: A request to issue a challenge is not valid for this authentication method.
@@ -2026,6 +2021,11 @@ Value: 8230
 Name: ANASTASIS_IBAN_INVALID
 Description: The provided IBAN address is not an acceptable IBAN.
 HttpStatus: 409
+
+Value: 8231
+Name: ANASTASIS_IBAN_FORBIDDEN
+Description: The provider has not yet received the IBAN wire transfer authorizing the disclosure of the key share.
+HttpStatus: 403
 
 
 Value: 8240
