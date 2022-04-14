@@ -2171,6 +2171,11 @@ Name: ANASTASIS_REDUCER_INTERNAL_ERROR
 Description: The reducer encountered an internal error, likely a bug that needs to be reported.
 HttpStatus: 0
 
+Value: 8420
+Name: ANASTASIS_REDUCER_PROVIDERS_ALREADY_SYNCED
+Description: The reducer already synchronized with all providers.
+HttpStatus: 0
+
 
 # 9000 - 9998: LibEuFin.
 
