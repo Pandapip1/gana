@@ -752,6 +752,28 @@ Description: The helper refuses to sign with the key, because it is too early: t
 HttpStatus: 400
 
 
+Value: 1775
+Name: EXCHANGE_RESERVES_PURSE_EXPIRATION_BEFORE_NOW
+Description: The purse expiration time is in the past at the time of its creation.
+HttpStatus: 400
+
+Value: 1776
+Name: EXCHANGE_RESERVES_PURSE_EXPIRATION_IS_NEVER
+Description: The purse expiration time is set to never, which is not allowed.
+HttpStatus: 400
+
+Value: 1777
+Name: EXCHANGE_RESERVES_PURSE_MERGE_SIGNATURE_INVALID
+Description: The signature affirming the merge of the purse is invalid.
+HttpStatus: 403
+
+Value: 1778
+Name: EXCHANGE_RESERVES_RESERVE_MERGE_SIGNATURE_INVALID
+Description: The signature by the reserve affirming the merge is invalid.
+HttpStatus: 403
+
+
+
 Value: 1800
 Name: EXCHANGE_MANAGEMENT_AUDITOR_NOT_FOUND
 Description: The auditor that was supposed to be disabled is unknown to this exchange.
@@ -972,7 +994,7 @@ HttpStatus: 403
 Value: 1930
 Name: EXCHANGE_KYC_CHECK_AUTHORIZATION_FAILED
 Description: The payto-URI hash did not match. Hence the request was denied.
-HttpStatus: 401
+HttpStatus: 403
 
 Value: 1950
 Name: EXCHANGE_CONTRACTS_UNKNOWN
