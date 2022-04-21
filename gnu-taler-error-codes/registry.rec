@@ -736,6 +736,12 @@ Name: EXCHANGE_DENOMINATION_HELPER_TOO_EARLY
 Description: The helper refuses to sign with the key, because it is too early: the validity period has not yet started.
 HttpStatus: 400
 
+Value: 1725
+Name: EXCHANGE_PURSE_DEPOSIT_EXCHANGE_SIGNATURE_INVALID
+Description: The signature of the exchange on the reply was invalid.
+HttpStatus: 0
+
+
 Value: 1750
 Name: EXCHANGE_SIGNKEY_HELPER_UNAVAILABLE
 Description: The exchange failed to talk to the process responsible for its private signing keys.
