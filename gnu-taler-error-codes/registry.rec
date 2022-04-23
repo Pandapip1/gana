@@ -340,6 +340,10 @@ Name: EXCHANGE_GENERIC_WIRE_FEES_MISSING
 Description: The exchange was not properly configured with wire fees.
 HttpStatus: 500
 
+Value: 1024
+Name: EXCHANGE_GENERIC_PURSE_PUB_MALFORMED
+Description: The purse public key was malformed.
+HttpStatus: 400
 
 
 Value: 1100
@@ -585,6 +589,11 @@ Value: 1453
 Name: EXCHANGE_TRANSFERS_GET_WIRE_FEE_INCONSISTENT
 Description: The exchange found a wire fee that was above the total transfer value (and thus could not have been charged).
 HttpStatus: 500
+
+Value: 1475
+Name: EXCHANGE_PURSES_INVALID_WAIT_TARGET
+Description: The wait target of the URL was not in the set of expected values.
+HttpStatus: 400
 
 
 Value: 1500
