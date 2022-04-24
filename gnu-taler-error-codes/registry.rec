@@ -731,17 +731,17 @@ HttpStatus: 500
 
 
 Value: 1675
-Name: EXCHANGE_RESERVE_PURSE_CREATE_CONFLICTING_META_DATA
+Name: EXCHANGE_RESERVES_PURSE_CREATE_CONFLICTING_META_DATA
 Description: This purse was previously created with different meta data.
 HttpStatus: 409
 
 Value: 1676
-Name: EXCHANGE_RESERVE_PURSE_MERGE_CONFLICTING_META_DATA
+Name: EXCHANGE_RESERVES_PURSE_MERGE_CONFLICTING_META_DATA
 Description: This purse was previously merged with different meta data.
 HttpStatus: 409
 
 Value: 1677
-Name: EXCHANGE_RESERVE_PURSE_CREATE_INSUFFICIENT_FUNDS
+Name: EXCHANGE_RESERVES_PURSE_CREATE_INSUFFICIENT_FUNDS
 Description: The reserve has insufficient funds to create another purse.
 HttpStatus: 409
 
