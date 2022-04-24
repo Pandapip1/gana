@@ -1,13 +1,19 @@
 #!/bin/sh
 ##
-# Usage: format.sh TEMPLATE
+# Usage: format.sh TEMPLATE [SELEXP]
 #
 # This runs recfmt w/ template file TEMPLATE, taking input from stdin,
 # and writing output to stdout.
+#
+# Optional arg SELEXP is an expression passed to ‘recsel -e’.  If specified,
+# stdin is first processed by recsel and its output is then piped to recfmt
+# for formatting.  If recsel exits failurefully (e.g., given invalid SELEXP),
+# no output is written and format.sh exits failurefully as well.
 ##
 me=$(basename $0)
 
-version='1.2'
+version='1.3'
+# 1.3  -- add support for optional arg SELEXP
 # 1.2  -- add check for required arg TEMPLATE
 # 1.1  -- add --help/--version support
 # 1.0  -- initial release
@@ -29,6 +35,17 @@ fi
 
 template="$1"
 
-exec recfmt -f "$template"
+if [ x"$2" = x ] ; then : ; else
+    selexp="$2"
+fi
+
+if [ "$selexp" ] ; then
+    t=$(mktemp -p .)
+    trap "rm -f $t" EXIT
+    recsel -e "$selexp" > $t &&
+        recfmt -f "$template" < $t
+else
+    exec recfmt -f "$template"
+fi
 
 # format.sh ends here
