@@ -730,6 +730,22 @@ Description: No wire fees are configured for an enabled wire method of the excha
 HttpStatus: 500
 
 
+Value: 1675
+Name: EXCHANGE_RESERVE_PURSE_CREATE_CONFLICTING_META_DATA
+Description: This purse was previously created with different meta data.
+HttpStatus: 409
+
+Value: 1676
+Name: EXCHANGE_RESERVE_PURSE_MERGE_CONFLICTING_META_DATA
+Description: This purse was previously merged with different meta data.
+HttpStatus: 409
+
+Value: 1677
+Name: EXCHANGE_RESERVE_PURSE_CREATE_INSUFFICIENT_FUNDS
+Description: The reserve has insufficient funds to create another purse.
+HttpStatus: 409
+
+
 Value: 1700
 Name: EXCHANGE_DENOMINATION_HELPER_UNAVAILABLE
 Description: The exchange failed to talk to the process responsible for its private denomination keys.
