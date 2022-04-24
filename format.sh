@@ -2,7 +2,8 @@
 ##
 # Usage: format.sh TEMPLATE
 #
-# This runs recfmt w/ template file TEMPLATE on stdin, writing to stdout.
+# This runs recfmt w/ template file TEMPLATE, taking input from stdin,
+# and writing output to stdout.
 ##
 me=$(basename $0)
 
