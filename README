@@ -52,3 +52,4 @@ Each registry must include at least the following files:
     Ideally, the registry.rec should be written such that the 'check' target
     is simply invoking "recfix --check registry.rec".
     Additional targets to convert data.rec to various formats may be defined.
+    In particular, see format.sh in this directory (try --help).
