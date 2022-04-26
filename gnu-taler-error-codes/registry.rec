@@ -345,6 +345,16 @@ Name: EXCHANGE_GENERIC_PURSE_PUB_MALFORMED
 Description: The purse public key was malformed.
 HttpStatus: 400
 
+Value: 1025
+Name: EXCHANGE_GENERIC_PURSE_UNKNOWN
+Description: The purse is unknown.
+HttpStatus: 404
+
+Value: 1026
+Name: EXCHANGE_GENERIC_PURSE_EXPIRED
+Description: The purse has expired.
+HttpStatus: 410
+
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
