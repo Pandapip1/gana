@@ -431,6 +431,16 @@ Name: EXCHANGE_WITHDRAW_UNBLIND_FAILURE
 Description: The client failed to unblind the blind signature.
 HttpStatus: 0
 
+Value: 1160
+Name: EXCHANGE_WITHDRAW_NONCE_REUSE
+Description: The client re-used a withdraw nonce, which is not allowed.
+HttpStatus: 400
+
+Value: 1175
+Name: EXCHANGE_WITHDRAW_BATCH_IDEMPOTENT_PLANCHET
+Description: The batch withdraw included a planchet that was already withdrawn. This is not allowed.
+HttpStatus: 409
+
 Value: 1205
 Name: EXCHANGE_DEPOSIT_COIN_SIGNATURE_INVALID
 Description: The signature made by the coin over the deposit permission is not valid.
@@ -959,11 +969,6 @@ Value: 1860
 Name: EXCHANGE_CREATE_PURSE_NEGATIVE_VALUE_AFTER_FEE
 Description: The deposited amount is less than the purse fee.
 HttpStatus: 400
-
-Value: 1875
-Name: EXCHANGE_MERGE_PURSE_NOT_FOUND
-Description: The purse to be merged is not known.
-HttpStatus: 404
 
 Value: 1876
 Name: EXCHANGE_PURSE_MERGE_INVALID_MERGE_SIGNATURE
