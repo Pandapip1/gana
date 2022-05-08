@@ -770,6 +770,11 @@ Name: EXCHANGE_RESERVES_PURSE_CREATE_INSUFFICIENT_FUNDS
 Description: The reserve has insufficient funds to create another purse.
 HttpStatus: 409
 
+Value: 1678
+Name: EXCHANGE_RESERVES_PURSE_FEE_TOO_LOW
+Description: The purse fee specified for the request is lower than the purse fee charged by the exchange at this time.
+HttpStatus: 400
+
 
 Value: 1700
 Name: EXCHANGE_DENOMINATION_HELPER_UNAVAILABLE
@@ -999,12 +1004,6 @@ Value: 1880
 Name: EXCHANGE_MERGE_PURSE_PARTNER_UNKNOWN
 Description: The exchange of the target account is not a partner of this exchange.
 HttpStatus: 400
-
-Value: 1881
-Name: EXCHANGE_PURSE_MERGE_WAD_FEE_EXCEEDS_PURSE_VALUE
-Description: The amount in the purse is lower than the wad fee. So the request was accepted, but no transfer is expected to take place. FIXME-DOLD: good HTTP status. Suggestion: no error, make variant of 200 OK.
-HttpStatus: 202
-
 
 
 Value: 1900
