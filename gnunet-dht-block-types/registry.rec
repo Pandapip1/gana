@@ -16,6 +16,11 @@
 %allowed: References
 %sort: Number Name Contact References
 
+Number: 0
+Name: ANY
+Comment: Identifier for any block.
+References: None
+
 Number: 1
 Name: FS_DBLOCK
 Comment: Data block (leaf) in the CHK tree.
