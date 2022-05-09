@@ -85,3 +85,13 @@ Number: 25
 Name: CONSENSUS_ELEMENT
 Comment: Block type for consensus elements. Contains either special marker elements or a nested block.
 References: None
+
+Number: 26
+Name: SETI_TEST
+Comment: Block for testing set intersection.  If first byte of the block is non-zero, the block is considered invalid.
+References: None
+
+Number: 27
+Name: SETU_TEST
+Comment: Block for testing set union.  If first byte of the block is non-zero, the block is considered invalid.
+References: None
