@@ -7,7 +7,7 @@ distclean:
 clean:
 	rm -f $(FILES) *.tmp
 gnunet_signatures.h.tmp: registry.rec h.template
-	../format.sh h.template < registry.rec > $@
+	../format.sh h.template 'Package = "GNUnet"' < registry.rec > $@
 
 gnunet_signatures.h: h.header gnunet_signatures.h.tmp h.footer
 	cat h.header gnunet_signatures.h.tmp h.footer > $@
