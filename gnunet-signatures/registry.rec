@@ -56,7 +56,6 @@ Name: HELLO
 Comment: Signature by which a peer affirms its address.
 Subsystem: GNUnet-HELLO
 
-
 Number: 11
 Name: DNS_RECORD
 Comment: Signature on a GNUNET_DNS_Advertisement.
