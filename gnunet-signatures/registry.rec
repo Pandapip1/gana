@@ -285,7 +285,7 @@ Name: MASTER_EXTENSION
 Comment: Set the configuration of an extension (age-restriction or peer2peer)
 Package: GNU Taler
 
-Number: 1032
+Number: 1048
 Name: MASTER_PARTNER_DETAILS
 Comment: Signature affirming a partner configuration for wads.
 Package: GNU Taler
