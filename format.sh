@@ -40,7 +40,7 @@ if [ x"$2" = x ] ; then : ; else
 fi
 
 if [ "$selexp" ] ; then
-    t=$(mktemp -p .)
+    t=$(mktemp)
     trap "rm -f $t" EXIT
     recsel -e "$selexp" > $t &&
         recfmt -f "$template" < $t
