@@ -1727,6 +1727,11 @@ Name: BANK_DUPLICATE_RESERVE_PUB_SUBJECT
 Description: The wire transfer subject duplicates an existing reserve public key. But wire transfer subjects must be unique.
 HttpStatus: 409
 
+Value: 5115
+Name: BANK_ANCIENT_TRANSACTION_GONE
+Description: The client requested a transaction that is so far in the past, that it has been forgotten by the bank.
+HttpStatus: 410
+
 
 # 6000 - 6999: Reserved for sync
 # 6000 - 6099: Reserved for SYNC_GENERIC
