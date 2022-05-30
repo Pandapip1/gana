@@ -1660,57 +1660,57 @@ HttpStatus: 410
 Value: 5101
 Name: BANK_SAME_ACCOUNT
 Description: Wire transfer attempted with credit and debit party being the same bank account.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 5102
 Name: BANK_UNALLOWED_DEBIT
 Description: Wire transfer impossible, due to financial limitation of the party that attempted the payment.
-HttpStatus: 0
+HttpStatus: 409
 
 Value: 5103
 Name: BANK_NEGATIVE_NUMBER_AMOUNT
 Description: Negative number was used (as value and/or fraction) to initiate a Amount object.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 5104
 Name: BANK_NUMBER_TOO_BIG
 Description: A number too big was used (as value and/or fraction) to initiate a amount object.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 5105
 Name: BANK_LOGIN_FAILED
 Description: Could not login for the requested operation.
-HttpStatus: 0
+HttpStatus: 403
 
 Value: 5106
 Name: BANK_UNKNOWN_ACCOUNT
-Description: The bank account referenced in the requested operation was not found. Returned along "400 Not found".
-HttpStatus: 0
+Description: The bank account referenced in the requested operation was not found.
+HttpStatus: 404
 
 Value: 5107
 Name: BANK_TRANSACTION_NOT_FOUND
 Description: The transaction referenced in the requested operation (typically a reject operation), was not found.
-HttpStatus: 0
+HttpStatus: 404
 
 Value: 5108
 Name: BANK_BAD_FORMAT_AMOUNT
 Description: Bank received a malformed amount string.
-HttpStatus: 0
+HttpStatus: 400
 
 Value: 5109
 Name: BANK_REJECT_NO_RIGHTS
-Description: The client does not own the account credited by the transaction which is to be rejected, so it has no rights do reject it.  To be returned along HTTP 403 Forbidden.
-HttpStatus: 0
+Description: The client does not own the account credited by the transaction which is to be rejected, so it has no rights do reject it.
+HttpStatus: 403
 
 Value: 5110
 Name: BANK_UNMANAGED_EXCEPTION
-Description: This error code is returned when no known exception types captured the exception, and comes along with a 500 Internal Server Error.
-HttpStatus: 0
+Description: This error code is returned when no known exception types captured the exception.
+HttpStatus: 500
 
 Value: 5111
 Name: BANK_SOFT_EXCEPTION
-Description: This error code is used for all those exceptions that do not really need a specific error code to return to the client, but need to signal the middleware that the bank is not responding with 500 Internal Server Error.  Used for example when a client is trying to register with a unavailable username.
-HttpStatus: 0
+Description: This error code is used for all those exceptions that do not really need a specific error code to return to the client. Used for example when a client is trying to register with a unavailable username.
+HttpStatus: 500
 
 Value: 5112
 Name: BANK_TRANSFER_REQUEST_UID_REUSED
