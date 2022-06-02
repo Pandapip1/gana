@@ -953,12 +953,12 @@ HttpStatus: 400
 Value: 1855
 Name: EXCHANGE_PURSE_CREATE_SIGNATURE_INVALID
 Description: The purse signature over the purse meta data is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1856
 Name: EXCHANGE_PURSE_ECONTRACT_SIGNATURE_INVALID
 Description: The signature over the encrypted contract is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1857
 Name: EXCHANGE_PURSE_CREATE_EXCHANGE_SIGNATURE_INVALID
@@ -983,12 +983,12 @@ HttpStatus: 400
 Value: 1876
 Name: EXCHANGE_PURSE_MERGE_INVALID_MERGE_SIGNATURE
 Description: The signature using the merge key is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1877
 Name: EXCHANGE_PURSE_MERGE_INVALID_RESERVE_SIGNATURE
 Description: The signature using the reserve key is invalid.
-HttpStatus: 400
+HttpStatus: 403
 
 Value: 1878
 Name: EXCHANGE_PURSE_NOT_FULL
@@ -1003,7 +1003,7 @@ HttpStatus: 0
 Value: 1880
 Name: EXCHANGE_MERGE_PURSE_PARTNER_UNKNOWN
 Description: The exchange of the target account is not a partner of this exchange.
-HttpStatus: 400
+HttpStatus: 404
 
 
 Value: 1900
