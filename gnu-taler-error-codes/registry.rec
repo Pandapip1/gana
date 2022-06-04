@@ -355,6 +355,17 @@ Name: EXCHANGE_GENERIC_PURSE_EXPIRED
 Description: The purse has expired.
 HttpStatus: 410
 
+Value: 1027
+Name: EXCHANGE_GENERIC_RESERVE_UNKNOWN
+Description: The exchange has no information about the "reserve_pub" that was given.
+HttpStatus: 404
+
+Value: 1028
+Name: EXCHANGE_GENERIC_KYC_REQUIRED
+Description: The exchange is not allowed to proceed with the operation until the client has satisfied a KYC check.
+HttpStatus: 451
+
+
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
@@ -396,10 +407,6 @@ Name: EXCHANGE_WITHDRAW_INSUFFICIENT_FUNDS
 Description: The given reserve does not have sufficient funds to admit the requested withdraw operation at this time.  The response includes the current "balance" of the reserve as well as the transaction "history" that lead to this balance.
 HttpStatus: 409
 
-Value: 1151
-Name: EXCHANGE_WITHDRAW_RESERVE_UNKNOWN
-Description: The exchange has no information about the "reserve_pub" that was given.
-HttpStatus: 404
 
 Value: 1152
 Name: EXCHANGE_WITHDRAW_AMOUNT_FEE_OVERFLOW
