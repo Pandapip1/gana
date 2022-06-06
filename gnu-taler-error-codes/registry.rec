@@ -1263,7 +1263,7 @@ HttpStatus: 500
 
 Value: 2160
 Name: MERCHANT_POST_ORDERS_ID_PAY_ALREADY_PAID
-Description: The order was already paid (maybe by another wallet?).
+Description: The order was already paid (maybe by another wallet).
 HttpStatus: 409
 
 Value: 2161
