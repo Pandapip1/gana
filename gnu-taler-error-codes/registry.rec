@@ -1261,6 +1261,11 @@ Name: MERCHANT_POST_ORDERS_ID_PAY_REFUND_DEADLINE_PAST_WIRE_TRANSFER_DEADLINE
 Description: The refund deadline in the contract is after the transfer deadline.
 HttpStatus: 500
 
+Value: 2160
+Name: MERCHANT_POST_ORDERS_ID_PAY_ALREADY_PAID
+Description: The order was already paid (maybe by another wallet?).
+HttpStatus: 409
+
 Value: 2161
 Name: MERCHANT_POST_ORDERS_ID_PAY_OFFER_EXPIRED
 Description: The payment is too late, the offer has expired.
@@ -1478,6 +1483,11 @@ HttpStatus: 409
 Value: 2520
 Name: MERCHANT_PRIVATE_DELETE_ORDERS_AWAITING_PAYMENT
 Description: The order provided to the backend could not be deleted, our offer is still valid and awaiting payment.
+HttpStatus: 409
+
+Value: 2521
+Name: MERCHANT_PRIVATE_DELETE_ORDERS_ALREADY_PAID
+Description: The order provided to the backend could not be deleted as the order was already paid.
 HttpStatus: 409
 
 Value: 2530
