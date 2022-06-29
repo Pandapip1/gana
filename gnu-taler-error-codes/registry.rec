@@ -1326,6 +1326,11 @@ Name: MERCHANT_POST_ORDERS_ID_PAY_AGE_VERIFICATION_FAILED
 Description: The payment required a minimum age but one of the coins provided a minimum_age_sig that couldn't be verified with the given age_commitment for that particular minimum age.
 HttpStatus: 400
 
+Value: 2174
+Name: MERCHANT_POST_ORDERS_ID_PAY_AGE_COMMITMENT_HASH_MISSING
+Description: The payment required no minimum age but one of the coins (of a denomination with support for age restriction) did not provide the required h_age_commitment.
+HttpStatus: 400
+
 # 2200-2249: post orders ID paid endpoint
 
 Value: 2200
