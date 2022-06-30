@@ -365,6 +365,15 @@ Name: EXCHANGE_GENERIC_KYC_REQUIRED
 Description: The exchange is not allowed to proceed with the operation until the client has satisfied a KYC check.
 HttpStatus: 451
 
+Value: 1029
+Name: EXCHANGE_PURSE_DEPOSIT_COIN_CONFLICTING_ATTEST_VS_AGE_COMMITMENT
+Description: Inconsistency between provided age commitment and attest: either none or both must be provided
+HttpStatus: 400
+
+Value: 1030
+Name: EXCHANGE_PURSE_DEPOSIT_COIN_AGE_ATTESTATION_FAILURE
+Description: The provided attestation for the minimum age couldn't be verified by the exchange.
+HttpStatus: 400
 
 
 Value: 1100
