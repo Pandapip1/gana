@@ -2288,7 +2288,7 @@ Description: The reducer already synchronized with all providers.
 HttpStatus: 0
 
 
-# 9000 - 9998: LibEuFin.
+# 9000 - 9599: LibEuFin.
 
 Value: 9000
 Name: LIBEUFIN_NEXUS_GENERIC_ERROR
@@ -2310,18 +2310,19 @@ Name: LIBEUFIN_SANDBOX_UNCAUGHT_EXCEPTION
 Description: An uncaught exception happened in the LibEuFin sandbox service.
 HttpStatus: 500
 
-# 10000 - 10998: Taldir
-Value: 10000
+# 9600 - 9749: Taldir
+Value: 9600
 Name: TALDIR_METHOD_NOT_SUPPORTED
 Description: This validation method is not supported by the service.
 HttpStatus: 404
 
-Value: 10001
+Value: 9601
 Name: TALDIR_REGISTER_RATE_LIMITED
 Description: Number of allowed attempts for initiating a challenge exceeded.
 HttpStatus: 429
 
-Value: 10999
+# Some of our build systems expect the range to be < 10k, so let's keep it like this for now.
+Value: 9999
 Name: END
 Description: End of error code range.
 HttpStatus: 0
