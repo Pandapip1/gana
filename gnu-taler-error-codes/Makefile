@@ -2,7 +2,8 @@ FILES=taler_error_codes.h \
   taler_error_codes.c \
   taler_error_codes.ts \
   taler_error_codes.py \
-  taler_error_codes.kt
+  taler_error_codes.kt \
+  taler_error_codes.go
 
 all: check $(FILES)
 
@@ -65,5 +66,10 @@ taler_error_codes.py.tmp: combined.tmp py.template
 taler_error_codes.py: py.header taler_error_codes.py.tmp 
 	cat $^ > $@
 
+taler_error_codes.go.tmp: combined.tmp go.template
+	../format.sh go.template < combined.tmp > $@
+
+taler_error_codes.go: go.header taler_error_codes.go.tmp go.footer
+	cat $^ > $@
 
 .PHONY: check clean distclean prep
