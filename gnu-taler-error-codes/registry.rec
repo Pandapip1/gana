@@ -2310,8 +2310,18 @@ Name: LIBEUFIN_SANDBOX_UNCAUGHT_EXCEPTION
 Description: An uncaught exception happened in the LibEuFin sandbox service.
 HttpStatus: 500
 
+# 10000 - 10998: Taldir
+Value: 10000
+Name: TALDIR_METHOD_NOT_SUPPORTED
+Description: This validation method is not supported by the service.
+HttpStatus: 404
 
-Value: 9999
+Value: 10001
+Name: TALDIR_REGISTER_RATE_LIMITED
+Description: Number of allowed attempts for initiating a challenge exceeded.
+HttpStatus: 429
+
+Value: 10999
 Name: END
 Description: End of error code range.
 HttpStatus: 0
