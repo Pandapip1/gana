@@ -1197,6 +1197,10 @@ Name: MERCHANT_GET_ORDERS_EXCHANGE_TRACKING_FAILURE
 Description: The exchange failed to provide a valid answer to the tracking request, thus those details are not in the response.
 HttpStatus: 200
 
+Value: 2102
+Name: MERCHANT_GET_ORDERS_ID_INVALID_CONTRACT_HASH
+Description: The contract hash used to authenticate the client is invalid for this order.
+HttpStatus: 403
 
 Value: 2103
 Name: MERCHANT_GET_ORDERS_ID_EXCHANGE_REQUEST_FAILURE
