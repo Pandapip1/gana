@@ -1831,6 +1831,17 @@ Name: SYNC_MISSING_CONTENT_LENGTH
 Description: The "Content-length" field for the upload is missing.
 HttpStatus: 400
 
+Value: 6113
+Name: SYNC_GENERIC_BACKEND_ERROR
+Description: Sync had problems communicating with its payment backend.
+HttpStatus: 502
+
+Value: 6114
+Name: SYNC_GENERIC_BACKEND_TIMEOUT
+Description: Sync experienced a timeout communicating with its payment backend.
+HttpStatus: 504
+
+
 
 # 7000 - 7999: Reserved for wallet
 
