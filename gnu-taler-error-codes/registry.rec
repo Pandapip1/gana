@@ -941,6 +941,11 @@ Name: EXCHANGE_MANAGEMENT_GLOBAL_FEE_SIGNATURE_INVALID
 Description: The signature affirming the fee structure is invalid.
 HttpStatus: 403
 
+Value: 1818
+Name: EXCHANGE_MANAGEMENT_DRAIN_PROFITS_SIGNATURE_INVALID
+Description: The signature affirming the profit drain is invalid.
+HttpStatus: 403
+
 Value: 1850
 Name: EXCHANGE_PURSE_CREATE_CONFLICTING_META_DATA
 Description: The purse was previously created with different meta data.
