@@ -219,11 +219,20 @@ Package: GNUnet
 Subsystem: GNUnet-TRANSPORT-TCP
 
 #-----------------------------------------------------------------------------
-# GNU Taler
+# GNU Taler, >= 1000
 
 #
 # Exchange offline signatures (with master key)
 #
+Number: 1018
+Name: MASTER_DRAIN_PROFIT
+Comment: Affirm wiring of exchange profits to operator account.
+Package: GNU Taler
+
+Number: 1019
+Name: MASTER_PARTNER_DETAILS
+Comment: Signature affirming a partner configuration for wads.
+Package: GNU Taler
 
 Number: 1020
 Name: MASTER_SIGNING_KEY_REVOKED
@@ -285,10 +294,6 @@ Name: MASTER_EXTENSION
 Comment: Set the configuration of an extension (age-restriction or peer2peer)
 Package: GNU Taler
 
-Number: 1048
-Name: MASTER_PARTNER_DETAILS
-Comment: Signature affirming a partner configuration for wads.
-Package: GNU Taler
 
 #
 # Exchange online signatures (with signing key)
@@ -373,6 +378,7 @@ Number: 1047
 Name: EXCHANGE_PURSE_STATUS
 Comment: Purpose for the state of a purse, signed by the exchange's signing key.
 Package: GNU Taler
+
 
 #
 # Auditor signatures
@@ -535,7 +541,7 @@ Comment: EdDSA test signature.
 Package: GNU Taler
 
 #
-# Anastasis signatures
+# GNU Anastasis signatures, >= 1400
 #
 
 Number: 1400
@@ -544,7 +550,7 @@ Comment: EdDSA signature for a policy upload.
 Package: GNU Taler
 
 #
-# Sync signatures
+# Sync signatures, >= 1450
 #
 
 Number: 1450
