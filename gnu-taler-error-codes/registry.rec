@@ -1077,6 +1077,11 @@ Name: EXCHANGE_KYC_GENERIC_LOGIC_UNKNOWN
 Description: The request used a logic specifier that is not known to the exchange.
 HttpStatus: 404
 
+Value: 1932
+Name: EXCHANGE_KYC_GENERIC_LOGIC_GONE
+Description: The request requires a logic which is no longer configured at the exchange.
+HttpStatus: 500
+
 
 Value: 1950
 Name: EXCHANGE_CONTRACTS_UNKNOWN
