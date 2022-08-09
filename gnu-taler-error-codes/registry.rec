@@ -1062,15 +1062,21 @@ Name: EXCHANGE_KYC_PROOF_BACKEND_AUTHORIZATION_FAILED
 Description: The backend signaled an authorization failure.
 HttpStatus: 403
 
+Value: 1929
+Name: EXCHANGE_KYC_PROOF_REQUEST_UNKNOWN
+Description: The exchange is unaware of having made an the authorization request.
+HttpStatus: 404
+
 Value: 1930
 Name: EXCHANGE_KYC_CHECK_AUTHORIZATION_FAILED
 Description: The payto-URI hash did not match. Hence the request was denied.
 HttpStatus: 403
 
 Value: 1931
-Name: EXCHANGE_KYC_WEBHOOK_LOGIC_UNKNOWN
-Description: The webhook used a logic specifier that is not known to the exchange.
+Name: EXCHANGE_KYC_GENERIC_LOGIC_UNKNOWN
+Description: The request used a logic specifier that is not known to the exchange.
 HttpStatus: 404
+
 
 Value: 1950
 Name: EXCHANGE_CONTRACTS_UNKNOWN
