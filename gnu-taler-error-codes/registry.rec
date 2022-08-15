@@ -1747,12 +1747,12 @@ HttpStatus: 409
 
 Value: 5103
 Name: BANK_NEGATIVE_NUMBER_AMOUNT
-Description: Negative number was used (as value and/or fraction) to initiate a Amount object.
+Description: Negative numbers are not allowed (as value and/or fraction) to instantiate an amount object.
 HttpStatus: 400
 
 Value: 5104
 Name: BANK_NUMBER_TOO_BIG
-Description: A number too big was used (as value and/or fraction) to initiate a amount object.
+Description: A too big number was used (as value and/or fraction) to instantiate an amount object.
 HttpStatus: 400
 
 Value: 5105
@@ -1809,6 +1809,16 @@ Value: 5115
 Name: BANK_ANCIENT_TRANSACTION_GONE
 Description: The client requested a transaction that is so far in the past, that it has been forgotten by the bank.
 HttpStatus: 410
+
+Value: 5116
+Name: BANK_ABORT_CONFIRM_CONFLICT
+Description: The client attempted to abort a transaction that was already confirmed.
+HttpStatus: 409
+
+Value: 5117
+Name: BANK_CONFIRM_ABORT_CONFLICT
+Description: The client attempted to confirm a transaction that was already aborted.
+HttpStatus: 409
 
 
 # 6000 - 6999: Reserved for sync
