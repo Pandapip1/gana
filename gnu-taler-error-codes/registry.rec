@@ -1082,6 +1082,33 @@ Name: EXCHANGE_KYC_GENERIC_LOGIC_GONE
 Description: The request requires a logic which is no longer configured at the exchange.
 HttpStatus: 500
 
+Value: 1933
+Name: EXCHANGE_KYC_GENERIC_LOGIC_BUG
+Description: The logic plugin had a bug in its interaction with the KYC provider.
+HttpStatus: 500
+
+Value: 1934
+Name: EXCHANGE_KYC_GENERIC_PROVIDER_ACCESS_REFUSED
+Description: The exchange could not process the request with its KYC provider because the provider refused access to the service. This indicates some configuration issue at the Taler exchange operator.
+HttpStatus: 511
+
+Value: 1935
+Name: EXCHANGE_KYC_GENERIC_PROVIDER_TIMEOUT
+Description: There was a timeout in the interaction between the exchange and the KYC provider. The most likely cause is some networking problem. Trying again later might succeed.
+HttpStatus: 504
+
+Value: 1936
+Name: EXCHANGE_KYC_GENERIC_PROVIDER_UNEXPECTED_REPLY
+Description: The KYC provider responded with a status that was completely unexpected by the KYC logic of the exchange.
+HttpStatus: 502
+
+Value: 1937
+Name: EXCHANGE_KYC_GENERIC_PROVIDER_RATE_LIMIT_EXCEEDED
+Description: The rate limit of the exchange at the KYC provider has been exceeded. Trying much later might work.
+HttpStatus: 503
+
+
+
 
 Value: 1950
 Name: EXCHANGE_CONTRACTS_UNKNOWN
