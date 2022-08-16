@@ -211,6 +211,18 @@ Name: GENERIC_CURL_ALLOCATION_FAILURE
 Description: The HTTP server failed to allocate memory for making a CURL request.
 HttpStatus: 500
 
+Value: 74
+Name: GENERIC_FAILED_TO_LOAD_TEMPLATE
+Description: The backend could not locate a required template to generate an HTML reply.
+HttpStatus: 406
+
+Value: 75
+Name: GENERIC_FAILED_TO_EXPAND_TEMPLATE
+Description: The backend could not expand the template to generate an HTML reply.
+HttpStatus: 500
+
+
+
 # 80-99: available for future use
 
 
@@ -1160,16 +1172,6 @@ Value: 2002
 Name: MERCHANT_GENERIC_RESERVE_PUB_MALFORMED
 Description: The reserve key of given to a /reserves/ handler was malformed.
 HttpStatus: 400
-
-Value: 2003
-Name: MERCHANT_GENERIC_FAILED_TO_LOAD_TEMPLATE
-Description: The backend could not locate a required template to generate an HTML reply.
-HttpStatus: 406
-
-Value: 2004
-Name: MERCHANT_GENERIC_FAILED_TO_EXPAND_TEMPLATE
-Description: The backend could not expand the template to generate an HTML reply.
-HttpStatus: 500
 
 Value: 2005
 Name: MERCHANT_GENERIC_ORDER_UNKNOWN
