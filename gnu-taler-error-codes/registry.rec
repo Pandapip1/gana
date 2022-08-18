@@ -1119,6 +1119,10 @@ Name: EXCHANGE_KYC_GENERIC_PROVIDER_RATE_LIMIT_EXCEEDED
 Description: The rate limit of the exchange at the KYC provider has been exceeded. Trying much later might work.
 HttpStatus: 503
 
+Value: 1938
+Name: EXCHANGE_KYC_WEBHOOK_UNAUTHORIZED
+Description: The request to the webhook lacked proper authorization or authentication data.
+HttpStatus: 401
 
 
 
