@@ -15,4 +15,11 @@ gnunet_dht_block_types.h.tmp: registry.rec h.template
 gnunet_dht_block_types.h: h.header gnunet_dht_block_types.h.tmp h.footer
 	cat h.header gnunet_dht_block_types.h.tmp h.footer > $@
 
+gnunet_dht_block_types.rst.tmp: registry.rec rst.template
+	../format.sh rst.template < registry.rec > $@
+
+gnunet_dht_block_types.rst: rst.header gnunet_dht_block_types.rst.tmp rst.footer
+	cat rst.header gnunet_dht_block_types.rst.tmp rst.footer > $@
+
+
 .PHONY: check clean distclean

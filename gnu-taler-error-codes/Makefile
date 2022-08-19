@@ -72,4 +72,10 @@ taler_error_codes.go.tmp: combined.tmp go.template
 taler_error_codes.go: go.header taler_error_codes.go.tmp go.footer
 	cat $^ > $@
 
+taler_error_codes.rst.tmp: combined.tmp rst.template
+	../format.sh rst.template < combined.tmp > $@
+
+taler_error_codes.rst: rst.header taler_error_codes.rst.tmp rst.footer
+	cat $^ > $@
+
 .PHONY: check clean distclean prep
