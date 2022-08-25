@@ -1826,6 +1826,11 @@ Name: BANK_CONFIRM_ABORT_CONFLICT
 Description: The client attempted to confirm a transaction that was already aborted.
 HttpStatus: 409
 
+Value: 5118
+Name: BANK_REGISTER_CONFLICT
+Description: The client attempted to register an account with the same name.
+HttpStatus: 409
+
 
 # 6000 - 6999: Reserved for sync
 # 6000 - 6099: Reserved for SYNC_GENERIC
