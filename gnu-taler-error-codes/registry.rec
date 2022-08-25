@@ -1831,6 +1831,11 @@ Name: BANK_REGISTER_CONFLICT
 Description: The client attempted to register an account with the same name.
 HttpStatus: 409
 
+Value: 5119
+Name: BANK_POST_WITHDRAWAL_OPERATION_REQUIRED
+Description: The client attempted to confirm a withdrawal operation before the wallet posted the required details.
+HttpStatus: 400
+
 
 # 6000 - 6999: Reserved for sync
 # 6000 - 6099: Reserved for SYNC_GENERIC
