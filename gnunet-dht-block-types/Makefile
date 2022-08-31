@@ -1,4 +1,4 @@
-FILES=gnunet_dht_block_types.h
+FILES=gnunet_dht_block_types.h gnunet_dht_block_types.rst
 all: check $(FILES)
 
 check:

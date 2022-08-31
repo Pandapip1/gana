@@ -1,5 +1,5 @@
-Registry for GNU Name System record types
------------------------------------------
+Registry for DHT block types
+----------------------------
 
 
 

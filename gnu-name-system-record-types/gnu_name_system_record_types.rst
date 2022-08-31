@@ -8,7 +8,7 @@ Registry for GNU Name System record types
                GNUNET_GNSRECORD_TYPE_PKEY
 -------------------------------------------------------------------------------
 Number              65536
-Commenr             GNS zone transfer
+Comment             GNS zone transfer
 =================== ===========================================================
 
 
@@ -17,7 +17,7 @@ Commenr             GNS zone transfer
                GNUNET_GNSRECORD_TYPE_NICK
 -------------------------------------------------------------------------------
 Number              65537
-Commenr             GNS nick names
+Comment             GNS nick names
 =================== ===========================================================
 
 
@@ -26,7 +26,7 @@ Commenr             GNS nick names
                GNUNET_GNSRECORD_TYPE_LEHO
 -------------------------------------------------------------------------------
 Number              65538
-Commenr             legacy hostnames
+Comment             legacy hostnames
 =================== ===========================================================
 
 
@@ -35,7 +35,7 @@ Commenr             legacy hostnames
                GNUNET_GNSRECORD_TYPE_VPN
 -------------------------------------------------------------------------------
 Number              65539
-Commenr             VPN resolution
+Comment             VPN resolution
 =================== ===========================================================
 
 
@@ -44,7 +44,7 @@ Commenr             VPN resolution
                GNUNET_GNSRECORD_TYPE_GNS2DNS
 -------------------------------------------------------------------------------
 Number              65540
-Commenr             Delegation to DNS
+Comment             Delegation to DNS
 =================== ===========================================================
 
 
@@ -53,7 +53,7 @@ Commenr             Delegation to DNS
                GNUNET_GNSRECORD_TYPE_BOX
 -------------------------------------------------------------------------------
 Number              65541
-Commenr             Boxed records (see TLSA/SRV handling in GNS)
+Comment             Boxed records (see TLSA/SRV handling in GNS)
 =================== ===========================================================
 
 
@@ -62,7 +62,7 @@ Commenr             Boxed records (see TLSA/SRV handling in GNS)
                GNUNET_GNSRECORD_TYPE_PLACE
 -------------------------------------------------------------------------------
 Number              65542
-Commenr             social place for SecuShare
+Comment             social place for SecuShare
 =================== ===========================================================
 
 
@@ -71,7 +71,7 @@ Commenr             social place for SecuShare
                GNUNET_GNSRECORD_TYPE_PHONE
 -------------------------------------------------------------------------------
 Number              65543
-Commenr             Endpoint for conversation
+Comment             Endpoint for conversation
 =================== ===========================================================
 
 
@@ -80,7 +80,7 @@ Commenr             Endpoint for conversation
                GNUNET_GNSRECORD_TYPE_RECLAIM_ATTRIBUTE
 -------------------------------------------------------------------------------
 Number              65544
-Commenr             identity attribute
+Comment             identity attribute
 =================== ===========================================================
 
 
@@ -89,7 +89,7 @@ Commenr             identity attribute
                GNUNET_GNSRECORD_TYPE_RECLAIM_TICKET
 -------------------------------------------------------------------------------
 Number              65545
-Commenr             local ticket reference
+Comment             local ticket reference
 =================== ===========================================================
 
 
@@ -98,7 +98,7 @@ Commenr             local ticket reference
                GNUNET_GNSRECORD_TYPE_DELEGATE
 -------------------------------------------------------------------------------
 Number              65548
-Commenr             For ABD policies
+Comment             For ABD policies
 =================== ===========================================================
 
 
@@ -107,7 +107,7 @@ Commenr             For ABD policies
                GNUNET_GNSRECORD_TYPE_ATTRIBUTE
 -------------------------------------------------------------------------------
 Number              65549
-Commenr             For ABD reverse lookups
+Comment             For ABD reverse lookups
 =================== ===========================================================
 
 
@@ -116,7 +116,7 @@ Commenr             For ABD reverse lookups
                GNUNET_GNSRECORD_TYPE_RECLAIM_ATTRIBUTE_REF
 -------------------------------------------------------------------------------
 Number              65550
-Commenr             for reclaim records
+Comment             for reclaim records
 =================== ===========================================================
 
 
@@ -125,7 +125,7 @@ Commenr             for reclaim records
                GNUNET_GNSRECORD_TYPE_REDIRECT
 -------------------------------------------------------------------------------
 Number              65551
-Commenr             Resolver redirects
+Comment             Resolver redirects
 =================== ===========================================================
 
 
@@ -134,7 +134,7 @@ Commenr             Resolver redirects
                GNUNET_GNSRECORD_TYPE_RECLAIM_OIDC_CLIENT
 -------------------------------------------------------------------------------
 Number              65552
-Commenr             For reclaim OIDC client names.
+Comment             For reclaim OIDC client names.
 =================== ===========================================================
 
 
@@ -143,7 +143,7 @@ Commenr             For reclaim OIDC client names.
                GNUNET_GNSRECORD_TYPE_RECLAIM_OIDC_REDIRECT
 -------------------------------------------------------------------------------
 Number              65553
-Commenr             Used reclaimID OIDC client redirect URIs.
+Comment             Used reclaimID OIDC client redirect URIs.
 =================== ===========================================================
 
 
@@ -152,7 +152,7 @@ Commenr             Used reclaimID OIDC client redirect URIs.
                GNUNET_GNSRECORD_TYPE_RECLAIM_CREDENTIAL
 -------------------------------------------------------------------------------
 Number              65554
-Commenr             Record type for an attribute attestation (e.g. JWT).
+Comment             Record type for an attribute attestation (e.g. JWT).
 =================== ===========================================================
 
 
@@ -161,7 +161,7 @@ Commenr             Record type for an attribute attestation (e.g. JWT).
                GNUNET_GNSRECORD_TYPE_RECLAIM_PRESENTATION
 -------------------------------------------------------------------------------
 Number              65555
-Commenr             Record type for a presentation of a credential.
+Comment             Record type for a presentation of a credential.
 =================== ===========================================================
 
 
@@ -170,7 +170,7 @@ Commenr             Record type for a presentation of a credential.
                GNUNET_GNSRECORD_TYPE_EDKEY
 -------------------------------------------------------------------------------
 Number              65556
-Commenr             Record type for EDKEY zone delegations.
+Comment             Record type for EDKEY zone delegations.
 =================== ===========================================================
 
 
@@ -179,7 +179,7 @@ Commenr             Record type for EDKEY zone delegations.
                GNUNET_GNSRECORD_TYPE_ERIS_READ_CAPABILITY
 -------------------------------------------------------------------------------
 Number              65557
-Commenr             Encoding for Robust Immutable Storage (ERIS) binary read capability
+Comment             Encoding for Robust Immutable Storage (ERIS) binary read capability
 =================== ===========================================================
 
 
@@ -188,7 +188,7 @@ Commenr             Encoding for Robust Immutable Storage (ERIS) binary read cap
                GNUNET_GNSRECORD_TYPE_MESSENGER_ROOM_ENTRY
 -------------------------------------------------------------------------------
 Number              65558
-Commenr             Record type to share an entry of a messenger room
+Comment             Record type to share an entry of a messenger room
 =================== ===========================================================
 
 
@@ -197,7 +197,7 @@ Commenr             Record type to share an entry of a messenger room
                GNUNET_GNSRECORD_TYPE_TOMBSTONE
 -------------------------------------------------------------------------------
 Number              65559
-Commenr             Record type to indicate a previously delete record (PRIVATE only)
+Comment             Record type to indicate a previously delete record (PRIVATE only)
 =================== ===========================================================
 
 
@@ -206,6 +206,15 @@ Commenr             Record type to indicate a previously delete record (PRIVATE 
                GNUNET_GNSRECORD_TYPE_MESSENGER_ROOM_DETAILS
 -------------------------------------------------------------------------------
 Number              65560
-Commenr             Record type to store details about a messenger room
+Comment             Record type to store details about a messenger room
+=================== ===========================================================
+
+
+
+=================== ===========================================================
+               GNUNET_GNSRECORD_TYPE_DID_DOCUMENT
+-------------------------------------------------------------------------------
+Number              65561
+Comment             Record type to store DID Documents
 =================== ===========================================================
 
