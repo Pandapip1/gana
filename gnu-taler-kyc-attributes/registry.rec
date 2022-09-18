@@ -1,0 +1,66 @@
+# -*- mode: rec -*-
+#
+# Registry for GNU Taler attributes, as per Design document 31
+#
+%rec: TalerAttributes
+%key: Identifier
+%typedef: Identifier_t regexp /^[ABCDEFGHIJKLMNOPQRSTUVWXYZ_][ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789:\.]*$/
+%type: Identifier Identifier_t
+%unique: Identifier
+%mandatory: Identifier
+%typedef: Description_t regexp |^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\)\.,;!"':#\/ -]*$|
+%type: Description Description_t
+%mandatory: Description
+%typedef: Category_t enum individual business both
+%type: Category Category_t
+%mandatory: Category
+%allowed: Contact
+%allowed: References
+%allowed: Comment
+%sort: Identifier Description Contact References
+
+
+Identifier: BUSINESS_NAME
+Description: Full legal name of the business.
+Category: business
+
+Identifier: BUSINESS_TAX_ID
+Description: Tax identifier of the business.
+Category: business
+Comment: Format may depend on the country of residence of the business.
+
+Identifier: FULL_NAME
+Description: Full legal name of an individual.
+Category: individual
+
+Identifier: CONTACT_EMAIL
+Description: E-mail address to contact the individual or business.
+Category: both
+Comment: Can be validated via E-mail with TAN.
+
+Identifier: CONTACT_PHONE
+Description: Phone number to contact the individual or business.
+Category: both
+Comment: Can be validated via SMS-TAN or phone call.
+
+Identifier: CONTACT_DNS_DOMAIN
+Description: DNS domain name owned by the individual or business.
+Category: both
+Comment: Can be validated by having the owner set an appropriate DNS TXT record.
+
+Identifier: CONTACT_WEB_DOMAIN
+Description: Web site owned by the individual or business.
+Category: both
+Comment: Can be validated by having the owner serve an appropriate well-known page.
+
+Identifier: ADDRESS_STREET
+Description: Street address (including house number) of the individual or business.
+Category: both
+
+Identifier: ADDRESS_CITY
+Description: Name of the city where the individual or business resides.
+Category: both
+
+Identifier: ADDRESS_COUNTRY
+Description: Name of the country where the individual or business resides.
+Category: both

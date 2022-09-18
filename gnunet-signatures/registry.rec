@@ -379,6 +379,10 @@ Name: EXCHANGE_PURSE_STATUS
 Comment: Purpose for the state of a purse, signed by the exchange's signing key.
 Package: GNU Taler
 
+Number: 1048
+Name: EXCHANGE_RESERVE_ATTEST_DETAILS
+Comment: Signature by which the exchange attests identity attributes of a particular reserve owner.
+Package: GNU Taler
 
 #
 # Auditor signatures
@@ -424,7 +428,7 @@ Package: GNU Taler
 
 Number: 1200
 Name: WALLET_RESERVE_WITHDRAW
-Comment: Signature where the reserve key confirms a withdraw request.
+Comment: Signature where the reserve key confirms a withdraw request. Signed with the reserve private key.
 Package: GNU Taler
 
 Number: 1201
@@ -434,17 +438,17 @@ Package: GNU Taler
 
 Number: 1202
 Name: WALLET_COIN_MELT
-Comment: Signature using a coin key confirming the melting of a coin.
+Comment: Signature using a coin key confirming the melting of a coin. Signed with the coin's private key.
 Package: GNU Taler
 
 Number: 1203
 Name: WALLET_COIN_RECOUP
-Comment: Signature using a coin key requesting recoup.
+Comment: Signature using a coin key requesting recoup. Signed with the coin's private key.
 Package: GNU Taler
 
 Number: 1204
 Name: WALLET_COIN_LINK
-Comment: Signature using a coin key authenticating link data.
+Comment: Signature using a coin key authenticating link data. Signed with the old coin's private key.
 Package: GNU Taler
 
 Number: 1205
@@ -454,7 +458,7 @@ Package: GNU Taler
 
 Number: 1206
 Name: WALLET_COIN_RECOUP_REFRESH
-Comment: Signature using a coin key requesting recoup-refresh.
+Comment: Signature using a coin key requesting recoup-refresh. Signed with the coin private key.
 Package: GNU Taler
 
 Number: 1207
@@ -464,47 +468,57 @@ Package: GNU Taler
 
 Number: 1208
 Name: WALLET_RESERVE_HISTORY
-Comment: Request full reserve history and pay for it.
+Comment: Request full reserve history and pay for it. Signed with the reserve private key.
 Package: GNU Taler
 
 Number: 1209
 Name: WALLET_RESERVE_STATUS
-Comment: Request detailed account status (for free).
+Comment: Request detailed account status (for free). Signed with the reserve private key.
 Package: GNU Taler
 
 Number: 1210
 Name: WALLET_PURSE_CREATE
-Comment: Request purse creation (without reserve).
+Comment: Request purse creation (without reserve). Signed by the purse private key.
 Package: GNU Taler
 
 Number: 1211
 Name: WALLET_PURSE_DEPOSIT
-Comment: Request coin to be deposited into a purse.
+Comment: Request coin to be deposited into a purse. Signed with the coin private key.
 Package: GNU Taler
 
 Number: 1212
 Name: WALLET_PURSE_STATUS
-Comment: Request purse status.
+Comment: Request purse status. Signed with the purse private key.
 Package: GNU Taler
 
 Number: 1213
 Name: WALLET_PURSE_MERGE
-Comment: Request purse to be merged with a reserve (by purse).
+Comment: Request purse to be merged with a reserve. Signed with the purse private key.
 Package: GNU Taler
 
 Number: 1214
 Name: WALLET_ACCOUNT_MERGE
-Comment: Request purse to be merged with a reserve (by account).
+Comment: Request purse to be merged with a reserve. Signed by the reserve private key.
 Package: GNU Taler
 
 Number: 1215
 Name: WALLET_RESERVE_CLOSE
-Comment: Request account to be closed.
+Comment: Request account to be closed. Signed with the reserve private key.
 Package: GNU Taler
 
 Number: 1216
 Name: WALLET_PURSE_ECONTRACT
-Comment: Associates encrypted contract with a purse.
+Comment: Associates encrypted contract with a purse. Signed with the purse private key.
+Package: GNU Taler
+
+Number: 1217
+Name: WALLET_RESERVE_OPEN
+Comment: Request reserve to be kept open. Signed with the reserve private key.
+Package: GNU Taler
+
+Number: 1218
+Name: WALLET_RESERVE_OPEN_DEPOSIT
+Comment: Request coin to be used to pay for reserve to be kept open. Signed with the coin private key.
 Package: GNU Taler
 
 #
