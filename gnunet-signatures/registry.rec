@@ -521,6 +521,11 @@ Name: WALLET_RESERVE_OPEN_DEPOSIT
 Comment: Request coin to be used to pay for reserve to be kept open. Signed with the coin private key.
 Package: GNU Taler
 
+Number: 1219
+Name: WALLET_RESERVE_ATTEST_DETAILS
+Comment: Request attestation about reserve owner. Signed by the reserve private key.
+Package: GNU Taler
+
 #
 # Security module signatures
 #
