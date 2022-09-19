@@ -2029,6 +2029,11 @@ Name: WALLET_PENDING_OPERATION_FAILED
 Description: A pending operation failed, and thus the request can't be completed.
 HttpStatus: 0
 
+Value: 7022
+Name: WALLET_PAY_MERCHANT_SERVER_ERROR
+Description: A payment was attempted, but the merchant had an internal server error (5xx).
+HttpStatus: 0
+
 # 8000 - 8999: Reserved for Anastasis
 
 Value: 8000
