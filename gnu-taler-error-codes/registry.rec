@@ -2034,6 +2034,12 @@ Name: WALLET_PAY_MERCHANT_SERVER_ERROR
 Description: A payment was attempted, but the merchant had an internal server error (5xx).
 HttpStatus: 0
 
+Value: 7023
+Name: WALLET_CRYPTO_WORKER_ERROR
+Description: The crypto worker failed.
+HttpStatus: 0
+
+
 # 8000 - 8999: Reserved for Anastasis
 
 Value: 8000
