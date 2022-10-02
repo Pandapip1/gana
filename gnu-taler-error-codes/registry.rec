@@ -876,6 +876,11 @@ Name: EXCHANGE_RESERVES_ATTEST_BAD_SIGNATURE
 Description: The signature by the reserve affirming the attestion request is invalid.
 HttpStatus: 403
 
+Value: 1788
+Name: EXCHANGE_RESERVES_CLOSE_NO_TARGET_ACCOUNT
+Description: The exchange does not know an origin account to which the remaining reserve balance could be wired to, and the wallet failed to provide one.
+HttpStatus: 409
+
 
 
 Value: 1800
