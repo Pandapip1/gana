@@ -109,6 +109,11 @@ Name: GENERIC_PARAMETER_MALFORMED
 Description: A parameter in the request was malformed.
 HttpStatus: 400
 
+Value: 27
+Name: GENERIC_RESERVE_PUB_MALFORMED
+Description: The reserve public key given as part of a /reserves/ endpoint was malformed.
+HttpStatus: 400
+
 
 # Circumstantial client-side protocol problems (30-39)
 # (Circumstantial == may work with another server, but not this one)
@@ -861,6 +866,21 @@ Name: EXCHANGE_RESERVES_RESERVE_MERGE_SIGNATURE_INVALID
 Description: The signature by the reserve affirming the merge is invalid.
 HttpStatus: 403
 
+Value: 1785
+Name: EXCHANGE_RESERVES_OPEN_BAD_SIGNATURE
+Description: The signature by the reserve affirming the open operation is invalid.
+HttpStatus: 403
+
+Value: 1786
+Name: EXCHANGE_RESERVES_CLOSE_BAD_SIGNATURE
+Description: The signature by the reserve affirming the close operation is invalid.
+HttpStatus: 403
+
+Value: 1787
+Name: EXCHANGE_RESERVES_ATTEST_BAD_SIGNATURE
+Description: The signature by the reserve affirming the attestion request is invalid.
+HttpStatus: 403
+
 
 
 Value: 1800
@@ -1171,11 +1191,6 @@ Value: 2001
 Name: MERCHANT_GENERIC_HOLE_IN_WIRE_FEE_STRUCTURE
 Description: The start and end-times in the wire fee structure leave a hole. This is not allowed.
 HttpStatus: 0
-
-Value: 2002
-Name: MERCHANT_GENERIC_RESERVE_PUB_MALFORMED
-Description: The reserve key of given to a /reserves/ handler was malformed.
-HttpStatus: 400
 
 Value: 2005
 Name: MERCHANT_GENERIC_ORDER_UNKNOWN
