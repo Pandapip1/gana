@@ -31,3 +31,8 @@ Contact: team@taler.net
 References: Design document 13
 
 
+Identifier: AUCTION_BRANDT
+Description: Auction support via libbrandt
+Critical: false
+Contact: oec-taler@kesim.org
+References: Design document 32
