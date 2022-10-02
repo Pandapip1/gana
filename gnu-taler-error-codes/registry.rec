@@ -332,11 +332,6 @@ Name: EXCHANGE_GENERIC_NEW_DENOMS_ARRAY_SIZE_EXCESSIVE
 Description: The number of denominations specified in the request exceeds the limit of the exchange.
 HttpStatus: 400
 
-Value: 1019
-Name: EXCHANGE_GENERIC_RESERVE_PUB_MALFORMED
-Description: The reserve public key was malformed.
-HttpStatus: 400
-
 Value: 1020
 Name: EXCHANGE_GENERIC_CLOCK_SKEW
 Description: The time at the server is too far off from the time specified in the request. Most likely the client system time is wrong.
