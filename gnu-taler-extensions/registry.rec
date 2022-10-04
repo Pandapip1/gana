@@ -24,15 +24,20 @@ Critical: true
 Contact: oec-taler@kesim.org
 References: Design document 24
 
-Identifier: P2P_PAYMENTS
-Description: Support for payments directly between wallets.
+Identifier: POLICY_REFUND
+Description: Support for refund in payments.
 Critical: false
 Contact: team@taler.net
 References: Design document 13
 
-
-Identifier: AUCTION_BRANDT
+Identifier: POLICY_AUCTION
 Description: Auction support via libbrandt
 Critical: false
 Contact: oec-taler@kesim.org
 References: Design document 32
+
+Identifier: POLICY_ESCROW
+Description: Escrow functionality provided by the exchange.  Deposited coins can be put into escrow for a specified time interval, potentialy in the future.  If the owner of the coins and the merchant both sign the contract within the interval, the coins' value will be transfered to the merchant's account. Otherwise, the coins can be refreshed by the owner.
+Critical: false
+Contact: oec-taler@kesim.org
+References: NOT YET
