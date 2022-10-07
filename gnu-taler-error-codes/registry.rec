@@ -423,6 +423,11 @@ Name: EXCHANGE_DEPOSITS_GET_MERCHANT_SIGNATURE_INVALID
 Description: The signature of the merchant is invalid.
 HttpStatus: 403
 
+Value: 1107
+Name: EXCHANGE_DEPOSITS_POLICY_NOT_ACCEPTED
+Description: The provided policy data was not accepted
+HttpStatus: 400
+
 Value: 1150
 Name: EXCHANGE_WITHDRAW_INSUFFICIENT_FUNDS
 Description: The given reserve does not have sufficient funds to admit the requested withdraw operation at this time.  The response includes the current "balance" of the reserve as well as the transaction "history" that lead to this balance.
