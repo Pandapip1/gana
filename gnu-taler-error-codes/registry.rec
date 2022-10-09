@@ -520,6 +520,12 @@ Description: The deposited amount is smaller than the deposit fee, which would r
 HttpStatus: 400
 
 
+Value: 1240
+Name: EXCHANGE_EXTENSIONS_INVALID_FULFILMENT
+Description: The proof of policy fulfilment was invalid.
+HttpStatus: 400
+
+
 Value: 1250
 Name: EXCHANGE_RESERVES_STATUS_UNKNOWN
 Description: The reserve balance, status or history was requested for a reserve which is not known to the exchange.
