@@ -37,7 +37,7 @@ Contact: oec-taler@kesim.org
 References: Design document 32
 
 Identifier: POLICY_ESCROW
-Description: Escrow functionality provided by the exchange.  Deposited coins can be put into escrow for a specified time interval, potentialy in the future.  If the owner of the coins and the merchant both sign the contract within the interval, the coins' value will be transfered to the merchant's account. Otherwise, the coins can be refreshed by the owner.
+Description: Escrow functionality provided by the exchange.  Deposited coins can be put into escrow for a specified time interval, potentially in the future.  If the owner of the coins and the merchant both sign the contract within the interval, the coins' value will be transferred to the merchant's account. Otherwise, the coins can be refreshed by the owner.
 Critical: false
 Contact: oec-taler@kesim.org
 References: NOT YET
