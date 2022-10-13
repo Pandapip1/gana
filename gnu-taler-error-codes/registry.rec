@@ -521,8 +521,8 @@ HttpStatus: 400
 
 
 Value: 1240
-Name: EXCHANGE_EXTENSIONS_INVALID_FULFILMENT
-Description: The proof of policy fulfilment was invalid.
+Name: EXCHANGE_EXTENSIONS_INVALID_FULFILLMENT
+Description: The proof of policy fulfillment was invalid.
 HttpStatus: 400
 
 
