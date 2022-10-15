@@ -384,6 +384,11 @@ Name: EXCHANGE_RESERVE_ATTEST_DETAILS
 Comment: Signature by which the exchange attests identity attributes of a particular reserve owner.
 Package: GNU Taler
 
+Number: 1049
+Name: EXCHANGE_CONFIRM_PURSE_REFUND
+Comment: Signature by which the exchange confirms that a purse expired and a coin was refunded.
+Package: GNU Taler
+
 #
 # Auditor signatures
 #
