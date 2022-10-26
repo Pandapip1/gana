@@ -12,11 +12,13 @@ cat "$@" > ${TARGET}
 TMPDIR=`pwd`
 export TMPDIR
 
-for n in `seq 100 599`
+n=100
+while [ "$n" -le 599 ]
 do
     VAL=`recsel -e "Value = $n" -P Description iana.tmp || true`
     CAPS=`echo ${VAL} | tr [a-z] [A-Z] | tr " -" "__"`
     recset -f Identifier -a "${CAPS}" -e "Value = $n" ${TARGET}
+    let "n+=1"
 done
 
 
