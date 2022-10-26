@@ -9,7 +9,7 @@ iana.tmp: http-status-codes-1.csv
 
 # extend by all-caps descriptions suitable for C-style identifier generation
 iana-extended.tmp: iana.tmp
-	./extend.sh $@ $^
+	./extend.sh $@ iana.tmp
 
 registry.rec: types.rec iana-extended.tmp extras.rec
 	cat types.rec iana-extended.tmp extras.rec > $@
