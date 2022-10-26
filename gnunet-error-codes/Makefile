@@ -27,7 +27,7 @@ combined.tmp: registry.rec prep
 	if ! diff $@ combined.xtmp > /dev/null; then mv combined.xtmp $@; else rm combined.xtmp; fi
 
 combined-escaped.tmp: combined.tmp
-	sed 's/"/\\"/g' $^ > $@
+	sed 's/"/\\"/g' combined.tmp > $@
 
 length.tmp: combined.tmp
 	recsel -p "Count(Description):ECS_LENGTH" combined.tmp > $@
@@ -36,7 +36,7 @@ gnunet_error_codes.h.tmp: combined.tmp h.template
 	../format.sh h.template < combined.tmp > $@
 
 gnunet_error_codes.h: h.header gnunet_error_codes.h.tmp h.footer
-	cat $^ > $@
+	cat h.header gnunet_error_codes.h.tmp h.footer > $@
 
 gnunet_error_codes.c.tmp: combined-escaped.tmp c.template
 	../format.sh c.template < combined-escaped.tmp > $@
@@ -45,24 +45,24 @@ gnunet_error_codes-length.c.tmp: length.tmp c-length.template
 	../format.sh c-length.template < length.tmp > $@
 
 gnunet_error_codes.c: c.header gnunet_error_codes.c.tmp gnunet_error_codes-length.c.tmp c.footer
-	cat $^ > $@
+	cat c.header gnunet_error_codes.c.tmp gnunet_error_codes-length.c.tmp c.footer > $@
 
 gnunet_error_codes.ts.tmp: combined.tmp ts.template
 	../format.sh ts.template < combined.tmp > $@
 
 gnunet_error_codes.ts: ts.header gnunet_error_codes.ts.tmp ts.footer
-	cat $^ > $@
+	cat ts.header gnunet_error_codes.ts.tmp ts.footer > $@
 
 gnunet_error_codes.go.tmp: combined.tmp go.template
 	../format.sh go.template < combined.tmp > $@
 
 gnunet_error_codes.go: go.header gnunet_error_codes.go.tmp go.footer
-	cat $^ > $@
+	cat go.header gnunet_error_codes.go.tmp go.footer > $@
 
 gnunet_error_codes.rst.tmp: combined.tmp rst.template
 	../format.sh rst.template < combined.tmp > $@
 
 gnunet_error_codes.rst: rst.header gnunet_error_codes.rst.tmp rst.footer
-	cat $^ > $@
+	cat rst.header gnunet_error_codes.rst.tmp rst.footer > $@
 
 .PHONY: check clean distclean prep
