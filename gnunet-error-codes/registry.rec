@@ -5,7 +5,6 @@
 %rec: GnunetErrorCode
 %key: Value
 %typedef: ValueRange_t range 0 9999
-%constraint: ( Value < 100 ) || ( Value > 999 )
 %type: Value ValueRange_t
 %mandatory: Value
 %typedef: Description_t regexp |^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_\(\)\.,;!"':#\/ -]*$|
@@ -24,6 +23,33 @@ Value: 0
 Name: NONE
 Description: No error (success).
 HttpStatus: 0
+
+Value: 1
+Name: UNKNOWN
+Description: Unknown and unspecified error.
+HttpStatus: 500
+
+Value: 101
+Name: SERVICE_COMMUNICATION_FAILED
+Description: Communication with service failed.
+HttpStatus: 500
+
+# IDENTITY Error Codes
+
+Value: 200
+Name: IDENTITY_NOT_FOUND
+Description: Ego not found.
+HttpStatus: 404
+
+Value: 201
+Name: IDENTITY_NAME_CONFLICT
+Description: Identifier already in use for another ego.
+HttpStatus: 409
+
+Value: 202
+Name: IDENTITY_INVALID
+Description: The given ego is invalid or malformed.
+HttpStatus: 500
 
 # NAMESTORE Error Codes
 
