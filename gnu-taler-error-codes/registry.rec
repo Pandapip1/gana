@@ -2070,6 +2070,11 @@ Name: WALLET_CRYPTO_WORKER_BAD_REQUEST
 Description: The crypto worker received a bad request.
 HttpStatus: 0
 
+Value: 7025
+Name: WALLET_WITHDRAWAL_KYC_REQUIRED
+Description: A KYC step is required before withdrawal can proceed.
+HttpStatus: 0
+
 
 # 8000 - 8999: Reserved for Anastasis
 
