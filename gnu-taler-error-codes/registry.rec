@@ -219,7 +219,7 @@ HttpStatus: 500
 Value: 74
 Name: GENERIC_FAILED_TO_LOAD_TEMPLATE
 Description: The backend could not locate a required template to generate an HTML reply.
-HttpStatus: 406
+HttpStatus: 500
 
 Value: 75
 Name: GENERIC_FAILED_TO_EXPAND_TEMPLATE
