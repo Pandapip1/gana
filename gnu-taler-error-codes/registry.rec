@@ -454,6 +454,11 @@ Name: EXCHANGE_RESERVE_HISTORY_ERROR_INSUFFICIENT_FUNDS
 Description: When computing the reserve history, we ended up with a negative overall balance, which should be impossible.
 HttpStatus: 500
 
+Value: 1156
+Name: EXCHANGE_GET_RESERVE_HISTORY_ERROR_INSUFFICIENT_BALANCE
+Description: The reserve did not have sufficient funds in it to pay for a full reserve history statement.
+HttpStatus: 409
+
 Value: 1158
 Name: EXCHANGE_WITHDRAW_DENOMINATION_KEY_LOST
 Description: Withdraw period of the coin to be withdrawn is in the past.
