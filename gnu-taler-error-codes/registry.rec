@@ -450,7 +450,7 @@ Description: The signature of the reserve is not valid.
 HttpStatus: 403
 
 Value: 1155
-Name: EXCHANGE_WITHDRAW_HISTORY_ERROR_INSUFFICIENT_FUNDS
+Name: EXCHANGE_RESERVE_HISTORY_ERROR_INSUFFICIENT_FUNDS
 Description: When computing the reserve history, we ended up with a negative overall balance, which should be impossible.
 HttpStatus: 500
 
@@ -892,7 +892,10 @@ Name: EXCHANGE_RESERVES_CLOSE_NO_TARGET_ACCOUNT
 Description: The exchange does not know an origin account to which the remaining reserve balance could be wired to, and the wallet failed to provide one.
 HttpStatus: 409
 
-
+Value: 1789
+Name: EXCHANGE_RESERVES_OPEN_INSUFFICIENT_FUNDS
+Description: The reserve balance is insufficient to pay for the open operation.
+HttpStatus: 409
 
 Value: 1800
 Name: EXCHANGE_MANAGEMENT_AUDITOR_NOT_FOUND
