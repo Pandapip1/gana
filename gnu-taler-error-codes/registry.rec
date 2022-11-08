@@ -4,6 +4,7 @@
 #
 %rec: TalerErrorCode
 %key: Value
+%singular: Value
 %typedef: ValueRange_t range 0 9999
 %constraint: ( Value < 100 ) || ( Value > 999 )
 %type: Value ValueRange_t
@@ -15,6 +16,7 @@
 %type: Name Name_t
 %unique: Name
 %mandatory: Name
+%singular: Name
 # A status of 0 means not an HTTP status (i.e. created client-side)
 %type: HttpStatus rec HttpStatusCode
 %mandatory: HttpStatus
@@ -28,7 +30,6 @@ Description: Special code to indicate success (no error).
 HttpStatus: 0
 
 # We could not get the error code.
-
 Value: 1
 Name: INVALID
 Description: A non-integer error code was returned in the JSON response.
