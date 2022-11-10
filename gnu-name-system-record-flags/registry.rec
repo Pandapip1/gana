@@ -20,24 +20,24 @@
 Number: 15
 Name: CRITICAL
 Comment: This record is critical. If it cannot be processed (for example because the record type is unknown) resolution MUST fail
-References: LSD0001
+References: https://lsd.gnunet.org/lsd0001
 
 Number: 14
 Name: SHADOW
 Comment: This record should not be used unless all (other) records in the set with an absolute expiration time have expired.
-References: LSD0001
+References: https://lsd.gnunet.org/lsd0001
 
 Number: 13
 Name: SUPPLEMENTAL
 Comment: This is a supplemental record.
-References: LSD0001
+References: https://lsd.gnunet.org/lsd0001
 
 Number: 1
 Name: RELATIVE_EXPIRATION
 Comment: This expiration time of the record is a relative time (not an absolute time). Used in GNUnet implementation.
-References: GNUnet implementation
+References: https://git.gnunet.org/gnunet.git
 
 Number: 0
 Name: PRIVATE
 Comment: This is a private record of this peer and it should thus not be published.
-References: GNUnet implementation
+References: https://git.gnunet.org/gnunet.git
