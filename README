@@ -8,6 +8,21 @@ protocols.  If you need to open a new registry, please feel free
 to contact us at gana@gnunet.org.
 
 
+Contributors
+============
+
+If you have Git access to GANA, you are generally authorized to add
+new entries to the registries.  Most registries are under a simple
+first-come first-use policy. If you are unsure about the registration
+policy of a particular registry, do ask gana@gnunet.org before making
+changes.
+
+Deleting or modifying existing entries (except improving comments)
+should be done particularly carefully, so if unsure you might want to
+double-check with gana@gnunet.org before changing or deleting
+anything.
+
+
 History
 =======
 
