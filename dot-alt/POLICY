@@ -1,0 +1,10 @@
+[REFERENCE .ALT RFC once published here!]
+
+The "Label" must be unique in the entire registry.  The value must be a
+case insensitive punycode string without dots following the restrictions
+on DNS names.
+
+Adding records can be done on a first-come first-served basis.
+
+The current contact(s) for review are reachable at
+alt-registry@gnunet.org.
