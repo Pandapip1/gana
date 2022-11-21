@@ -1277,6 +1277,11 @@ Name: MERCHANT_GENERIC_TRANSFER_UNKNOWN
 Description: The backend could not find the inbound wire transfer specified in the request.
 HttpStatus: 404
 
+Value: 2018
+Name: MERCHANT_GENERIC_TEMPLATE_UNKNOWN
+Description: The backend could not find the template(id) because it is not exist.
+HttpStatus: 404
+
 
 # 2100-2499: public API
 # 2100-2149: get orders endpoint
@@ -1755,6 +1760,8 @@ Value: 2800
 Name: MERCHANT_PRIVATE_GET_ORDERS_ID_AMOUNT_ARITHMETIC_FAILURE
 Description: The merchant backend encountered a failure in computing the deposit total.
 HttpStatus: 200
+
+# 2850-2899: template operations
 
 
 
