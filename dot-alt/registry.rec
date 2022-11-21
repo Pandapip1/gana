@@ -5,16 +5,26 @@
 
 %rec: AltTld
 %key: Label
-%typedef: Label_t regexp /^[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.-]*$/
+%typedef: Label_t regexp /^[abcdefghijklmnopqrstuvwxyz0123456789][abcdefghijklmnopqrstuvwxyz0123456789-]*$/
 %type: Label Label_t
 %unique: Label
 %mandatory: Label
 %mandatory: Description
 %allowed: Contact
 %allowed: References
+%allowed: UnicodeLabel
 %sort: Name Contact References
 
 Label: gns
+UnicodeLabel: gns
 Contact: Martin Schanzenbach <schanzen@gnunet.org>
 References: RFC XXXX
 Description: The GNU Name System
+
+# Unreserved unicode example
+Label: xn--fsq
+UnicodeLabel: 例
+Contact: Martin Schanzenbach <schanzen@gnunet.org>
+References: None
+Description: Unreserved unicode example
+
