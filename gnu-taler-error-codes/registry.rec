@@ -1763,7 +1763,10 @@ HttpStatus: 200
 
 # 2850-2899: template operations
 
-
+Value: 2850
+Name: MERCHANT_PRIVATE_POST_TEMPLATES_CONFLICT_TEMPLATE_EXISTS
+Description: The template ID exists.
+HttpStatus: 409
 
 
 # 3000 - 3999: Reserved for auditor
