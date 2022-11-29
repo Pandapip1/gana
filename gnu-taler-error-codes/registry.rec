@@ -1282,6 +1282,11 @@ Name: MERCHANT_GENERIC_TEMPLATE_UNKNOWN
 Description: The backend could not find the template(id) because it is not exist.
 HttpStatus: 404
 
+Value: 2019
+Name: MERCHANT_GENERIC_WEBHOOK_UNKNOWN
+Description: The backend could not find the webhook(id) because it is not exist.
+HttpStatus: 404
+
 
 # 2100-2499: public API
 # 2100-2149: get orders endpoint
@@ -1765,8 +1770,18 @@ HttpStatus: 200
 
 Value: 2850
 Name: MERCHANT_PRIVATE_POST_TEMPLATES_CONFLICT_TEMPLATE_EXISTS
-Description: The template ID exists.
+Description: The template ID already exists.
 HttpStatus: 409
+
+
+# 2900-2949: webhook operations
+
+Value: 2900
+Name: MERCHANT_PRIVATE_POST_WEBHOOKS_CONFLICT_WEBHOOK_EXISTS
+Description: The webhook ID elready exists.
+HttpStatus: 409
+
+
 
 
 # 3000 - 3999: Reserved for auditor
