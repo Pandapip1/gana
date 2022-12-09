@@ -1196,6 +1196,11 @@ Name: EXCHANGE_PURSE_DEPOSIT_COIN_SIGNATURE_INVALID
 Description: A coin signature for a deposit into the purse is invalid.
 HttpStatus: 403
 
+Value: 1976
+Name: EXCHANGE_PURSE_DEPOSIT_DECIDED_ALREADY
+Description: It is too late to deposit coins into the purse.
+HttpStatus: 410
+
 
 
 
