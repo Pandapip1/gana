@@ -1778,12 +1778,12 @@ Name: MERCHANT_PRIVATE_POST_TEMPLATES_CONFLICT_TEMPLATE_EXISTS
 Description: The template ID already exists.
 HttpStatus: 409
 
-Value: 2851
+Value: 2870
 Name: MERCHANT_POST_USING_TEMPLATES_AMOUNT_CONFLICT_TEMPLATES_CONTRACT_AMOUNT
 Description: Amount given in the using template and in the template contract. There is a conflict.
 HttpStatus: 409
 
-Value: 2852
+Value: 2871
 Name: MERCHANT_POST_USING_TEMPLATES_SUBJECT_CONFLICT_TEMPLATES_CONTRACT_SUBJECT
 Description: Subject given in the using template and in the template contract. There is a conflict.
 HttpStatus: 409
