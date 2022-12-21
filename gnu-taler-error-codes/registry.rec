@@ -1778,6 +1778,26 @@ Name: MERCHANT_PRIVATE_POST_TEMPLATES_CONFLICT_TEMPLATE_EXISTS
 Description: The template ID already exists.
 HttpStatus: 409
 
+Value: 2860
+Name: MERCHANT_POST_USING_TEMPLATES_AMOUNT_CONFLICT_TEMPLATES_CONTRACT_AMOUNT
+Description: Amount given in the using template and in the template contract. There is a conflict.
+HttpStatus: 409
+
+Value: 2861
+Name: MERCHANT_POST_USING_TEMPLATES_SUMMARY_CONFLICT_TEMPLATES_CONTRACT_SUBJECT
+Description: Subject given in the using template and in the template contract. There is a conflict.
+HttpStatus: 409
+
+Value: 2862
+Name: MERCHANT_POST_USING_TEMPLATES_NO_AMOUNT
+Description: Amount not given in the using template and in the template contract. There is a conflict.
+HttpStatus: 409
+
+Value: 2863
+Name: MERCHANT_POST_USING_TEMPLATES_NO_SUMMARY
+Description: Subject not given in the using template and in the template contract. There is a conflict.
+HttpStatus: 409
+
 
 
 # 2900-2949: webhook operations
@@ -1788,18 +1808,7 @@ Description: The webhook ID elready exists.
 HttpStatus: 409
 
 
-# 2950-2999: Using template operations
 
-
-Value: 2950
-Name: MERCHANT_POST_USING_TEMPLATES_AMOUNT_CONFLICT_TEMPLATES_CONTRACT_AMOUNT
-Description: Amount given in the using template and in the template contract. There is a conflict.
-HttpStatus: 409
-
-Value: 2951
-Name: MERCHANT_POST_USING_TEMPLATES_SUBJECT_CONFLICT_TEMPLATES_CONTRACT_SUBJECT
-Description: Subject given in the using template and in the template contract. There is a conflict.
-HttpStatus: 409
 
 
 
