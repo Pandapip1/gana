@@ -820,6 +820,16 @@ Name: EXCHANGE_RESERVES_PURSE_FEE_TOO_LOW
 Description: The purse fee specified for the request is lower than the purse fee charged by the exchange at this time.
 HttpStatus: 400
 
+Value: 1679
+Name: EXCHANGE_PURSE_DELETE_ALREADY_DECIDED
+Description: The payment request cannot be deleted anymore, as it either already completed or timed out.
+HttpStatus: 410
+
+Value: 1680
+Name: EXCHANGE_PURSE_DELETE_SIGNATURE_INVALID
+Description: The signature affirming the purse deletion is invalid.
+HttpStatus: 403
+
 
 Value: 1700
 Name: EXCHANGE_DENOMINATION_HELPER_UNAVAILABLE
