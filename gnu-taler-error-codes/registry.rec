@@ -388,6 +388,10 @@ Name: EXCHANGE_PURSE_DEPOSIT_COIN_AGE_ATTESTATION_FAILURE
 Description: The provided attestation for the minimum age couldn't be verified by the exchange.
 HttpStatus: 400
 
+Value: 1031
+Name: EXCHANGE_GENERIC_PURSE_DELETED
+Description: The purse was deleted.
+HttpStatus: 410
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
