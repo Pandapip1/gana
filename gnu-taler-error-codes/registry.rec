@@ -823,7 +823,7 @@ HttpStatus: 400
 Value: 1679
 Name: EXCHANGE_PURSE_DELETE_ALREADY_DECIDED
 Description: The payment request cannot be deleted anymore, as it either already completed or timed out.
-HttpStatus: 410
+HttpStatus: 409
 
 Value: 1680
 Name: EXCHANGE_PURSE_DELETE_SIGNATURE_INVALID
