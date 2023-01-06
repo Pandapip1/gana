@@ -2151,6 +2151,11 @@ Name: WALLET_WITHDRAWAL_KYC_REQUIRED
 Description: A KYC step is required before withdrawal can proceed.
 HttpStatus: 0
 
+Value: 7026
+Name: WALLET_DEPOSIT_GROUP_INSUFFICIENT_BALANCE
+Description: The wallet does not have sufficient balance to create a deposit group.
+HttpStatus: 0
+
 
 # 8000 - 8999: Reserved for Anastasis
 
