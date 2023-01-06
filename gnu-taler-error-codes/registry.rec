@@ -2160,8 +2160,8 @@ Value: 7027
 Name: WALLET_PEER_PUSH_PAYMENT_INSUFFICIENT_BALANCE
 Description: The wallet does not have sufficient balance to create a peer push payment.
 HttpStatus: 0
-Value: 7027
 
+Value: 7028
 Name: WALLET_PEER_PULL_PAYMENT_INSUFFICIENT_BALANCE
 Description: The wallet does not have sufficient balance to pay for an invoice.
 HttpStatus: 0
