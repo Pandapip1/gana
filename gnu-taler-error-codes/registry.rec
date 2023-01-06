@@ -2156,6 +2156,11 @@ Name: WALLET_DEPOSIT_GROUP_INSUFFICIENT_BALANCE
 Description: The wallet does not have sufficient balance to create a deposit group.
 HttpStatus: 0
 
+Value: 7027
+Name: WALLET_PEER_PUSH_PAYMENT_INSUFFICIENT_BALANCE
+Description: The wallet does not have sufficient balance to create a peer push payment.
+HttpStatus: 0
+
 
 # 8000 - 8999: Reserved for Anastasis
 
