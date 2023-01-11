@@ -393,11 +393,6 @@ Name: EXCHANGE_GENERIC_PURSE_DELETED
 Description: The purse was deleted.
 HttpStatus: 410
 
-Value: 1051
-Name: EXCHANGE_GENERIC_KYC_REQUIRED
-Description: The request cannot be legally completed until the customer completes a know-your-customer (KYC) process.
-HttpStatus: 451
-
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
