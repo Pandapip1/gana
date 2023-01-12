@@ -1231,6 +1231,11 @@ Name: MERCHANT_GENERIC_HOLE_IN_WIRE_FEE_STRUCTURE
 Description: The start and end-times in the wire fee structure leave a hole. This is not allowed.
 HttpStatus: 0
 
+Value: 2002
+Name: MERCHANT_GENERIC_EXCHANGE_WIRE_REQUEST_FAILED
+Description: The merchant was unable to obtain a valid answer to /wire from the exchange.
+HttpStatus: 502
+
 Value: 2005
 Name: MERCHANT_GENERIC_ORDER_UNKNOWN
 Description: The proposal is not known to the backend.
