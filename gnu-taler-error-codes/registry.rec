@@ -1198,7 +1198,7 @@ HttpStatus: 0
 Value: 1953
 Name: EXCHANGE_CONTRACTS_SIGNATURE_INVALID
 Description: The signature on the encrypted contract did not validate.
-zHttpStatus: 0
+HttpStatus: 0
 
 Value: 1954
 Name: EXCHANGE_CONTRACTS_DECODING_FAILED
@@ -1312,7 +1312,7 @@ Description: The backend could not find the webhook(id) because it is not exist.
 HttpStatus: 404
 
 Value: 2020
-Name: MERCHANT_GENERIC_PENDING_UNKNOWN
+Name: MERCHANT_GENERIC_PENDING_WEBHOOK_UNKNOWN
 Description: The backend could not find the webhook(serial) because it is not exist.
 HttpStatus: 404
 
@@ -1833,7 +1833,7 @@ HttpStatus: 409
 
 Value: 2910
 Name: MERCHANT_PRIVATE_POST_PENDING_WEBHOOKS_CONFLICT_PENDING_WEBHOOKS_EXISTS
-Description: The webhook ID elready exists.
+Description: The webhook serial elready exists.
 HttpStatus: 409
 
 
