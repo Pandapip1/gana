@@ -388,6 +388,10 @@ Name: EXCHANGE_PURSE_DEPOSIT_COIN_AGE_ATTESTATION_FAILURE
 Description: The provided attestation for the minimum age couldn't be verified by the exchange.
 HttpStatus: 400
 
+Value: 1031
+Name: EXCHANGE_GENERIC_PURSE_DELETED
+Description: The purse was deleted.
+HttpStatus: 410
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
@@ -820,6 +824,16 @@ Name: EXCHANGE_RESERVES_PURSE_FEE_TOO_LOW
 Description: The purse fee specified for the request is lower than the purse fee charged by the exchange at this time.
 HttpStatus: 400
 
+Value: 1679
+Name: EXCHANGE_PURSE_DELETE_ALREADY_DECIDED
+Description: The payment request cannot be deleted anymore, as it either already completed or timed out.
+HttpStatus: 409
+
+Value: 1680
+Name: EXCHANGE_PURSE_DELETE_SIGNATURE_INVALID
+Description: The signature affirming the purse deletion is invalid.
+HttpStatus: 403
+
 
 Value: 1700
 Name: EXCHANGE_DENOMINATION_HELPER_UNAVAILABLE
@@ -1216,6 +1230,11 @@ Value: 2001
 Name: MERCHANT_GENERIC_HOLE_IN_WIRE_FEE_STRUCTURE
 Description: The start and end-times in the wire fee structure leave a hole. This is not allowed.
 HttpStatus: 0
+
+Value: 2002
+Name: MERCHANT_GENERIC_EXCHANGE_WIRE_REQUEST_FAILED
+Description: The merchant was unable to obtain a valid answer to /wire from the exchange.
+HttpStatus: 502
 
 Value: 2005
 Name: MERCHANT_GENERIC_ORDER_UNKNOWN
@@ -2144,6 +2163,21 @@ HttpStatus: 0
 Value: 7025
 Name: WALLET_WITHDRAWAL_KYC_REQUIRED
 Description: A KYC step is required before withdrawal can proceed.
+HttpStatus: 0
+
+Value: 7026
+Name: WALLET_DEPOSIT_GROUP_INSUFFICIENT_BALANCE
+Description: The wallet does not have sufficient balance to create a deposit group.
+HttpStatus: 0
+
+Value: 7027
+Name: WALLET_PEER_PUSH_PAYMENT_INSUFFICIENT_BALANCE
+Description: The wallet does not have sufficient balance to create a peer push payment.
+HttpStatus: 0
+
+Value: 7028
+Name: WALLET_PEER_PULL_PAYMENT_INSUFFICIENT_BALANCE
+Description: The wallet does not have sufficient balance to pay for an invoice.
 HttpStatus: 0
 
 
