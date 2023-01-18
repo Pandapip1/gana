@@ -12,7 +12,8 @@
 ##
 me=$(basename $0)
 
-version='1.3'
+version='1.4'
+# 1.4  -- create $TMPDIR if it does not exist
 # 1.3  -- add support for optional arg SELEXP
 # 1.2  -- add check for required arg TEMPLATE
 # 1.1  -- add --help/--version support
@@ -40,6 +41,7 @@ if [ x"$2" = x ] ; then : ; else
 fi
 
 if [ "$selexp" ] ; then
+    mkdir -p "$TMPDIR" || exit 1
     t=$(mktemp)
     trap "rm -f $t" EXIT
     recsel -e "$selexp" > $t &&
