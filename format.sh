@@ -41,7 +41,6 @@ if [ x"$2" = x ] ; then : ; else
 fi
 
 if [ "$selexp" ] ; then
-    mkdir -p "$TMPDIR" || exit 1
     t=$(mktemp)
     trap "rm -f $t" EXIT
     recsel -e "$selexp" > $t &&
