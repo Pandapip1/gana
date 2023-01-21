@@ -393,6 +393,12 @@ Name: EXCHANGE_GENERIC_PURSE_DELETED
 Description: The purse was deleted.
 HttpStatus: 410
 
+Value: 1032
+Name: EXCHANGE_GENERIC_AML_OFFICER_PUB_MALFORMED
+Description: The public key of the AML officer in the URL was malformed.
+HttpStatus: 400
+
+
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
