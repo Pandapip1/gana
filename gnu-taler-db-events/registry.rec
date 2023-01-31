@@ -74,6 +74,10 @@ Value: 1105
 Name: MERCHANT_ORDERS_CHANGE
 Description: Event triggered when the set of orders or their state changes.
 
+Value: 1106
+Name: MERCHANT_WEBHOOK_PENDING
+Description: Event triggered when a new pending webhook is ready to be run.
+
 
 # 2000-2099: For Anastasis
 
