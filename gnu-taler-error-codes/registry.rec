@@ -393,6 +393,17 @@ Name: EXCHANGE_GENERIC_PURSE_DELETED
 Description: The purse was deleted.
 HttpStatus: 410
 
+Value: 1032
+Name: EXCHANGE_GENERIC_AML_OFFICER_PUB_MALFORMED
+Description: The public key of the AML officer in the URL was malformed.
+HttpStatus: 400
+
+Value: 1033
+Name: EXCHANGE_GENERIC_AML_OFFICER_GET_SIGNATURE_INVALID
+Description: The signature affirming the GET request of the AML officer is invalid.
+HttpStatus: 403
+
+
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
 Description: The exchange did not find information about the specified transaction in the database.
@@ -438,6 +449,10 @@ Name: EXCHANGE_WITHDRAW_INSUFFICIENT_FUNDS
 Description: The given reserve does not have sufficient funds to admit the requested withdraw operation at this time.  The response includes the current "balance" of the reserve as well as the transaction "history" that lead to this balance.
 HttpStatus: 409
 
+Value: 1151
+Name: EXCHANGE_AGE_WITHDRAW_INSUFFICIENT_FUNDS
+Description: The given reserve does not have sufficient funds to admit the requested age-withdraw operation at this time.  The response includes the current "balance" of the reserve as well as the transaction "history" that lead to this balance.
+HttpStatus: 409
 
 Value: 1152
 Name: EXCHANGE_WITHDRAW_AMOUNT_FEE_OVERFLOW
@@ -1012,6 +1027,34 @@ Name: EXCHANGE_MANAGEMENT_DRAIN_PROFITS_SIGNATURE_INVALID
 Description: The signature affirming the profit drain is invalid.
 HttpStatus: 403
 
+Value: 1825
+Name: EXCHANGE_AML_DECISION_ADD_SIGNATURE_INVALID
+Description: The signature affirming the AML decision is invalid.
+HttpStatus: 403
+
+Value: 1826
+Name: EXCHANGE_AML_DECISION_INVALID_OFFICER
+Description: The AML officer specified is not allowed to make AML decisions right now.
+HttpStatus: 403
+
+Value: 1827
+Name: EXCHANGE_AML_DECISION_MORE_RECENT_PRESENT
+Description: There is a more recent AML decision on file. The decision was rejected as timestamps of AML decisions must be monotonically increasing.
+HttpStatus: 409
+
+Value: 1830
+Name: EXCHANGE_MANAGEMENT_UPDATE_AML_OFFICER_SIGNATURE_INVALID
+Description: The signature affirming the change in the AML officer status is invalid.
+HttpStatus: 403
+
+Value: 1831
+Name: EXCHANGE_MANAGEMENT_AML_OFFICERS_MORE_RECENT_PRESENT
+Description: A more recent decision about the AML officer status is known to the exchange.
+HttpStatus: 409
+
+
+
+
 Value: 1850
 Name: EXCHANGE_PURSE_CREATE_CONFLICTING_META_DATA
 Description: The purse was previously created with different meta data.
@@ -1091,6 +1134,16 @@ Value: 1880
 Name: EXCHANGE_MERGE_PURSE_PARTNER_UNKNOWN
 Description: The exchange of the target account is not a partner of this exchange.
 HttpStatus: 404
+
+Value: 1890
+Name: EXCHANGE_MANAGEMENT_ADD_PARTNER_SIGNATURE_INVALID
+Description: The signature affirming the new partner is invalid.
+HttpStatus: 403
+
+Value: 1891
+Name: EXCHANGE_MANAGEMENT_ADD_PARTNER_DATA_CONFLICT
+Description: Conflicting data for the partner already exists with the exchange.
+HttpStatus: 409
 
 
 Value: 1900

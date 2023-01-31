@@ -395,6 +395,11 @@ Name: EXCHANGE_CONFIRM_PURSE_REFUND
 Comment: Signature by which the exchange confirms that a purse expired and a coin was refunded.
 Package: GNU Taler
 
+Number: 1050
+Name: EXCHANGE_CONFIRM_AGE_WITHDRAW
+Comment: Signature where the Exchange confirms an age-withdraw.
+Package: GNU Taler
+
 #
 # Auditor signatures
 #
@@ -540,6 +545,11 @@ Package: GNU Taler
 Number: 1220
 Name: WALLET_PURSE_DELETE
 Comment: Signature by which a wallet requests a purse to be deleted.
+Package: GNU Taler
+
+Number: 1221
+Name: WALLET_RESERVE_AGE_WITHDRAW
+Comment: Signature where the reserve key confirms an age-withdraw request. Signed with the reserve private key.
 Package: GNU Taler
 
 #
