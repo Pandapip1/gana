@@ -1664,6 +1664,16 @@ Name: MERCHANT_PRIVATE_POST_ORDERS_WIRE_DEADLINE_IS_NEVER
 Description: The request is invalid: the wire deadline for the order would be "never".
 HttpStatus: 400
 
+Value: 2507
+Name: MERCHANT_PRIVATE_POST_ORDERS_PAY_DEADLINE_IN_PAST
+Description: The request is invalid: a payment deadline was given, but it is in the past.
+HttpStatus: 400
+
+Value: 2508
+Name: MERCHANT_PRIVATE_POST_ORDERS_REFUND_DEADLINE_IN_PAST
+Description: The request is invalid: a refund deadline was given, but it is in the past.
+HttpStatus: 400
+
 Value: 2510
 Name: MERCHANT_PRIVATE_PATCH_ORDERS_ID_FORGET_PATH_SYNTAX_INCORRECT
 Description: One of the paths to forget is malformed.
