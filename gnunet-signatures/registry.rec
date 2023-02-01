@@ -594,6 +594,11 @@ Name: AML_DECISION
 Comment: Signature by which an AML officer signs an AML decision.
 Package: GNU Taler
 
+Number: 1351
+Name: AML_QUERY
+Comment: Signature by which an AML officer requests AML data.
+Package: GNU Taler
+
 
 #
 # GNU Anastasis signatures, >= 1400
