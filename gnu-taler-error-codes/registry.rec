@@ -403,6 +403,11 @@ Name: EXCHANGE_GENERIC_AML_OFFICER_GET_SIGNATURE_INVALID
 Description: The signature affirming the GET request of the AML officer is invalid.
 HttpStatus: 403
 
+Value: 1034
+Name: EXCHANGE_GENERIC_AML_OFFICER_ACCESS_DENIED
+Description: The specified AML officer does not have access at this time.
+HttpStatus: 403
+
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
