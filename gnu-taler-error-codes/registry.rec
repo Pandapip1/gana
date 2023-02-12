@@ -408,6 +408,16 @@ Name: EXCHANGE_GENERIC_AML_OFFICER_ACCESS_DENIED
 Description: The specified AML officer does not have access at this time.
 HttpStatus: 403
 
+Value: 1035
+Name: EXCHANGE_GENERIC_AML_PENDING
+Description: The requested operation is denied pending the resolution of an anti-money laundering investigation by the exchange operator. This is a manual process, please wait and retry later.
+HttpStatus: 451
+
+Value: 1036
+Name: EXCHANGE_GENERIC_AML_FROZEN
+Description: The requested operation is denied as the account was frozen on suspicion of money laundering. Please contact the exchange operator.
+HttpStatus: 451
+
 
 Value: 1100
 Name: EXCHANGE_DEPOSITS_GET_NOT_FOUND
