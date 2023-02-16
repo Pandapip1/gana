@@ -1057,6 +1057,11 @@ Name: EXCHANGE_AML_DECISION_MORE_RECENT_PRESENT
 Description: There is a more recent AML decision on file. The decision was rejected as timestamps of AML decisions must be monotonically increasing.
 HttpStatus: 409
 
+Value: 1828
+Name: EXCHANGE_AML_DECISION_UNKNOWN_CHECK
+Description: There AML decision would impose an AML check of a type that is not provided by any KYC provider known to the exchange.
+HttpStatus: 400
+
 Value: 1830
 Name: EXCHANGE_MANAGEMENT_UPDATE_AML_OFFICER_SIGNATURE_INVALID
 Description: The signature affirming the change in the AML officer status is invalid.
