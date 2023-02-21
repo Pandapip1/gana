@@ -2263,6 +2263,11 @@ Name: WALLET_PEER_PULL_PAYMENT_INSUFFICIENT_BALANCE
 Description: The wallet does not have sufficient balance to pay for an invoice.
 HttpStatus: 0
 
+Value: 7029
+Name: WALLET_REFRESH_GROUP_INCOMPLETE
+Description: A group of refresh operations has errors and will be tried again later.
+HttpStatus: 0
+
 
 # 8000 - 8999: Reserved for Anastasis
 
