@@ -1290,6 +1290,13 @@ HttpStatus: 410
 
 
 
+Value: 1980
+Name: EXCHANGE_TOTP_KEY_INVALID
+Description: TOTP key is not valid.
+HttpStatus: 0
+
+
+
 
 # 2000 - 2999: Reserved for merchant
 # 2000 - 2099: Reserved for MERCHANT_GENERIC
