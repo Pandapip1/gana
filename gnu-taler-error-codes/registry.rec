@@ -2270,8 +2270,13 @@ Name: WALLET_PEER_PULL_PAYMENT_INSUFFICIENT_BALANCE
 Description: The wallet does not have sufficient balance to pay for an invoice.
 HttpStatus: 0
 
+Value: 7029
+Name: WALLET_REFRESH_GROUP_INCOMPLETE
+Description: A group of refresh operations has errors and will be tried again later.
+HttpStatus: 0
 
-# 8000 - 8999: Reserved for Anastasis
+
+# 8000 - 8499: Reserved for Anastasis
 
 Value: 8000
 Name: ANASTASIS_GENERIC_BACKEND_TIMEOUT
@@ -2613,6 +2618,8 @@ Name: ANASTASIS_REDUCER_PROVIDERS_ALREADY_SYNCED
 Description: The reducer already synchronized with all providers.
 HttpStatus: 0
 
+# 8500 - 9000: Frosix
+
 
 # 9000 - 9599: LibEuFin.
 
@@ -2646,6 +2653,8 @@ Value: 9601
 Name: TALDIR_REGISTER_RATE_LIMITED
 Description: Number of allowed attempts for initiating a challenge exceeded.
 HttpStatus: 429
+
+
 
 # Some of our build systems expect the range to be < 10k, so let's keep it like this for now.
 Value: 9999
