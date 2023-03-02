@@ -37,3 +37,7 @@ Reference: RFC 8905
 Name: ldap
 Reference: ldap.txt
 Contact: ietf@pep.security
+
+Name: eth
+Reference: eth.txt
+Contact: gavinnjohn@gmail.com
